@@ -11,6 +11,24 @@
     </image:image>
   </url>
   <url>
+    <loc>https://gtmwithvarun.vercel.app/about/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://gtmwithvarun.vercel.app/assets/varun-portrait.jpg</image:loc>
+      <image:title>About Varun Murugan P - GTM Engineer</image:title>
+      <image:caption>Varun Murugan P, Aeronautical Science graduate turned GTM Engineer and AI Revenue Automation Specialist</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gtmwithvarun.vercel.app/projects/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://gtmwithvarun.vercel.app/assets/case-studies/lead-response-os/hero-workflow.png</image:loc>
+      <image:title>Engineered GTM Systems Portfolio</image:title>
+      <image:caption>Portfolio of verified revenue systems, lead response automation, and AI workflows</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://gtmwithvarun.vercel.app/projects/us-insurance-outbound-system/</loc>
     <lastmod>2026-10-14</lastmod>
     <image:image>
@@ -62,6 +80,15 @@
       <image:loc>https://gtmwithvarun.vercel.app/assets/case-studies/candidate-screening/hero-pipeline.png</image:loc>
       <image:title>AI Candidate Screening System Architecture</image:title>
       <image:caption>Automated resume extraction and objective rubric scoring pipeline</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gtmwithvarun.vercel.app/research/gtm-engineering-market-research-2026/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://gtmwithvarun.vercel.app/assets/varun-portrait.jpg</image:loc>
+      <image:title>GTM Engineering Market Research 2026</image:title>
+      <image:caption>Empirical analysis of GTM Engineering headcount, hiring demand, skill requirements, and compensation benchmarks in 2026</image:caption>
     </image:image>
   </url>
   <url>

@@ -78,7 +78,7 @@ for (const file of htmlFiles) {
       const rawJson = tag.replace(/<script[^>]*>/i, '').replace(/<\/script>/i, '').trim();
       try {
         const parsed = JSON.parse(rawJson);
-        if (rel.startsWith('projects/')) {
+        if (rel.startsWith('projects/') && rel !== 'projects/index.html') {
           const graph = parsed['@graph'] || [parsed];
           const hasArticle = graph.some(e => e['@type'] === 'TechArticle');
           const hasBreadcrumb = graph.some(e => e['@type'] === 'BreadcrumbList');
@@ -97,8 +97,25 @@ for (const file of htmlFiles) {
 }
 console.log(`  ✓ Validated ${htmlFiles.length} HTML pages.`);
 
-// 3. Check projects in dist
-console.log('\n[Test 3] Verifying 6 Case Study Directories in dist...');
+// 3. Check projects and dedicated pages in dist
+console.log('\n[Test 3] Verifying Core Architecture Pages in dist...');
+const corePages = [
+  { path: 'about/index.html', label: '/about/' },
+  { path: 'projects/index.html', label: '/projects/' },
+  { path: 'research/gtm-engineering-market-research-2026/index.html', label: '/research/gtm-engineering-market-research-2026/' },
+  { path: 'blog/index.html', label: '/blog/' }
+];
+for (const cp of corePages) {
+  const p = path.join(distDir, cp.path);
+  if (!fs.existsSync(p)) {
+    console.error(`  [FAIL] Missing core architecture page: ${cp.label} at ${p}`);
+    errors++;
+  } else {
+    console.log(`  ✓ Verified core page: ${cp.label}`);
+  }
+}
+
+console.log('\n[Test 3b] Verifying 6 Case Study Directories in dist...');
 const caseStudySlugs = [
   'us-insurance-outbound-system',
   'gtm-intelligence-hub',
@@ -153,7 +170,19 @@ if (!fs.existsSync(sitemapPath)) {
       errors++;
     }
   }
-  console.log('  ✓ All 6 case studies verified in sitemap.xml');
+  if (!sm.includes(`https://gtmwithvarun.vercel.app/about/`)) {
+    console.error(`  [FAIL] Sitemap missing /about/`);
+    errors++;
+  }
+  if (!sm.includes(`https://gtmwithvarun.vercel.app/projects/`)) {
+    console.error(`  [FAIL] Sitemap missing /projects/`);
+    errors++;
+  }
+  if (!sm.includes(`https://gtmwithvarun.vercel.app/research/gtm-engineering-market-research-2026/`)) {
+    console.error(`  [FAIL] Sitemap missing /research/gtm-engineering-market-research-2026/`);
+    errors++;
+  }
+  console.log('  ✓ All routes verified in sitemap.xml');
 }
 
 // 5. Validate robots.txt
@@ -167,9 +196,12 @@ if (!fs.existsSync(robotsPath)) {
   if (!rb.includes('Sitemap: https://gtmwithvarun.vercel.app/sitemap.xml')) {
     console.error('  [FAIL] robots.txt missing correct sitemap directive');
     errors++;
-  } else {
-    console.log('  ✓ robots.txt points to correct canonical sitemap');
   }
+  if (!rb.includes('User-agent: OAI-SearchBot')) {
+    console.error('  [FAIL] robots.txt missing OAI-SearchBot directive');
+    errors++;
+  }
+  console.log('  ✓ robots.txt points to correct canonical sitemap and permits OAI-SearchBot');
 }
 
 console.log(`\n========================================`);

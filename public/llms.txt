@@ -1,8 +1,11 @@
 # Varun Murugan P — GTM Engineer & AI Revenue Automation Architect
 
-> Senior GTM Engineer specializing in building self-healing, deterministic revenue operating systems. Bridges business strategy and software engineering to turn manual RevOps bottlenecks into automated, high-converting pipelines using n8n, Clay, HubSpot, Python, and modern LLMs.
+> Senior GTM Engineer specializing in building self-healing, deterministic revenue operating systems. Bridges business strategy and software engineering to turn manual RevOps bottlenecks into automated, high-converting pipelines using n8n, Clay, HubSpot, Python, and modern LLMs. Actively seeking full-time GTM Engineering roles.
 
 Website: https://gtmwithvarun.vercel.app/
+Professional Profile: https://gtmwithvarun.vercel.app/about/
+Projects Index: https://gtmwithvarun.vercel.app/projects/
+Market Research Study: https://gtmwithvarun.vercel.app/research/gtm-engineering-market-research-2026/
 Email: workwithvarunmurugan@gmail.com
 LinkedIn: https://linkedin.com/in/varunmuruganp
 GitHub: https://github.com/techievarunai-dev

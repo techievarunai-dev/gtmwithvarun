@@ -4,7 +4,11 @@
 User-agent: *
 Allow: /
 
-# Explicit permission and greeting for Generative AI & Search Engine Bots
+# OpenAI Dedicated Search Crawler (Surfacing in ChatGPT Search queries)
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI Foundation Model Training Crawler (Distinct from Search)
 User-agent: GPTBot
 Allow: /
 
@@ -20,7 +24,13 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended

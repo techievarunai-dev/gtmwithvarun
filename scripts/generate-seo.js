@@ -28,6 +28,28 @@ const routes = [
       caption: 'Varun Murugan P, Senior GTM Engineer and AI Revenue Automation Architect'
     }
   },
+  // About & Professional Profile
+  {
+    path: '/about/',
+    sourceFile: 'about/index.html',
+    lastmod: '2026-10-14',
+    image: {
+      loc: '/assets/varun-portrait.jpg',
+      title: 'About Varun Murugan P - GTM Engineer',
+      caption: 'Varun Murugan P, Aeronautical Science graduate turned GTM Engineer and AI Revenue Automation Specialist'
+    }
+  },
+  // Projects Hub
+  {
+    path: '/projects/',
+    sourceFile: 'projects/index.html',
+    lastmod: '2026-10-14',
+    image: {
+      loc: '/assets/case-studies/lead-response-os/hero-workflow.png',
+      title: 'Engineered GTM Systems Portfolio',
+      caption: 'Portfolio of verified revenue systems, lead response automation, and AI workflows'
+    }
+  },
   // Projects / Case Studies
   {
     path: '/projects/us-insurance-outbound-system/',
@@ -87,6 +109,17 @@ const routes = [
       loc: '/assets/case-studies/candidate-screening/hero-pipeline.png',
       title: 'AI Candidate Screening System Architecture',
       caption: 'Automated resume extraction and objective rubric scoring pipeline'
+    }
+  },
+  // Market Research
+  {
+    path: '/research/gtm-engineering-market-research-2026/',
+    sourceFile: 'research/gtm-engineering-market-research-2026/index.html',
+    lastmod: '2026-10-14',
+    image: {
+      loc: '/assets/varun-portrait.jpg',
+      title: 'GTM Engineering Market Research 2026',
+      caption: 'Empirical analysis of GTM Engineering headcount, hiring demand, skill requirements, and compensation benchmarks in 2026'
     }
   },
   // Blog Index
@@ -174,7 +207,11 @@ const robotsTxt = `# Robots.txt for Varun Murugan P - GTM Engineer Portfolio
 User-agent: *
 Allow: /
 
-# Explicit permission and greeting for Generative AI & Search Engine Bots
+# OpenAI Dedicated Search Crawler (Surfacing in ChatGPT Search queries)
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI Foundation Model Training Crawler (Distinct from Search)
 User-agent: GPTBot
 Allow: /
 
@@ -190,7 +227,13 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
