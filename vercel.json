@@ -3,8 +3,18 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/projects/us-insurance-outbound/",
+      "destination": "/projects/us-insurance-outbound-system/",
+      "permanent": true
+    },
+    {
       "source": "/projects/us-insurance-outbound",
       "destination": "/projects/us-insurance-outbound-system/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ai-candidate-screening/",
+      "destination": "/projects/candidate-screening/",
       "permanent": true
     },
     {
