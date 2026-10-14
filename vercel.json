@@ -30,11 +30,24 @@
       ]
     },
     {
+      "source": "/(sitemap\\.xml|robots\\.txt|llms\\.txt|llms-full\\.txt)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=0, must-revalidate"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    },
+    {
       "source": "/(.*)\\.(html|json|xml|txt)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "public, max-age=0, s-maxage=0, must-revalidate"
         }
       ]
     }
