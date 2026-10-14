@@ -102,6 +102,7 @@ console.log('\n[Test 3] Verifying Core Architecture Pages in dist...');
 const corePages = [
   { path: 'about/index.html', label: '/about/' },
   { path: 'projects/index.html', label: '/projects/' },
+  { path: 'faq/index.html', label: '/faq/' },
   { path: 'research/gtm-engineering-market-research-2026/index.html', label: '/research/gtm-engineering-market-research-2026/' },
   { path: 'blog/index.html', label: '/blog/' }
 ];

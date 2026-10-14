@@ -122,6 +122,17 @@ const routes = [
       caption: 'Empirical analysis of GTM Engineering headcount, hiring demand, skill requirements, and compensation benchmarks in 2026'
     }
   },
+  // Dedicated FAQ Page
+  {
+    path: '/faq/',
+    sourceFile: 'faq/index.html',
+    lastmod: '2026-10-14',
+    image: {
+      loc: '/assets/varun-portrait.jpg',
+      title: 'Frequently Asked Questions (FAQ) - GTM Engineering',
+      caption: 'Comprehensive answers on GTM Engineering, AI workflow automation with n8n, CRM integration, and revenue systems'
+    }
+  },
   // Blog Index
   {
     path: '/blog/',

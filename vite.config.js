@@ -22,7 +22,8 @@ export default defineConfig({
         articleIntelHub: resolve(import.meta.dirname, 'blog/inside-an-ai-powered-gtm-intelligence-hub/index.html'),
         articleOutboundSystem: resolve(import.meta.dirname, 'blog/building-an-automated-outbound-system/index.html'),
         articleGtmVsRevops: resolve(import.meta.dirname, 'blog/gtm-engineering-vs-revops/index.html'),
-        articleN8nWorkflows: resolve(import.meta.dirname, 'blog/building-gtm-automation-workflows-with-n8n/index.html')
+        articleN8nWorkflows: resolve(import.meta.dirname, 'blog/building-gtm-automation-workflows-with-n8n/index.html'),
+        faq: resolve(import.meta.dirname, 'faq/index.html')
       },
       output: {
         manualChunks(id) {

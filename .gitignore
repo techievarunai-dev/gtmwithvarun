@@ -37,3 +37,4 @@ lerna-debug.log*
 # Caches
 .vite/
 .cache/
+.sanity/

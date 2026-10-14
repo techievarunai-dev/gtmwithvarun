@@ -1,6 +1,7 @@
 import { BLOG_CATEGORIES, BLOG_ARTICLES, getPublishedArticles } from './blogData.js';
 import { initMobileNav } from './navController.js';
 import { initSpeedInsights } from './speedInsights.js';
+import { fetchPublishedBlogArticles, urlFor } from './sanity/client.js';
 
 // Initialize Real-User Performance Monitoring (Vercel Speed Insights)
 initSpeedInsights();
@@ -13,13 +14,24 @@ export class BlogEngine {
     this.init();
   }
 
-  init() {
+  async init() {
     this.bindSearch();
     this.bindCategoryFilters();
     this.bindMobileMenu();
     this.bindScrollProgress();
     this.readUrlParams();
     this.renderArticles();
+
+    // Asynchronously fetch published articles from Sanity CMS
+    try {
+      const cmsArticles = await fetchPublishedBlogArticles();
+      if (Array.isArray(cmsArticles) && cmsArticles.length > 0 && cmsArticles[0]._id) {
+        this.articles = cmsArticles;
+        this.renderArticles();
+      }
+    } catch {
+      // Graceful fallback to static data
+    }
   }
 
   bindMobileMenu() {
@@ -167,13 +179,20 @@ export class BlogEngine {
     container.style.display = 'grid';
     if (emptyState) emptyState.style.display = 'none';
 
+    const resolveImg = (src) => {
+      if (!src) return '/assets/varun-portrait.jpg';
+      if (typeof src === 'string') return src;
+      if (src.asset) return urlFor(src);
+      return '/assets/varun-portrait.jpg';
+    };
+
     container.innerHTML = filtered.map(article => `
       <article class="blog-card" data-slug="${article.slug}">
         <a href="/blog/${article.slug}/" class="blog-card-media-link" aria-label="Read ${article.title}">
           <div class="blog-card-media-frame">
             <img 
-              src="${article.coverImage}" 
-              alt="${article.coverAlt}" 
+              src="${resolveImg(article.coverImage)}" 
+              alt="${article.coverAlt || article.title}" 
               class="blog-card-img" 
               width="600" 
               height="338" 

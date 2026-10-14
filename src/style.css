@@ -3360,11 +3360,27 @@ a.detail-text:hover {
 /* ========================================================
    SCENE 7: TRANSMISSION CONTACT
    ======================================================== */
+.spatial-section.transmission-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 40px;
+}
+
+.transmission-glass-card {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
 .transmission-layout-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 34px;
+  gap: 36px;
+  align-items: start;
+  margin-bottom: 24px;
 }
 
 .core-orb-box {
@@ -3554,8 +3570,11 @@ a.detail-text:hover {
 
 /* Scene Footer */
 .scene-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  padding-top: 20px;
+  width: 100%;
+  max-width: 1040px;
+  margin: 40px auto 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 24px 0 12px 0;
 }
 
 .footer-inner {
@@ -4424,16 +4443,18 @@ a.detail-text:hover {
   min-height: 100vh;
 }
 
+.cs-sub-header,
 .cs-header {
   position: sticky;
-  top: 0;
+  top: 76px;
   width: 100%;
-  z-index: 100;
-  background: rgba(243, 242, 238, 0.92);
+  z-index: 900;
+  background: rgba(243, 242, 238, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 12px 24px;
+  padding: 10px 24px;
+  margin-top: 76px;
 }
 
 .cs-header-inner {
@@ -5427,9 +5448,166 @@ a.detail-text:hover {
 
 .cs-lightbox-full-img {
   max-width: 95vw;
-  max-height: 90vh;
+  max-height: 82vh;
   object-fit: contain;
   display: block;
+}
+
+.cs-lightbox-info {
+  background: rgba(15, 23, 42, 0.95);
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cs-lightbox-info-title {
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cs-lightbox-info-desc {
+  color: #94a3b8;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* ========================================================
+   SCREENSHOTS & DELIVERABLES GALLERY
+   ======================================================== */
+.cs-deliverables-section {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.cs-deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.cs-deliverable-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.cs-deliverable-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+  border-color: rgba(0, 82, 255, 0.25);
+}
+
+.cs-deliverable-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #0f172a;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cs-deliverable-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs-deliverable-card:hover .cs-deliverable-img {
+  transform: scale(1.025);
+}
+
+.cs-deliverable-badge-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cs-deliverable-pill {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.cs-deliverable-pill.verified {
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.cs-deliverable-inspect-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.cs-deliverable-card:hover .cs-deliverable-inspect-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cs-deliverable-body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cs-deliverable-title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.cs-deliverable-desc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .cs-deliverables-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }
 
 /* Case Study Footer */
@@ -5458,7 +5636,28 @@ a.detail-text:hover {
 
 /* Responsive Case Study Page Adjustments */
 @media (max-width: 960px) {
+  .cs-sub-header,
+  .cs-header {
+    top: 70px;
+    margin-top: 70px;
+    padding: 8px 16px;
+  }
+
+  .cs-header-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   .cs-quick-nav {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .cs-quick-nav::-webkit-scrollbar {
     display: none;
   }
 

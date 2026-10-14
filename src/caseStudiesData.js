@@ -355,6 +355,15 @@ export const CASE_STUDIES = {
         alt: 'Full n8n Workflow Canvas showing Lead Intake, AI Lead Intelligence, CRM Enrichment, and Slack Notifications',
         tag: 'GENUINE n8n WORKFLOW',
         desc: 'Complete production pipeline: Lead Intake (Jotform webhook) → AI Lead Intelligence (Dual agents for Lead Qualification & Company Intelligence) → CRM Enrichment (HubSpot API upsert) → Instant Slack Triage & Airtable logging.'
+      },
+      {
+        id: 'client-recommendation',
+        label: 'Client Recommendation (LinkedIn)',
+        title: 'Verified Client Recommendation — Nicolae Ionescu (CEO & Founder, Upbrisk / SaaS)',
+        image: '/assets/case-studies/lead-response-os/client-recommendation-linkedin.png',
+        alt: 'Verified public LinkedIn recommendation from Romanian SaaS founder Nicolae Ionescu praising Varun Murugan',
+        tag: 'AUTHENTIC CLIENT OUTCOME',
+        desc: 'Direct LinkedIn recommendation from Romanian SaaS founder Nicolae Ionescu highlighting Varun\'s exceptional speed, automation architecture, and system reliability.'
       }
     ],
     problem: {
@@ -590,11 +599,29 @@ export const CASE_STUDIES = {
       {
         id: 'audit-framework',
         label: 'GTM Audit Framework',
-        title: 'Strategic B2B Outbound GTM Audit Framework',
+        title: 'Strategic B2B Outbound GTM Audit Framework Blueprint',
         image: '/assets/case-studies/outbound-gtm-audit/hero-framework.jpg',
         alt: 'Strategic Outbound GTM Audit Framework showing ICP Scorecard, Buying Signals, CRM Health, and Automation Roadmap',
         tag: 'STRATEGIC SPECIFICATION',
         desc: 'End-to-end framework evaluating ICP Fit, Digital Intent & Technographic Triggers, CRM Data Completeness (88%), Deduplication (3%), Sequence Optimization, and an Impact vs Complexity Priority Matrix.'
+      },
+      {
+        id: 'audit-full-blueprint',
+        label: 'Complete System Architecture Audit',
+        title: 'End-to-End Outbound Architecture & Pipeline Blueprint',
+        image: '/assets/case-studies/outbound-gtm-audit/outbound-gtm-audit-full.png',
+        alt: 'High-resolution diagram of the full GTM outbound audit and technical roadmap',
+        tag: 'ARCHITECTURAL BLUEPRINT',
+        desc: 'Full diagnostic blueprint showing multi-channel data flow, DNS authentication protocols, waterfall verification steps, and CRM synchronization handoffs.'
+      },
+      {
+        id: 'audit-scorecard',
+        label: 'Diagnostic Scorecard Mockup',
+        title: 'Executive Deliverability & Data Hygiene Diagnostic Scorecard',
+        image: '/assets/case-studies/outbound-gtm-audit/audit-scorecard-mockup.png',
+        alt: 'Diagnostic Scorecard and Technical Gap Analysis interface',
+        tag: 'DIAGNOSTIC DELIVERABLE',
+        desc: 'Quantified scorecard rating domain health, list hygiene, enrichment match rates, and sequence conversion across all pipeline stages.'
       }
     ],
     problem: {
@@ -708,6 +735,15 @@ export const CASE_STUDIES = {
         alt: 'Detailed n8n workflow architecture diagram for AI-assisted candidate screening pipeline',
         tag: 'CLIENT PRODUCTION ARCHITECTURE',
         desc: 'Structured 10-node pipeline: Webhook Trigger → Download File → Text Extraction (OCR) → GPT-4 JSON Parsing → Job Requirements Ingestion (Google Docs) → Rubric Comparison & 0-100 Scoring → Database Sync → Dual Alerts (Email + Slack) with scoring logic breakdown.'
+      },
+      {
+        id: 'candidate-firm-pipeline',
+        label: 'Recruitment Firm Workflow Diagram',
+        title: 'AI Candidate Screening Pipeline — Recruitment Firm (US)',
+        image: '/assets/case-studies/candidate-screening/candidate-screening-firm-pipeline.png',
+        alt: 'High-resolution architecture diagram of the AI candidate screening pipeline for US recruitment firm',
+        tag: 'CLIENT PRODUCTION BLUEPRINT',
+        desc: 'Comprehensive end-to-end recruitment architecture showing multi-source resume intake, structured parsing, rubric scoring, and reviewer approval workflow.'
       }
     ],
     problem: {

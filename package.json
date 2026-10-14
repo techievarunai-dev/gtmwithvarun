@@ -9,6 +9,9 @@
     "generate-seo": "node scripts/generate-seo.js",
     "verify-seo": "node scripts/verify-seo-aeo.js",
     "set-domain": "node scripts/update-domain.js",
+    "sanity:export": "node scripts/migrate-to-sanity.js",
+    "studio:dev": "npm --prefix studio run dev",
+    "studio:build": "npm --prefix studio run build",
     "preview": "vite preview"
   },
   "keywords": [
@@ -25,6 +28,8 @@
     "vite": "^8.3.4"
   },
   "dependencies": {
+    "@sanity/client": "^8.9.0",
+    "@sanity/image-url": "^2.1.1",
     "@vercel/speed-insights": "^2.0.0",
     "gsap": "^3.15.0",
     "three": "^0.186.1"

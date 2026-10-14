@@ -1,9 +1,12 @@
 import { CASE_STUDIES } from './caseStudiesData.js';
 import { SITE_CONFIG } from './siteConfig.js';
 import { initSpeedInsights } from './speedInsights.js';
+import { fetchCaseStudyBySlug, urlFor } from './sanity/client.js';
+import { initMobileNav } from './navController.js';
 
 // Initialize Real-User Performance Monitoring (Vercel Speed Insights)
 initSpeedInsights();
+initMobileNav();
 
 export class CaseStudyPageManager {
   constructor() {
@@ -25,14 +28,34 @@ export class CaseStudyPageManager {
     return 'us-insurance-outbound-system';
   }
 
-  init() {
+  async init() {
+    // 1. Render immediately from static dataset for zero latency
     this.render(this.currentId);
     this.setupListeners();
+
+    // 2. Query published Sanity CMS content asynchronously
+    try {
+      const liveData = await fetchCaseStudyBySlug(this.currentId);
+      if (liveData && liveData._id) {
+        this.render(this.currentId, liveData);
+      }
+    } catch {
+      // Graceful silent fallback to static
+    }
   }
 
-  render(id) {
-    const data = CASE_STUDIES[id] || CASE_STUDIES['us-insurance-outbound-system'];
-    this.currentId = data.id;
+  render(id, overrideData = null) {
+    const base = CASE_STUDIES[id] || CASE_STUDIES['us-insurance-outbound-system'];
+    const data = overrideData ? { ...base, ...overrideData } : base;
+    this.currentId = data.id || id;
+
+    // Helper to resolve Sanity asset or local string
+    const resolveImg = (src) => {
+      if (!src) return '';
+      if (typeof src === 'string') return src;
+      if (src.asset) return urlFor(src);
+      return '';
+    };
 
     // Update document title & metadata for SEO/AEO
     document.title = `${data.title} — GTM Engineering Case Study | Varun Murugan P`;
@@ -47,16 +70,17 @@ export class CaseStudyPageManager {
     if (ogDesc) ogDesc.setAttribute('content', data.tagline);
 
     const siteUrl = (typeof window !== 'undefined' && window.location.origin) ? window.location.origin : SITE_CONFIG.siteUrl;
+    const coverUrl = resolveImg(data.coverImage) || resolveImg(data.image);
     const ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg) ogImg.setAttribute('content', `${siteUrl}${data.image}`);
+    if (ogImg && coverUrl) ogImg.setAttribute('content', coverUrl.startsWith('http') ? coverUrl : `${siteUrl}${coverUrl}`);
 
     const canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (canonicalLink) canonicalLink.setAttribute('href', `${SITE_CONFIG.siteUrl}/projects/${data.id}/`);
+    if (canonicalLink) canonicalLink.setAttribute('href', `${SITE_CONFIG.siteUrl}/projects/${data.id || id}/`);
 
     // 1. Meta Badges & Header
-    this.setText('cs-index-badge', `CASE 0${data.index} / 06`);
-    this.setText('cs-type-pill', data.type);
-    this.setText('cs-runtime-pill', data.runtime);
+    this.setText('cs-index-badge', `CASE 0${data.index || 1} / 06`);
+    this.setText('cs-type-pill', data.type || data.projectType || 'PROTOTYPE');
+    this.setText('cs-runtime-pill', data.runtime || '20 MIN WALKTHROUGH');
     this.setText('cs-title', data.title);
     this.setText('cs-tagline', data.tagline);
     this.setText('cs-client-val', data.client);
@@ -258,13 +282,21 @@ export class CaseStudyPageManager {
         : 'Strategic Diagnostic Framework Blueprint · Architectural Reference';
     }
 
+    const resolveImg = (src) => {
+      if (!src) return '';
+      if (typeof src === 'string') return src;
+      if (src.asset) return urlFor(src);
+      return '';
+    };
+
     if (!tabsContainer || gallery.length <= 1) {
       if (tabsContainer) tabsContainer.style.display = 'none';
-      imgEl.src = data.image;
-      imgEl.alt = data.imageAlt;
+      const singleImg = resolveImg(data.image) || (gallery[0] && resolveImg(gallery[0].image));
+      imgEl.src = singleImg;
+      imgEl.alt = data.imageAlt || data.title;
       if (lightboxImg) {
-        lightboxImg.src = data.image;
-        lightboxImg.alt = data.imageAlt;
+        lightboxImg.src = singleImg;
+        lightboxImg.alt = data.imageAlt || data.title;
       }
       if (captionEl) {
         captionEl.textContent = `FIGURE 1.0 — ${data.title.toUpperCase()} SYSTEM ARCHITECTURE BLUEPRINT`;
@@ -288,14 +320,15 @@ export class CaseStudyPageManager {
     `).join('');
 
     const setActiveEvidence = (item, activeBtn) => {
+      const itemImg = resolveImg(item.image);
       imgEl.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
       imgEl.style.opacity = '0.35';
       imgEl.style.transform = 'scale(0.99)';
       setTimeout(() => {
-        imgEl.src = item.image;
+        imgEl.src = itemImg;
         imgEl.alt = item.alt;
         if (lightboxImg) {
-          lightboxImg.src = item.image;
+          lightboxImg.src = itemImg;
           lightboxImg.alt = item.alt;
         }
         if (captionEl) captionEl.textContent = item.title;

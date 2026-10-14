@@ -138,7 +138,83 @@
 </head>
 <body class="spatial-body case-study-body">
 
-  <header class="cs-header" role="banner">
+  <!-- Fixed Floating Pill Navigation Bar -->
+  <header class="site-header" role="banner">
+    <div class="nav-capsule-container">
+      <a href="/#hero" class="brand-link" id="brand-logo" aria-label="Varun Murugan — GTM Engineer Portfolio Home">
+        <span class="status-pulse-dot" aria-hidden="true"></span>
+        <span class="brand-name">Varun <strong>Murugan</strong></span>
+      </a>
+
+      <nav class="scene-nav" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="/#hero" class="nav-btn">Home</a></li>
+          <li class="nav-item"><a href="/about/" class="nav-btn">About</a></li>
+          <li class="nav-item"><a href="/projects/" class="nav-btn active" aria-current="page">Projects</a></li>
+          <li class="nav-item"><a href="/blog/" class="nav-btn">Blog</a></li>
+          <li class="nav-item"><a href="/research/gtm-engineering-market-research-2026/" class="nav-btn">Research</a></li>
+          <li class="nav-item"><a href="/#calculator" class="nav-btn">Calculator</a></li>
+          <li class="nav-item"><a href="/faq/" class="nav-btn">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/#transmission" class="nav-cta-dark-btn" id="nav-cta-btn" aria-label="Contact Varun Murugan about GTM Engineering opportunities">
+          <span>Discuss Opportunity</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-top">
+        <div class="mobile-nav-brand">
+          <span class="status-pulse-dot"></span>
+          <span>Varun <strong>Murugan</strong></span>
+        </div>
+        <button type="button" class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+      </div>
+      
+      <span class="mobile-nav-section-label">NAVIGATION</span>
+      <ul class="mobile-nav-list">
+        <li><a href="/#hero" class="mobile-nav-link"><span class="m-idx">01</span> HOME</a></li>
+        <li><a href="/about/" class="mobile-nav-link"><span class="m-idx">02</span> ABOUT</a></li>
+        <li><a href="/projects/" class="mobile-nav-link active"><span class="m-idx">03</span> PROJECTS</a></li>
+        <li><a href="/blog/" class="mobile-nav-link"><span class="m-idx">04</span> BLOG &amp; INSIGHTS</a></li>
+        <li><a href="/research/gtm-engineering-market-research-2026/" class="mobile-nav-link"><span class="m-idx">05</span> MARKET RESEARCH 2026</a></li>
+        <li><a href="/#calculator" class="mobile-nav-link"><span class="m-idx">06</span> GTM IMPACT CALCULATOR</a></li>
+        <li><a href="/faq/" class="mobile-nav-link"><span class="m-idx">07</span> FAQ</a></li>
+      </ul>
+
+      <div class="mobile-nav-footer">
+        <a href="/#transmission" class="mobile-cta-action-btn">
+          <span>Discuss Opportunity</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="/Varun_Murugan_GTM_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="mobile-resume-download">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>DOWNLOAD RESUME (PDF)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study Contextual Quick-Switcher Sub-Bar -->
+  <div class="cs-sub-header" role="navigation" aria-label="Case Study Switcher">
     <div class="cs-header-inner">
       <div class="cs-header-left">
         <a href="/projects/" class="cs-back-home-link">
@@ -167,7 +243,7 @@
         </a>
       </div>
     </div>
-  </header>
+  </div>
 
   <main class="cs-main-container" id="main-content">
 
@@ -393,6 +469,152 @@
           <span><strong>AI Triage Boundaries:</strong> Reply classification uses temperature=0 and JSON schema validation, but ambiguous edge cases (e.g. conditional interest depending on pricing) are routed to a human SDR review queue.</span>
         </li>
       </ul>
+    <!-- Dedicated Screenshots & Deliverables Gallery Section -->
+    <section class="cs-deliverables-section" id="deliverables" aria-label="Screenshots and Technical Deliverables Gallery">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">VERIFIED PROJECT ARTIFACTS</span>
+        <h3 class="cs-compact-headline">Screenshots &amp; Technical Deliverables</h3>
+      </div>
+      <p class="cs-body-lead" style="font-size: 14px; margin-bottom: 0;">
+        Interactive gallery of authentic n8n workflows, relational state tables, email templates, and SLA monitoring dashboards engineered for this system. Click any artifact to inspect at full resolution.
+      </p>
+
+      <div class="cs-deliverables-grid">
+        <!-- Item 1: WF2 Sequence Engine -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/workflow-2-sequence-engine.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/workflow-2-sequence-engine.png" alt="n8n Workflow 2: Insurance Outbound Sequence Engine" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill verified">● GENUINE n8n WORKFLOW</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Workflow 2 — Outbound Sequence Engine</h4>
+            <p class="cs-deliverable-desc">Loads due contacts, validates recipient status, iterates contacts one-by-one, personalizes content dynamically, dispatches via Gmail, and updates individual touch state.</p>
+          </div>
+        </article>
+
+        <!-- Item 2: WF3 AI Reply Handling -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/workflow-3-reply-classification.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/workflow-3-reply-classification.png" alt="n8n Workflow 3: Reply Classification & Response Handling" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill verified">● GENUINE n8n WORKFLOW</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Workflow 3 — AI Reply Classification &amp; Response Handling</h4>
+            <p class="cs-deliverable-desc">Monitors Gmail replies via webhook, classifies intent across 4 deterministic branches (Positive, Negative, Out of Office, Bounce), and triggers immediate alerts.</p>
+          </div>
+        </article>
+
+        <!-- Item 3: WF4 Campaign Analytics & SLA -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/workflow-4-analytics-sla.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/workflow-4-analytics-sla.png" alt="n8n Workflow 4: Campaign Analytics & SLA Engine" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill verified">● GENUINE n8n WORKFLOW</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Workflow 4 — Campaign Analytics &amp; SLA Engine</h4>
+            <p class="cs-deliverable-desc">Daily aggregation pulling campaign contacts and SLA rules, evaluating operational delivery rates, and updating real-time telemetry tables.</p>
+          </div>
+        </article>
+
+        <!-- Item 4: Prospects State Store -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/prospects-state-store.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/prospects-state-store.png" alt="Google Sheets Prospect State Store with ICP fit, employee counts, and personalization signals" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill">● REAL PROJECT DATA</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Google Sheets Single Source of Truth — Real Prospects Data</h4>
+            <p class="cs-deliverable-desc">Structured state table with columns for Company Name (Kemper, Goosehead, Arch Insurance), Headcount, Verified Email, Account Tier, ICP Fit, 0-100 Score, and dynamic Personalization Signals.</p>
+          </div>
+        </article>
+
+        <!-- Item 5: Campaign Contacts Tracking -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/campaign-contacts.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/campaign-contacts.png" alt="Live Campaign Contacts Table with Sequence Status and Next Touch Dates" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill">● REAL PROJECT DATA</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Campaign Contacts Tracking &amp; Reply Progression</h4>
+            <p class="cs-deliverable-desc">Live tracking of enrolled contacts, sequence steps (Day 1, 3, 6, 10), sent timestamps, next touch schedules, and recorded positive reply outcomes.</p>
+          </div>
+        </article>
+
+        <!-- Item 6: Email Cadence & Templates -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/email-templates.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/email-templates.png" alt="Multi-Touch Outbound Email Templates & Personalization Variables" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill">● REAL PROJECT DATA</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Multi-Touch Outbound Email Templates</h4>
+            <p class="cs-deliverable-desc">Modular multi-touch email templates with conditional merge fields, industry-specific pain hooks, and compliant unsubscribe footers.</p>
+          </div>
+        </article>
+
+        <!-- Item 7: SLA Definitions -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/sla-definitions.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/sla-definitions.png" alt="Operational SLA Rules & Threshold Definitions" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill">● REAL PROJECT DATA</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Operational SLA Rules &amp; Threshold Definitions</h4>
+            <p class="cs-deliverable-desc">Explicit SLA policy matrix defining response time limits: Positive Leads (15 min SLA), General Inquiries (2h SLA), and Unsubscribe Handlers (immediate).</p>
+          </div>
+        </article>
+
+        <!-- Item 8: SLA Performance Telemetry -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/sla-analytics.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/sla-analytics.png" alt="SLA Performance Telemetry & Resolution Rates" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill">● REAL PROJECT DATA</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">SLA Performance Telemetry &amp; Resolution Rates</h4>
+            <p class="cs-deliverable-desc">Real-time resolution telemetry measuring positive lead alert times, average resolution duration, and SLA compliance percentages.</p>
+          </div>
+        </article>
+
+        <!-- Item 9: Campaign Telemetry -->
+        <article class="cs-deliverable-card">
+          <div class="cs-deliverable-img-wrap" data-lightbox-src="/assets/case-studies/us-insurance-outbound-system/campaign-analytics.png">
+            <img src="/assets/case-studies/us-insurance-outbound-system/campaign-analytics.png" alt="Campaign Outbound Telemetry & Delivery Analytics" class="cs-deliverable-img" width="700" height="438" loading="lazy" decoding="async">
+            <div class="cs-deliverable-badge-overlay">
+              <span class="cs-deliverable-pill">● REAL PROJECT DATA</span>
+            </div>
+            <span class="cs-deliverable-inspect-hint">Click to enlarge ↗</span>
+          </div>
+          <div class="cs-deliverable-body">
+            <h4 class="cs-deliverable-title">Campaign Outbound Telemetry &amp; Delivery Analytics</h4>
+            <p class="cs-deliverable-desc">Holistic dashboard tracking total contacts enrolled, delivery rates, open rates, positive response percentages, and sequence step drop-offs.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- Question-Based Search & AEO FAQ Section -->
@@ -507,14 +729,32 @@
 
   </main>
 
+  <!-- Fullscreen Diagram & Deliverable Lightbox Modal -->
+  <div class="cs-lightbox-overlay" id="cs-lightbox-modal" aria-hidden="true">
+    <div class="cs-lightbox-dialog">
+      <button type="button" class="cs-lightbox-close-btn" id="cs-lightbox-close" aria-label="Close enlarged deliverable">✕</button>
+      <img src="/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png" alt="Enlarged System Deliverable" class="cs-lightbox-full-img" id="lightbox-img">
+      <div class="cs-lightbox-info">
+        <div class="cs-lightbox-info-title" id="lightbox-title">Deliverable Preview</div>
+        <div class="cs-lightbox-info-desc" id="lightbox-desc">Detailed node and schema configuration.</div>
+      </div>
+    </div>
+  </div>
+
   <footer class="cs-footer">
     <div class="cs-footer-inner">
       <span>Varun Murugan P · GTM Engineer Portfolio</span>
-      <a href="/projects/" class="cs-footer-back">View All Projects ↑</a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a href="/projects/" class="cs-footer-back">All Projects</a>
+        <span>·</span>
+        <a href="/faq/" class="cs-footer-back">FAQ</a>
+        <span>·</span>
+        <a href="/" class="cs-footer-back">Home ↑</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Performance Telemetry & Speed Insights -->
+  <!-- Performance Telemetry & Speed Insights & Lightbox Controller -->
   <script type="module" src="/src/projectPage.js"></script>
 </body>
 </html>

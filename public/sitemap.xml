@@ -92,6 +92,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://gtmwithvarun.vercel.app/faq/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://gtmwithvarun.vercel.app/assets/varun-portrait.jpg</image:loc>
+      <image:title>Frequently Asked Questions (FAQ) - GTM Engineering</image:title>
+      <image:caption>Comprehensive answers on GTM Engineering, AI workflow automation with n8n, CRM integration, and revenue systems</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://gtmwithvarun.vercel.app/blog/</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
