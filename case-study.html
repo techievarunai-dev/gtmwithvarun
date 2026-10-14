@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Insurance Outbound System — GTM Engineering Case Study | Varun Murugan P</title>
+  <meta name="description" content="Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling. Engineered by Varun Murugan P, Senior GTM Engineer.">
+  <meta name="keywords" content="US Insurance Outbound System, n8n workflows, Apollo, Gmail, AI reply classification, GTM Engineer, Revenue Operations, RevOps, Varun Murugan">
+  <meta name="author" content="Varun Murugan P">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://varunmurugan-gtm.vercel.app/case-study.html">
+
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Varun Murugan P — GTM Engineer Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://varunmurugan-gtm.vercel.app/case-study.html">
+  <meta property="og:title" content="US Insurance Outbound System — GTM Engineering Case Study">
+  <meta property="og:description" content="Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.">
+  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="US Insurance Outbound System — GTM Engineering Case Study">
+  <meta name="twitter:description" content="Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.">
+  <meta name="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- Machine-Readable AI Knowledge Base Link -->
+  <link rel="alternate" type="text/plain" href="https://varunmurugan-gtm.vercel.app/llms.txt" title="LLMs.txt Context File">
+
+  <!-- Structured Data JSON-LD for Case Study -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://varunmurugan-gtm.vercel.app/case-study.html#article",
+        "headline": "US Insurance Outbound System — System Architecture Case Study",
+        "description": "Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.",
+        "url": "https://varunmurugan-gtm.vercel.app/case-study.html",
+        "image": "https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Varun Murugan P",
+          "url": "https://varunmurugan-gtm.vercel.app/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Varun Murugan P"
+        },
+        "keywords": "GTM Engineering, RevOps Automation, n8n, Apollo, OpenAI, Gmail"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://varunmurugan-gtm.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://varunmurugan-gtm.vercel.app/#case-studies"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "US Insurance Outbound System",
+            "item": "https://varunmurugan-gtm.vercel.app/case-study.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="spatial-body case-study-body">
+
+  <!-- Fixed Top Hairline Progress Bar -->
+  <div class="global-scroll-progress-bar" id="scroll-progress-line" aria-hidden="true"></div>
+
+  <!-- Dedicated Case Study Header -->
+  <header class="cs-header" role="banner">
+    <div class="cs-header-inner">
+      <div class="cs-header-left">
+        <a href="/index.html#case-studies" class="cs-back-home-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Portfolio</span>
+        </a>
+        <div class="cs-header-divider"></div>
+        <span class="cs-active-label" id="cs-index-badge">CASE 01 / 06</span>
+      </div>
+
+      <!-- Quick Switcher Pills -->
+      <nav class="cs-quick-nav" aria-label="Case Study Switcher">
+        <button type="button" class="cs-nav-pill active" data-case-id="us-insurance-outbound-system">01 Insurance</button>
+        <button type="button" class="cs-nav-pill" data-case-id="gtm-intelligence-hub">02 Intel Hub</button>
+        <button type="button" class="cs-nav-pill" data-case-id="lead-response-os">03 Lead OS</button>
+        <button type="button" class="cs-nav-pill" data-case-id="newsletter-automation">04 Newsletter</button>
+        <button type="button" class="cs-nav-pill" data-case-id="outbound-gtm-audit">05 Audit</button>
+        <button type="button" class="cs-nav-pill" data-case-id="candidate-screening">06 Screening</button>
+      </nav>
+
+      <div class="cs-header-right">
+        <a href="/blog/" class="cs-share-btn" style="text-decoration:none;" title="Read GTM Engineering Insights">
+          <span>Blog ↗</span>
+        </a>
+        <button type="button" class="cs-share-btn" id="btn-share-case-study" title="Copy case study link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span>Share</span>
+        </button>
+        <a href="/Varun_Murugan_GTM_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-pill-btn">
+          <span>RESUME (PDF)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Case Study Content Container -->
+  <main class="cs-main-container">
+
+    <!-- Temporary Placeholder Notice -->
+    <div class="cs-placeholder-banner">
+      <div class="cs-banner-content">
+        <span class="cs-banner-icon">⚡</span>
+        <div>
+          <strong>ARCHITECTURAL CASE STUDY PLACEHOLDER</strong>
+          <p>This deep-dive page contains the verified system blueprint, workflows, and metrics. Expanded client videos and detailed project assets can be continuously plugged in here.</p>
+        </div>
+      </div>
+      <a href="/index.html#transmission" class="cs-banner-cta">Talk Architecture →</a>
+    </div>
+
+    <!-- Case Study Hero Block -->
+    <section class="cs-hero-section">
+      <div class="cs-hero-kicker-row">
+        <span class="cs-meta-pill primary" id="cs-type-pill">SANDBOX PROTOTYPE · EUBRICS CHALLENGE</span>
+        <span class="cs-meta-pill subtle" id="cs-runtime-pill">24 MIN WALKTHROUGH</span>
+      </div>
+
+      <h1 class="cs-main-title" id="cs-title">US Insurance Outbound System</h1>
+      <p class="cs-main-tagline" id="cs-tagline">Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.</p>
+
+      <!-- Tech Stack Tags Row -->
+      <div class="cs-tags-row" id="cs-tags-container"></div>
+
+      <!-- Quick Metadata Grid -->
+      <div class="cs-quick-meta-grid">
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">CLIENT / CONTEXT</span>
+          <span class="cs-meta-value" id="cs-client-val">Assessment Challenge (Eubrics)</span>
+        </div>
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">STATUS & TIMELINE</span>
+          <span class="cs-meta-value" id="cs-timeline-val">Verified Sandbox Prototype</span>
+        </div>
+        <div class="cs-meta-cell highlight">
+          <span class="cs-meta-label">KEY IMPACT / OUTCOME</span>
+          <span class="cs-meta-value-metric" id="cs-metric-num">4 Workflows · 0 Errors</span>
+          <span class="cs-meta-sub" id="cs-metric-sub">Deterministic state progression</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Blueprint Visual Card -->
+    <section class="cs-architecture-stage">
+      <div class="cs-diagram-frame">
+        <div class="cs-diagram-topbar">
+          <span class="cs-diagram-title" id="cs-diagram-caption">FIGURE 1.0 — US INSURANCE OUTBOUND SYSTEM ARCHITECTURE BLUEPRINT</span>
+          <button type="button" class="cs-zoom-btn" id="btn-zoom-diagram">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+            <span>Click to Enlarge Blueprint</span>
+          </button>
+        </div>
+
+        <div class="cs-diagram-img-wrap">
+          <img src="/assets/us-insurance-system.jpg" alt="Case Study System Architecture Diagram" class="cs-blueprint-img" id="cs-diagram-img">
+        </div>
+
+        <div class="cs-diagram-footer">
+          <span class="cs-telemetry-tag">● PRODUCTION_SPEC_VALIDATED</span>
+          <span class="cs-telemetry-note">Deterministic State Machine · End-to-End Orchestration</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Problem & Solution Grid -->
+    <section class="cs-narrative-section">
+      <div class="cs-two-col-grid">
+
+        <!-- Column 1: The Problem -->
+        <div class="cs-content-block problem-card">
+          <div class="cs-block-badge problem">
+            <span>⚠</span>
+            <span>THE BOTTLENECK</span>
+          </div>
+          <h2 class="cs-section-heading" id="cs-problem-headline">The Problem: Manual Prospect Qualification & Reply Latency</h2>
+          <p class="cs-body-lead" id="cs-problem-lead">
+            Outbound operations in commercial insurance often suffer from slow response times, fragmented qualification criteria, and manual CRM entry bottlenecks.
+          </p>
+          <ul class="cs-bullet-list" id="cs-problem-points"></ul>
+        </div>
+
+        <!-- Column 2: The Engineered Solution -->
+        <div class="cs-content-block solution-card">
+          <div class="cs-block-badge solution">
+            <span>⚙</span>
+            <span>SYSTEM ARCHITECTURE</span>
+          </div>
+          <h2 class="cs-section-heading" id="cs-solution-headline">The Engineered Solution: 4-Workflow Deterministic Architecture</h2>
+          <p class="cs-body-lead" id="cs-solution-lead">
+            Architected a resilient 4-workflow system in n8n featuring strict schema validation, state-driven progression, and AI-powered reply triage.
+          </p>
+
+          <div class="cs-workflows-list" id="cs-workflows-container"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Verified Outcomes & Alive Metrics -->
+    <section class="cs-outcomes-section">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">VERIFIED TELEMETRY</span>
+        <h3 class="cs-compact-headline">Production Outcomes & Performance Metrics</h3>
+      </div>
+      <div class="cs-outcomes-grid" id="cs-outcomes-grid"></div>
+    </section>
+
+    <!-- Testimonial Quote (If available) -->
+    <section class="cs-testimonial-wrapper" id="cs-testimonial-box" style="display: none;">
+      <div class="cs-quote-card">
+        <span class="cs-quote-mark">“</span>
+        <p class="cs-quote-text" id="cs-testimonial-quote"></p>
+        <div class="cs-quote-author-row">
+          <strong class="cs-quote-author" id="cs-testimonial-author"></strong>
+          <span class="cs-quote-role" id="cs-testimonial-role"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Stack & API Components -->
+    <section class="cs-stack-section">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">ENGINEERING INFRASTRUCTURE</span>
+        <h3 class="cs-compact-headline">Core Tech Stack & API Nodes</h3>
+      </div>
+      <div class="cs-tech-stack-grid" id="cs-tech-stack-grid"></div>
+    </section>
+
+    <!-- Previous / Next Case Study Navigation Bar -->
+    <nav class="cs-adjacent-nav" aria-label="Adjacent Case Studies">
+      <a href="#" class="cs-nav-box prev" id="cs-prev-link">
+        <span class="nav-direction">← PREVIOUS CASE STUDY</span>
+        <span class="nav-dest-title">AI-Assisted Candidate Screening</span>
+      </a>
+      <a href="#" class="cs-nav-box next" id="cs-next-link">
+        <span class="nav-direction">NEXT CASE STUDY →</span>
+        <span class="nav-dest-title">AI-Powered GTM Intelligence Hub</span>
+      </a>
+    </nav>
+
+    <!-- Bottom Contact Ingress Banner -->
+    <section class="cs-contact-banner">
+      <div class="cs-contact-banner-inner">
+        <div>
+          <h3 class="cs-banner-title">Need a similar deterministic GTM architecture?</h3>
+          <p class="cs-banner-sub">Let's talk buying signal intelligence, n8n orchestration, and CRM sync for your revenue pipeline.</p>
+        </div>
+        <a href="/index.html#transmission" class="spatial-btn primary-btn">
+          <span>Talk Architecture with Varun</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Fullscreen Diagram Lightbox Modal -->
+  <div class="cs-lightbox-overlay" id="cs-lightbox-modal" aria-hidden="true">
+    <div class="cs-lightbox-dialog">
+      <button type="button" class="cs-lightbox-close-btn" id="cs-lightbox-close" aria-label="Close enlarged blueprint">✕</button>
+      <img src="/assets/us-insurance-system.jpg" alt="Enlarged System Blueprint" class="cs-lightbox-full-img" id="lightbox-img">
+    </div>
+  </div>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-inner">
+      <span>Varun Murugan P · GTM Engineer Portfolio</span>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a href="/blog/" class="cs-footer-back">Engineering Blog</a>
+        <span class="blog-meta-dot">·</span>
+        <a href="/index.html" class="cs-footer-back">Return to Portfolio Overview ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/caseStudy.js"></script>
+</body>
+</html>

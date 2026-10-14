@@ -1,0 +1,16 @@
+{
+  "name": "Varun Murugan P — GTM Engineer",
+  "short_name": "Varun GTM",
+  "description": "Portfolio of Varun Murugan P, Senior GTM Engineer & AI Revenue Automation Architect.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3f2ee",
+  "theme_color": "#0052ff",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

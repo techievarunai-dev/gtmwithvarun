@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building GTM Automation Workflows with n8n | Varun Murugan P</title>
+  <meta name="description" content="Learn how to build scalable, fault-tolerant Go-to-Market workflows in n8n with production-grade error handling and custom code nodes.">
+  <meta name="keywords" content="n8n, Node.js, Docker, Webhooks, REST APIs, Error Handling, GTM Engineer, RevOps, Varun Murugan">
+  <meta name="author" content="Varun Murugan P">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#f3f2ee">
+  <link rel="canonical" href="https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Varun Murugan P — GTM Engineering Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/">
+  <meta property="og:title" content="Building GTM Automation Workflows with n8n">
+  <meta property="og:description" content="An engineering guide to using n8n for enterprise RevOps: self-hosted Docker architecture, webhook security, handling rate limits, and custom JavaScript nodes.">
+  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg">
+  <meta property="article:published_time" content="2026-09-02">
+  <meta property="article:modified_time" content="2026-09-25">
+  <meta property="article:author" content="Varun Murugan P">
+  <meta property="article:section" content="AI Agents &amp; Workflows">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building GTM Automation Workflows with n8n">
+  <meta name="twitter:description" content="An engineering guide to using n8n for enterprise RevOps: self-hosted Docker architecture, webhook security, handling rate limits, and custom JavaScript nodes.">
+  <meta name="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg">
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- Machine-Readable AI Knowledge Base Link -->
+  <link rel="alternate" type="text/plain" href="https://varunmurugan-gtm.vercel.app/llms.txt" title="LLMs.txt Context File">
+
+  <!-- JSON-LD Structured Data for AEO / GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/#article",
+        "headline": "Building GTM Automation Workflows with n8n",
+        "description": "Learn how to build scalable, fault-tolerant Go-to-Market workflows in n8n with production-grade error handling and custom code nodes.",
+        "url": "https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/",
+        "image": "https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg",
+        "datePublished": "2026-09-02",
+        "dateModified": "2026-09-25",
+        "author": {
+          "@type": "Person",
+          "name": "Varun Murugan P",
+          "jobTitle": "GTM Engineer & AI Revenue Automation Architect",
+          "url": "https://varunmurugan-gtm.vercel.app/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Varun Murugan P"
+        },
+        "articleSection": "AI Agents &amp; Workflows",
+        "keywords": "n8n, Node.js, Docker, Webhooks, REST APIs, Error Handling"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://varunmurugan-gtm.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://varunmurugan-gtm.vercel.app/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Building GTM Automation Workflows with n8n",
+            "item": "https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="spatial-body article-body">
+
+  <!-- Fixed Top Scroll Progress Bar -->
+  <div class="global-scroll-progress-bar" id="scroll-progress-line" aria-hidden="true"></div>
+
+  <!-- Fixed Floating Pill Navigation Bar -->
+  <header class="site-header" role="banner">
+    <div class="nav-capsule-container">
+      <!-- Left-Aligned Personal Brand Mark -->
+      <a href="/#hero" class="brand-link" id="brand-logo" aria-label="Varun Murugan — GTM Engineer Portfolio Home">
+        <span class="status-pulse-dot" aria-hidden="true"></span>
+        <span class="brand-name">Varun <strong>Murugan</strong></span>
+      </a>
+
+      <!-- Centered Navigation Links -->
+      <nav class="scene-nav" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/#hero" class="nav-btn">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#philosophy" class="nav-btn">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#case-studies" class="nav-btn">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="/blog/" class="nav-btn active" aria-current="page">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#calculator" class="nav-btn">GTM Impact Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#faq" class="nav-btn">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right-Aligned Contrasting Dark Pill CTA & Mobile Toggle -->
+      <div class="header-actions">
+        <a href="/#transmission" class="nav-cta-dark-btn" id="nav-cta-btn" aria-label="Go to contact section and book a strategy call">
+          <span>Let's Talk</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-top">
+        <div class="mobile-nav-brand">
+          <span class="status-pulse-dot"></span>
+          <span>Varun <strong>Murugan</strong></span>
+        </div>
+        <button type="button" class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+      </div>
+      
+      <span class="mobile-nav-section-label">NAVIGATION</span>
+      <ul class="mobile-nav-list">
+        <li><a href="/#hero" class="mobile-nav-link"><span class="m-idx">01</span> HOME</a></li>
+        <li><a href="/#philosophy" class="mobile-nav-link"><span class="m-idx">02</span> ABOUT</a></li>
+        <li><a href="/#case-studies" class="mobile-nav-link"><span class="m-idx">03</span> PROJECTS</a></li>
+        <li><a href="/blog/" class="mobile-nav-link active"><span class="m-idx">04</span> BLOG &amp; INSIGHTS</a></li>
+        <li><a href="/#calculator" class="mobile-nav-link"><span class="m-idx">05</span> GTM IMPACT CALCULATOR</a></li>
+        <li><a href="/#faq" class="mobile-nav-link"><span class="m-idx">06</span> FAQ</a></li>
+      </ul>
+
+      <div class="mobile-nav-footer">
+        <a href="/#transmission" class="mobile-cta-action-btn">
+          <span>Let's Talk</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="/Varun_Murugan_GTM_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="mobile-resume-download">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>DOWNLOAD RESUME (PDF)</span>
+        </a>
+        <div class="mobile-nav-status-pill">
+          <span class="status-pulse-dot"></span>
+          <span>SYSTEMS OPERATIONAL · 4 COUNTRIES</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Article Container -->
+  <main class="article-main-container" id="main-content">
+    
+    <!-- Breadcrumb bar -->
+    <nav class="article-breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="article-breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li class="bc-sep">/</li>
+        <li><a href="/blog/">Blog</a></li>
+        <li class="bc-sep">/</li>
+        <li aria-current="page">AI Agents &amp; Workflows</li>
+      </ol>
+    </nav>
+
+    <!-- Article Header Hero -->
+    <header class="article-hero-header">
+      <div class="article-meta-kicker">
+        <span class="blog-cat-pill static">AI Agents &amp; Workflows</span>
+        <span class="blog-meta-dot">·</span>
+        <time datetime="2026-09-02">2026-09-02</time>
+        <span class="blog-meta-dot">·</span>
+        <span class="article-read-time">8 min read</span>
+      </div>
+
+      <h1 class="article-headline">Building GTM Automation Workflows with n8n</h1>
+      <p class="article-lead-desc">An engineering guide to using n8n for enterprise RevOps: self-hosted Docker architecture, webhook security, handling rate limits, and custom JavaScript nodes.</p>
+
+      <div class="article-author-row">
+        <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="article-author-img" width="44" height="44" loading="lazy">
+        <div class="article-author-info">
+          <strong class="article-author-name">Varun Murugan P</strong>
+          <span class="article-author-title">GTM Engineer &amp; AI Revenue Automation Architect</span>
+        </div>
+      </div>
+
+      <div class="article-tags-bar">
+        <span class="blog-tag-pill">n8n</span><span class="blog-tag-pill">Node.js</span><span class="blog-tag-pill">Docker</span><span class="blog-tag-pill">Webhooks</span><span class="blog-tag-pill">REST APIs</span><span class="blog-tag-pill">Error Handling</span>
+      </div>
+    </header>
+
+    <!-- Two-Column Layout: TOC Sidebar + Article Prose -->
+    <div class="article-layout-grid">
+      
+      <!-- Table of Contents Sidebar -->
+      
+      <aside class="article-toc-sidebar" aria-label="Table of Contents">
+        <div class="toc-sticky-card">
+          <h2 class="toc-title">Table of Contents</h2>
+          <nav>
+            <ul class="toc-list">
+              
+                <li><a href="#why-n8n" class="toc-link">Why n8n Over Traditional No-Code Platforms</a></li>
+              
+                <li><a href="#docker-deployment" class="toc-link">Production Self-Hosted Architecture</a></li>
+              
+                <li><a href="#rate-limiting-queues" class="toc-link">Handling API Rate Limits and Backpressure</a></li>
+              
+                <li><a href="#error-handling-patterns" class="toc-link">Dead-Letter Queues and Error Nodes</a></li>
+              
+            </ul>
+          </nav>
+          <div class="toc-card-footer">
+            <a href="/#transmission" class="toc-talk-btn">
+              <span>Talk Architecture →</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+      
+
+      <!-- Main Prose Content -->
+      <article class="article-prose-content">
+        
+      <section id="why-n8n">
+        <h2>Why n8n Over Traditional No-Code Platforms</h2>
+        <p>
+          While Zapier and Make are accessible for simple two-step zaps, enterprise GTM engineering requires features they cannot provide:
+        </p>
+        <ul>
+          <li><strong>Self-Hosted Data Privacy:</strong> Complete control over contact PII without sending customer data through third-party multi-tenant servers.</li>
+          <li><strong>Unlimited Function Nodes:</strong> Writing raw JavaScript and Python directly inside execution nodes for custom payload transformations.</li>
+          <li><strong>Transparent Execution History:</strong> Inspecting exact input/output payloads across every step with zero cost penalty for high-volume iterations.</li>
+        </ul>
+      </section>
+
+      <section id="docker-deployment">
+        <h2>Production Self-Hosted Architecture</h2>
+        <p>
+          Here is a recommended production Docker Compose configuration with PostgreSQL persistence:
+        </p>
+        <pre><code class="language-yaml">version: '3.8'
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n_prod
+      - DB_POSTGRESDB_USER=n8n_user
+      - DB_POSTGRESDB_PASSWORD=${DB_PASSWORD}
+      - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - WEBHOOK_URL=https://workflows.yourcompany.com/
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+    ports:
+      - "5678:5678"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=n8n_prod
+      - POSTGRES_USER=n8n_user
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - postgres_storage:/var/lib/postgresql/data
+
+volumes:
+  postgres_storage:</code></pre>
+      </section>
+
+      <section id="rate-limiting-queues">
+        <h2>Handling API Rate Limits and Backpressure</h2>
+        <p>
+          APIs like Apollo, HubSpot, and LinkedIn enforce strict requests-per-minute quotas. In n8n, avoid blasting APIs simultaneously. Use the <strong>SplitInBatches</strong> node combined with dynamic wait intervals:
+        </p>
+        <pre><code class="language-javascript">// Function Node: Calculate Dynamic Jitter Delay
+const batchIndex = $input.first().json.batchIndex || 0;
+const baseDelayMs = 1200;
+const jitter = Math.floor(Math.random() * 400);
+
+return {
+  json: {
+    delaySeconds: Math.ceil((baseDelayMs + jitter) / 1000),
+    batchNumber: batchIndex + 1
+  }
+};</code></pre>
+      </section>
+
+      <section id="error-handling-patterns">
+        <h2>Dead-Letter Queues and Error Nodes</h2>
+        <p>
+          Every critical workflow in n8n should configure an <strong>Error Trigger Workflow</strong>. When an API returns a 5xx or JSON parse fails, execution routes to a designated error handler:
+        </p>
+        <ul>
+          <li>Logs the execution ID and failing node name.</li>
+          <li>Stores the raw payload in a Supabase dead-letter queue table for manual replay.</li>
+          <li>Sends an alert to <code>#gtm-telemetry-alerts</code> in Slack with an instant retry link.</li>
+        </ul>
+      </section>
+    
+      </article>
+
+    </div>
+
+    <!-- Author Biography Box -->
+    <section class="article-author-bio-card" aria-label="About the Author">
+      <div class="author-bio-inner">
+        <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="author-bio-photo" width="72" height="72" loading="lazy">
+        <div>
+          <span class="author-bio-kicker">WRITTEN BY</span>
+          <h3 class="author-bio-name">Varun Murugan P</h3>
+          <p class="author-bio-text">Senior GTM Engineer specializing in building self-healing, deterministic revenue operating systems with n8n, Clay, HubSpot, and Python.</p>
+          <div class="author-bio-links">
+            <a href="/#hero" class="bio-link">Portfolio Overview →</a>
+            <a href="https://linkedin.com/in/varunmuruganp" target="_blank" rel="noopener noreferrer" class="bio-link">LinkedIn ↗</a>
+            <a href="https://github.com/techievarunai-dev" target="_blank" rel="noopener noreferrer" class="bio-link">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Articles Section -->
+    
+    <section class="article-related-section" aria-label="Related Publications">
+      <div class="related-section-header">
+        <span class="blog-mini-kicker">CONTINUE EXPLORING</span>
+        <h2 class="related-headline">Related Engineering Insights</h2>
+      </div>
+      <div class="related-cards-grid">
+        
+          <div class="related-card">
+            <span class="related-cat">GTM Engineering</span>
+            <h3 class="related-title">
+              <a href="/blog/what-is-a-gtm-engineer/">What Is a GTM Engineer? A Practical Guide</a>
+            </h3>
+            <p class="related-excerpt">A technical deep-dive into the emerging GTM Engineering discipline: how software engineering rigor, deterministic state machines, and AI automation are replacing fragile RevOps hacks.</p>
+            <a href="/blog/what-is-a-gtm-engineer/" class="related-link">Read article →</a>
+          </div>
+        
+          <div class="related-card">
+            <span class="related-cat">GTM Engineering</span>
+            <h3 class="related-title">
+              <a href="/blog/building-an-automated-outbound-system/">Building an Automated Outbound System: Architecture and Lessons</a>
+            </h3>
+            <p class="related-excerpt">Detailed architectural retrospective from engineering a 4-workflow ABM system in n8n: Apollo qualification, Google Sheets as an idempotent state store, and AI reply classification.</p>
+            <a href="/blog/building-an-automated-outbound-system/" class="related-link">Read article →</a>
+          </div>
+        
+          <div class="related-card">
+            <span class="related-cat">AI Automation</span>
+            <h3 class="related-title">
+              <a href="/blog/how-to-build-an-ai-powered-lead-response-system/">How to Build an AI-Powered Lead Response System</a>
+            </h3>
+            <p class="related-excerpt">Step-by-step architectural breakdown of a sub-2-minute inbound response engine: webhook ingestion, waterfall enrichment in Clay, GPT-4 qualification, and conditional calendar booking.</p>
+            <a href="/blog/how-to-build-an-ai-powered-lead-response-system/" class="related-link">Read article →</a>
+          </div>
+        
+      </div>
+    </section>
+    
+
+    <!-- Bottom Contact Ingress Banner -->
+    <section class="cs-contact-banner">
+      <div class="cs-contact-banner-inner">
+        <div>
+          <h3 class="cs-banner-title">Have a GTM problem worth solving?</h3>
+          <p class="cs-banner-sub">Let's discuss buying signal intelligence, custom n8n orchestration, and CRM sync for your revenue pipeline.</p>
+        </div>
+        <a href="/#transmission" class="spatial-btn primary-btn">
+          <span>Talk Architecture with Varun</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-inner">
+      <span>Varun Murugan P · GTM Engineer Blog</span>
+      <a href="/blog/" class="cs-footer-back">Return to All Articles ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll progress indicator
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement,
+            b = document.body,
+            st = 'scrollTop',
+            sh = 'scrollHeight';
+      const percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+      const bar = document.getElementById('scroll-progress-line');
+      if (bar) bar.style.width = percent + '%';
+    });
+  </script>
+  <script type="module" src="/src/navController.js"></script>
+</body>
+</html>

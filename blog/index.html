@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideas, Systems & Experiments in GTM Engineering | Varun Murugan P</title>
+  <meta name="description" content="Practical insights from building AI-powered go-to-market systems, revenue automation, lead generation workflows, and intelligent business infrastructure by Varun Murugan P.">
+  <meta name="keywords" content="GTM Engineer, AI Automation, Revenue Operations, RevOps, n8n workflows, Clay, HubSpot, B2B lead generation, buying signals, Varun Murugan">
+  <meta name="author" content="Varun Murugan P">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#f3f2ee">
+  <link rel="canonical" href="https://varunmurugan-gtm.vercel.app/blog/">
+
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Varun Murugan P — GTM Engineering Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://varunmurugan-gtm.vercel.app/blog/">
+  <meta property="og:title" content="Ideas, Systems & Experiments in GTM Engineering | Varun Murugan P">
+  <meta property="og:description" content="Practical insights from building AI-powered go-to-market systems, revenue automation, and intelligent business infrastructure.">
+  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/varun-portrait.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ideas, Systems & Experiments in GTM Engineering">
+  <meta name="twitter:description" content="Practical insights from building AI-powered go-to-market systems and revenue automation pipelines.">
+  <meta name="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/varun-portrait.jpg">
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Resource Hints & Typography -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- Machine-Readable AI Knowledge Base Link -->
+  <link rel="alternate" type="text/plain" href="https://varunmurugan-gtm.vercel.app/llms.txt" title="LLMs.txt Context File">
+
+  <!-- Structured Data JSON-LD (Blog / CollectionPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://varunmurugan-gtm.vercel.app/blog/#blog",
+        "name": "Ideas, Systems & Experiments in GTM Engineering",
+        "description": "Practical insights from building AI-powered go-to-market systems, revenue automation, lead generation workflows, and intelligent business infrastructure.",
+        "url": "https://varunmurugan-gtm.vercel.app/blog/",
+        "author": {
+          "@type": "Person",
+          "name": "Varun Murugan P",
+          "jobTitle": "GTM Engineer & AI Revenue Automation Architect",
+          "url": "https://varunmurugan-gtm.vercel.app/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Varun Murugan P"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://varunmurugan-gtm.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog & Insights",
+            "item": "https://varunmurugan-gtm.vercel.app/blog/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="spatial-body blog-body">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Global Top Scroll Progress Bar -->
+  <div class="global-scroll-progress-bar" id="scroll-progress-line" aria-hidden="true"></div>
+
+  <!-- Background 3D WebGL Canvas for Spatial Constellation -->
+  <div id="canvas-container" aria-hidden="true">
+    <canvas id="webgl-canvas"></canvas>
+    <div class="canvas-ambient-gradient"></div>
+  </div>
+
+  <!-- Fixed Floating Pill Navigation Bar -->
+  <header class="site-header" role="banner">
+    <div class="nav-capsule-container">
+      <!-- Left-Aligned Personal Brand Mark -->
+      <a href="/#hero" class="brand-link" id="brand-logo" aria-label="Varun Murugan — GTM Engineer Portfolio Home">
+        <span class="status-pulse-dot" aria-hidden="true"></span>
+        <span class="brand-name">Varun <strong>Murugan</strong></span>
+      </a>
+
+      <!-- Centered Navigation Links -->
+      <nav class="scene-nav" role="navigation" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/#hero" class="nav-btn">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#philosophy" class="nav-btn">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#case-studies" class="nav-btn">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="/blog/" class="nav-btn active" aria-current="page">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#calculator" class="nav-btn">GTM Impact Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#faq" class="nav-btn">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right-Aligned Contrasting Dark Pill CTA & Mobile Toggle -->
+      <div class="header-actions">
+        <a href="/#transmission" class="nav-cta-dark-btn" id="nav-cta-btn" aria-label="Go to contact section and book a strategy call">
+          <span>Let's Talk</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-top">
+        <div class="mobile-nav-brand">
+          <span class="status-pulse-dot"></span>
+          <span>Varun <strong>Murugan</strong></span>
+        </div>
+        <button type="button" class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+      </div>
+      
+      <span class="mobile-nav-section-label">NAVIGATION</span>
+      <ul class="mobile-nav-list">
+        <li><a href="/#hero" class="mobile-nav-link"><span class="m-idx">01</span> HOME</a></li>
+        <li><a href="/#philosophy" class="mobile-nav-link"><span class="m-idx">02</span> ABOUT</a></li>
+        <li><a href="/#case-studies" class="mobile-nav-link"><span class="m-idx">03</span> PROJECTS</a></li>
+        <li><a href="/blog/" class="mobile-nav-link active"><span class="m-idx">04</span> BLOG &amp; INSIGHTS</a></li>
+        <li><a href="/#calculator" class="mobile-nav-link"><span class="m-idx">05</span> GTM IMPACT CALCULATOR</a></li>
+        <li><a href="/#faq" class="mobile-nav-link"><span class="m-idx">06</span> FAQ</a></li>
+      </ul>
+
+      <div class="mobile-nav-footer">
+        <a href="/#transmission" class="mobile-cta-action-btn">
+          <span>Let's Talk</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="/Varun_Murugan_GTM_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="mobile-resume-download">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>DOWNLOAD RESUME (PDF)</span>
+        </a>
+        <div class="mobile-nav-status-pill">
+          <span class="status-pulse-dot"></span>
+          <span>SYSTEMS OPERATIONAL · 4 COUNTRIES</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Blog Container -->
+  <main class="blog-main-container" id="main-content">
+
+    <!-- ========================================================
+         SECTION 1: BLOG HERO
+         ======================================================== -->
+    <section class="blog-hero-section" aria-label="Blog Hero">
+      <div class="blog-hero-glass-card">
+        
+        <div class="blog-hero-kicker-row">
+          <div class="card-badge">
+            <span class="badge-sparkle">🧠</span>
+            <span class="badge-text">KNOWLEDGE ARCHITECTURE & INSIGHTS</span>
+          </div>
+          <span class="blog-telemetry-pill">
+            <span class="status-pulse-dot mini"></span>
+            <span>6 PRODUCTION ESSAYS · 0 FLUFF</span>
+          </span>
+        </div>
+
+        <h1 class="blog-hero-headline">
+          Ideas, Systems &amp; Experiments in GTM Engineering
+        </h1>
+
+        <p class="blog-hero-subline">
+          Practical insights from building AI-powered go-to-market systems, revenue automation, lead generation workflows, and intelligent business infrastructure.
+        </p>
+
+        <div class="blog-hero-action-row">
+          <a href="#featured-article" class="spatial-btn primary-btn">
+            <span>Explore Featured Essay</span>
+            <span>↓</span>
+          </a>
+          <a href="#topic-exploration" class="spatial-btn secondary-btn">
+            <span>Filter by Category &amp; Topic</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2: FEATURED ARTICLE EDITORIAL LAYOUT
+         ======================================================== -->
+    <section class="blog-featured-section" id="featured-article" aria-label="Featured Technical Essay">
+      <div class="blog-section-header-compact">
+        <span class="blog-mini-kicker">FEATURED PUBLICATION</span>
+        <h2 class="blog-compact-headline">Lead Architectural Essay</h2>
+      </div>
+
+      <div class="blog-featured-card">
+        <div class="featured-card-grid">
+          
+          <div class="featured-media-col">
+            <a href="/blog/what-is-a-gtm-engineer/" class="featured-media-link" aria-label="Read What Is a GTM Engineer? A Practical Guide">
+              <div class="featured-media-frame">
+                <img 
+                  src="/assets/varun-portrait.jpg" 
+                  alt="Varun Murugan P - GTM Engineering Guide" 
+                  class="featured-cover-img" 
+                  width="800" 
+                  height="450" 
+                  fetchpriority="high"
+                  decoding="async"
+                >
+                <div class="featured-media-scrim"></div>
+                <span class="featured-badge-pill">GTM Engineering · Architecture</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="featured-content-col">
+            <div class="featured-meta-row">
+              <span class="featured-pill-category">GTM Engineering</span>
+              <span class="blog-meta-dot">·</span>
+              <time datetime="2026-10-08" class="featured-meta-date">Oct 8, 2026</time>
+              <span class="blog-meta-dot">·</span>
+              <span class="featured-meta-time">9 min read</span>
+            </div>
+
+            <h3 class="featured-card-title">
+              <a href="/blog/what-is-a-gtm-engineer/">What Is a GTM Engineer? A Practical Guide</a>
+            </h3>
+
+            <p class="featured-card-excerpt">
+              A technical deep-dive into the emerging GTM Engineering discipline: how software engineering rigor, deterministic state machines, and AI automation are replacing fragile RevOps hacks.
+            </p>
+
+            <div class="featured-tags-row">
+              <span class="blog-tag-pill">GTM Engineering</span>
+              <span class="blog-tag-pill">Systems Architecture</span>
+              <span class="blog-tag-pill">RevOps</span>
+              <span class="blog-tag-pill">State Machines</span>
+            </div>
+
+            <div class="featured-action-row">
+              <a href="/blog/what-is-a-gtm-engineer/" class="spatial-btn primary-btn">
+                <span>Read Full Essay</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <div class="featured-author-inline">
+                <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="author-micro-avatar" width="32" height="32" loading="lazy">
+                <div>
+                  <strong class="author-inline-name">Varun Murugan P</strong>
+                  <span class="author-inline-title">GTM Engineer</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3: TOPIC EXPLORATION & SEARCH TOOLBAR
+         ======================================================== -->
+    <section class="blog-toolbar-section" id="topic-exploration" aria-label="Filter and Search Articles">
+      <div class="blog-toolbar-card">
+        
+        <div class="blog-search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="search" 
+            id="blog-search-input" 
+            class="blog-search-field" 
+            placeholder="Search articles by title, tech stack, or topic... (Press '/' to focus)" 
+            aria-label="Search articles"
+          >
+          <button type="button" id="blog-search-clear" class="blog-search-clear-btn" aria-label="Clear search query" style="display: none;">✕</button>
+        </div>
+
+        <div class="blog-categories-scroll-wrapper">
+          <div class="blog-categories-track" role="tablist" aria-label="Article Categories">
+            <button type="button" class="blog-cat-pill active" data-category="All" role="tab" aria-selected="true">All Topics</button>
+            <button type="button" class="blog-cat-pill" data-category="GTM Engineering" role="tab" aria-selected="false">GTM Engineering</button>
+            <button type="button" class="blog-cat-pill" data-category="AI Automation" role="tab" aria-selected="false">AI Automation</button>
+            <button type="button" class="blog-cat-pill" data-category="Revenue Operations" role="tab" aria-selected="false">Revenue Operations</button>
+            <button type="button" class="blog-cat-pill" data-category="Lead Generation & Outbound" role="tab" aria-selected="false">Lead Gen &amp; Outbound</button>
+            <button type="button" class="blog-cat-pill" data-category="AI Agents & Workflows" role="tab" aria-selected="false">AI Agents &amp; Workflows</button>
+            <button type="button" class="blog-cat-pill" data-category="Technical Experiments & Case Studies" role="tab" aria-selected="false">Experiments &amp; Case Studies</button>
+          </div>
+        </div>
+
+        <div class="blog-toolbar-status-row">
+          <span class="blog-results-badge" id="blog-results-count">6 of 6 Articles</span>
+          <span class="blog-shortcut-cue">Press <kbd>/</kbd> to search</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4: LATEST ARTICLES GRID
+         ======================================================== -->
+    <section class="blog-listing-section" aria-label="Latest Articles">
+      
+      <!-- Dynamic / Semantic Pre-rendered Grid -->
+      <div class="blog-articles-grid" id="blog-articles-grid">
+        
+        <!-- Article 1 -->
+        <article class="blog-card" data-slug="what-is-a-gtm-engineer">
+          <a href="/blog/what-is-a-gtm-engineer/" class="blog-card-media-link" aria-label="Read What Is a GTM Engineer? A Practical Guide">
+            <div class="blog-card-media-frame">
+              <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineering Guide" class="blog-card-img" width="600" height="338" loading="lazy" decoding="async">
+              <div class="blog-card-scrim"></div>
+              <span class="blog-card-category-badge">GTM Engineering</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta-row">
+              <time datetime="2026-10-08" class="blog-card-date">Oct 8, 2026</time>
+              <span class="blog-meta-dot">·</span>
+              <span class="blog-card-readtime">9 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="/blog/what-is-a-gtm-engineer/" class="blog-title-link">What Is a GTM Engineer? A Practical Guide</a>
+            </h3>
+            <p class="blog-card-excerpt">A technical deep-dive into the emerging GTM Engineering discipline: how software engineering rigor, deterministic state machines, and AI automation are replacing fragile RevOps hacks.</p>
+            <div class="blog-card-tags">
+              <span class="blog-tag-pill">GTM Engineering</span>
+              <span class="blog-tag-pill">Systems Architecture</span>
+              <span class="blog-tag-pill">RevOps</span>
+            </div>
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="blog-author-avatar" width="28" height="28" loading="lazy">
+                <span class="blog-author-name">Varun Murugan P</span>
+              </div>
+              <a href="/blog/what-is-a-gtm-engineer/" class="blog-card-cta-link">
+                <span>Read article</span>
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card" data-slug="how-to-build-an-ai-powered-lead-response-system">
+          <a href="/blog/how-to-build-an-ai-powered-lead-response-system/" class="blog-card-media-link" aria-label="Read How to Build an AI-Powered Lead Response System">
+            <div class="blog-card-media-frame">
+              <img src="/assets/lead-response-os.jpg" alt="Autonomous Lead Response OS Architecture" class="blog-card-img" width="600" height="338" loading="lazy" decoding="async">
+              <div class="blog-card-scrim"></div>
+              <span class="blog-card-category-badge">AI Automation</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta-row">
+              <time datetime="2026-10-04" class="blog-card-date">Oct 4, 2026</time>
+              <span class="blog-meta-dot">·</span>
+              <span class="blog-card-readtime">8 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="/blog/how-to-build-an-ai-powered-lead-response-system/" class="blog-title-link">How to Build an AI-Powered Lead Response System</a>
+            </h3>
+            <p class="blog-card-excerpt">Step-by-step architectural breakdown of a sub-2-minute inbound response engine: webhook ingestion, waterfall enrichment in Clay, GPT-4 qualification, and conditional calendar booking.</p>
+            <div class="blog-card-tags">
+              <span class="blog-tag-pill">AI Automation</span>
+              <span class="blog-tag-pill">Speed to Lead</span>
+              <span class="blog-tag-pill">n8n</span>
+            </div>
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="blog-author-avatar" width="28" height="28" loading="lazy">
+                <span class="blog-author-name">Varun Murugan P</span>
+              </div>
+              <a href="/blog/how-to-build-an-ai-powered-lead-response-system/" class="blog-card-cta-link">
+                <span>Read article</span>
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card" data-slug="inside-an-ai-powered-gtm-intelligence-hub">
+          <a href="/blog/inside-an-ai-powered-gtm-intelligence-hub/" class="blog-card-media-link" aria-label="Read Inside an AI-Powered GTM Intelligence Hub">
+            <div class="blog-card-media-frame">
+              <img src="/assets/gtm-intelligence-hub.jpg" alt="AI-Powered GTM Intelligence Hub Architecture" class="blog-card-img" width="600" height="338" loading="lazy" decoding="async">
+              <div class="blog-card-scrim"></div>
+              <span class="blog-card-category-badge">Technical Experiments & Case Studies</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta-row">
+              <time datetime="2026-09-28" class="blog-card-date">Sep 28, 2026</time>
+              <span class="blog-meta-dot">·</span>
+              <span class="blog-card-readtime">10 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="/blog/inside-an-ai-powered-gtm-intelligence-hub/" class="blog-title-link">Inside an AI-Powered GTM Intelligence Hub</a>
+            </h3>
+            <p class="blog-card-excerpt">How to replace generic cold outbound with real-time buying signal monitoring: event ingestion, intent scoring, multi-provider enrichment, and automated CRM sync.</p>
+            <div class="blog-card-tags">
+              <span class="blog-tag-pill">Buying Signals</span>
+              <span class="blog-tag-pill">Clay</span>
+              <span class="blog-tag-pill">OpenAI</span>
+            </div>
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="blog-author-avatar" width="28" height="28" loading="lazy">
+                <span class="blog-author-name">Varun Murugan P</span>
+              </div>
+              <a href="/blog/inside-an-ai-powered-gtm-intelligence-hub/" class="blog-card-cta-link">
+                <span>Read article</span>
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="blog-card" data-slug="building-an-automated-outbound-system">
+          <a href="/blog/building-an-automated-outbound-system/" class="blog-card-media-link" aria-label="Read Building an Automated Outbound System: Architecture and Lessons">
+            <div class="blog-card-media-frame">
+              <img src="/assets/us-insurance-system.jpg" alt="US Insurance Outbound System Architecture" class="blog-card-img" width="600" height="338" loading="lazy" decoding="async">
+              <div class="blog-card-scrim"></div>
+              <span class="blog-card-category-badge">GTM Engineering</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta-row">
+              <time datetime="2026-09-20" class="blog-card-date">Sep 20, 2026</time>
+              <span class="blog-meta-dot">·</span>
+              <span class="blog-card-readtime">9 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="/blog/building-an-automated-outbound-system/" class="blog-title-link">Building an Automated Outbound System: Architecture and Lessons</a>
+            </h3>
+            <p class="blog-card-excerpt">Detailed architectural retrospective from engineering a 4-workflow ABM system in n8n: Apollo qualification, Google Sheets as an idempotent state store, and AI reply classification.</p>
+            <div class="blog-card-tags">
+              <span class="blog-tag-pill">n8n</span>
+              <span class="blog-tag-pill">Outbound</span>
+              <span class="blog-tag-pill">State Store</span>
+            </div>
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="blog-author-avatar" width="28" height="28" loading="lazy">
+                <span class="blog-author-name">Varun Murugan P</span>
+              </div>
+              <a href="/blog/building-an-automated-outbound-system/" class="blog-card-cta-link">
+                <span>Read article</span>
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="blog-card" data-slug="gtm-engineering-vs-revops">
+          <a href="/blog/gtm-engineering-vs-revops/" class="blog-card-media-link" aria-label="Read GTM Engineering vs. RevOps: Roles, Responsibilities, and Tools">
+            <div class="blog-card-media-frame">
+              <img src="/assets/outbound-gtm-audit.jpg" alt="GTM Engineering vs RevOps Framework Blueprint" class="blog-card-img" width="600" height="338" loading="lazy" decoding="async">
+              <div class="blog-card-scrim"></div>
+              <span class="blog-card-category-badge">Revenue Operations</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta-row">
+              <time datetime="2026-09-12" class="blog-card-date">Sep 12, 2026</time>
+              <span class="blog-meta-dot">·</span>
+              <span class="blog-card-readtime">7 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="/blog/gtm-engineering-vs-revops/" class="blog-title-link">GTM Engineering vs. RevOps: Roles, Responsibilities, and Tools</a>
+            </h3>
+            <p class="blog-card-excerpt">An objective architectural comparison between GTM Engineering and traditional Revenue Operations: why modern tech companies need both disciplines working in lockstep.</p>
+            <div class="blog-card-tags">
+              <span class="blog-tag-pill">RevOps</span>
+              <span class="blog-tag-pill">GTM Engineering</span>
+              <span class="blog-tag-pill">Team Design</span>
+            </div>
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="blog-author-avatar" width="28" height="28" loading="lazy">
+                <span class="blog-author-name">Varun Murugan P</span>
+              </div>
+              <a href="/blog/gtm-engineering-vs-revops/" class="blog-card-cta-link">
+                <span>Read article</span>
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="blog-card" data-slug="building-gtm-automation-workflows-with-n8n">
+          <a href="/blog/building-gtm-automation-workflows-with-n8n/" class="blog-card-media-link" aria-label="Read Building GTM Automation Workflows with n8n">
+            <div class="blog-card-media-frame">
+              <img src="/assets/us-insurance-system.jpg" alt="n8n Workflow Engineering Blueprint" class="blog-card-img" width="600" height="338" loading="lazy" decoding="async">
+              <div class="blog-card-scrim"></div>
+              <span class="blog-card-category-badge">AI Agents & Workflows</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta-row">
+              <time datetime="2026-09-02" class="blog-card-date">Sep 2, 2026</time>
+              <span class="blog-meta-dot">·</span>
+              <span class="blog-card-readtime">8 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="/blog/building-gtm-automation-workflows-with-n8n/" class="blog-title-link">Building GTM Automation Workflows with n8n</a>
+            </h3>
+            <p class="blog-card-excerpt">An engineering guide to using n8n for enterprise RevOps: self-hosted Docker architecture, webhook security, handling rate limits, and custom JavaScript nodes.</p>
+            <div class="blog-card-tags">
+              <span class="blog-tag-pill">n8n</span>
+              <span class="blog-tag-pill">Docker</span>
+              <span class="blog-tag-pill">Webhooks</span>
+            </div>
+            <div class="blog-card-footer">
+              <div class="blog-card-author">
+                <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="blog-author-avatar" width="28" height="28" loading="lazy">
+                <span class="blog-author-name">Varun Murugan P</span>
+              </div>
+              <a href="/blog/building-gtm-automation-workflows-with-n8n/" class="blog-card-cta-link">
+                <span>Read article</span>
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty Search Fallback State -->
+      <div class="blog-empty-state" id="blog-empty-state" style="display: none;">
+        <span class="empty-icon">🔍</span>
+        <h3>No matching essays found</h3>
+        <p>No articles matched your query <strong id="empty-search-term"></strong>. Try filtering by category or searching for keywords like <em>n8n</em>, <em>signals</em>, or <em>RevOps</em>.</p>
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         SECTION 5: SCHEDULED RESEARCH & DRAFTS ROADMAP
+         ======================================================== -->
+    <section class="blog-drafts-section" aria-label="Upcoming Research Pipeline">
+      <div class="blog-drafts-card">
+        <div class="drafts-card-header">
+          <span class="card-badge subtle">
+            <span class="badge-sparkle">⏱</span>
+            <span class="badge-text">ACTIVE RESEARCH PIPELINE</span>
+          </span>
+          <h3 class="drafts-headline">Upcoming Technical Papers in Validation</h3>
+          <p class="drafts-desc">
+            Articles in progress are tested across real client environments before publication. No fabricated statistics or hypothetical drafts disguised as finished work.
+          </p>
+        </div>
+
+        <div class="drafts-list">
+          <div class="draft-item-row">
+            <div class="draft-badge">DRAFT // IN EDITORIAL REVIEW</div>
+            <strong class="draft-item-title">How AI Automation Improves B2B Lead Generation</strong>
+            <span class="draft-item-topic">Lead Generation &amp; Outbound · Scheduled Oct 2026</span>
+            <p class="draft-item-summary">
+              Investigating the transition from high-volume list blasting to signal-triggered precision outbound: domain warmup defense, vector-based prospect matching, and multi-tenant deliverability protection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 6: ABOUT THE AUTHOR
+         ======================================================== -->
+    <section class="blog-author-section" aria-label="About the Author">
+      <div class="spatial-card blog-author-card">
+        <div class="author-split-layout">
+          
+          <div class="author-avatar-frame">
+            <img src="/assets/varun-portrait.jpg" alt="Varun Murugan P - GTM Engineer" class="author-profile-img" width="160" height="160" loading="lazy">
+            <span class="author-status-pill">● SYSTEMS_ONLINE</span>
+          </div>
+
+          <div class="author-bio-content">
+            <div class="card-badge">
+              <span class="badge-sparkle">👨‍💻</span>
+              <span class="badge-text">ENGINEER PROFILE</span>
+            </div>
+
+            <h3 class="author-name-title">Varun Murugan P</h3>
+            <span class="author-role-sub">GTM Engineer · AI Revenue Automation Architect</span>
+
+            <p class="author-bio-p">
+              I am a GTM Engineer who bridges software engineering, revenue operations, and artificial intelligence. Having graduated with a <strong>B.Sc. in Aeronautical Science as a Gold Medallist (GPA 4.0)</strong>, I apply flight-critical systems engineering principles—such as deterministic state transitions, idempotency, and automated failure recovery—to modern revenue funnels.
+            </p>
+
+            <div class="author-links-row">
+              <a href="/#hero" class="spatial-btn secondary-btn compact">Explore Portfolio Overview</a>
+              <a href="https://linkedin.com/in/varunmuruganp" target="_blank" rel="noopener noreferrer" class="spatial-btn outline-btn compact">LinkedIn ↗</a>
+              <a href="https://github.com/techievarunai-dev" target="_blank" rel="noopener noreferrer" class="spatial-btn outline-btn compact">GitHub ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 7: CLOSING TRANSITION TO TRANSMISSION
+         ======================================================== -->
+    <section class="blog-closing-section" aria-label="Collaborate with Varun">
+      <div class="spatial-card blog-closing-card">
+        <div class="closing-content-wrap">
+          <div class="card-badge">
+            <span class="badge-sparkle">🔒</span>
+            <span class="badge-text">SECURE TRANSMISSION INGRESS</span>
+          </div>
+          <h2 class="closing-headline">Have a GTM problem worth solving?</h2>
+          <p class="closing-subline">
+            Let's diagnose pipeline bottlenecks, audit email deliverability, or engineer autonomous revenue operating systems for your team.
+          </p>
+          <div class="closing-cta-row">
+            <a href="/#transmission" class="spatial-btn primary-btn large">
+              <span>Initiate Transmission with Varun</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="/#case-studies" class="spatial-btn secondary-btn large">
+              <span>View Production Deliverables</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="cs-footer">
+    <div class="cs-footer-inner">
+      <span>Varun Murugan P · GTM Engineer Blog &amp; Insights</span>
+      <div class="footer-links-group">
+        <a href="/#hero" class="cs-footer-back">Portfolio Overview</a>
+        <span class="footer-dot">·</span>
+        <a href="/case-study.html" class="cs-footer-back">Case Studies</a>
+        <span class="footer-dot">·</span>
+        <a href="/llms.txt" class="cs-footer-back">llms.txt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/blogEngine.js"></script>
+</body>
+</html>

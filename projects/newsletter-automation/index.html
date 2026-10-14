@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous AI Newsletter Operations — GTM Engineering Architecture Case Study | Varun Murugan P</title>
+  <meta name="description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations. Engineered by Varun Murugan P, Senior GTM Engineer.">
+  <meta name="keywords" content="Beehiiv, n8n, OpenAI, Make, RSS Parsing, REST APIs, GTM Engineer, Revenue Operations, AI Automation, Varun Murugan">
+  <meta name="author" content="Varun Murugan P">
+  <link rel="canonical" href="https://varunmurugan-gtm.vercel.app/projects/newsletter-automation/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://varunmurugan-gtm.vercel.app/projects/newsletter-automation/">
+  <meta property="og:title" content="Autonomous AI Newsletter Operations — GTM Engineering Case Study">
+  <meta property="og:description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations.">
+  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/newsletter-operations.jpg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Autonomous AI Newsletter Operations — GTM Engineering Case Study">
+  <meta property="twitter:description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations.">
+  <meta property="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/newsletter-operations.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- JSON-LD Structured Data for AEO / GEO & Google Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://varunmurugan-gtm.vercel.app/projects/newsletter-automation/#article",
+        "headline": "Autonomous AI Newsletter Operations — System Architecture Case Study",
+        "description": "Automated newsletter research, curation, and staging with AI-powered editorial operations.",
+        "url": "https://varunmurugan-gtm.vercel.app/projects/newsletter-automation/",
+        "image": "https://varunmurugan-gtm.vercel.app/assets/newsletter-operations.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Varun Murugan P",
+          "url": "https://varunmurugan-gtm.vercel.app/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Varun Murugan P"
+        },
+        "about": [
+          "Beehiiv", "n8n", "OpenAI", "Make", "RSS Parsing", "REST APIs"
+        ],
+        "keywords": "Beehiiv, n8n, OpenAI, Make, RSS Parsing, REST APIs, GTM Engineering, RevOps Automation"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://varunmurugan-gtm.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://varunmurugan-gtm.vercel.app/#case-studies"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Autonomous AI Newsletter Operations",
+            "item": "https://varunmurugan-gtm.vercel.app/projects/newsletter-automation/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="spatial-body case-study-body">
+
+  <header class="cs-header" role="banner">
+    <div class="cs-header-inner">
+      <div class="cs-header-left">
+        <a href="/#case-studies" class="cs-back-home-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Portfolio</span>
+        </a>
+        <div class="cs-header-divider"></div>
+        <span class="cs-active-label">CASE 04 / 06</span>
+      </div>
+
+      <nav class="cs-quick-nav" aria-label="Case Study Switcher">
+        <a href="/projects/us-insurance-outbound-system/" class="cs-nav-pill ">01 Insurance</a>
+        <a href="/projects/gtm-intelligence-hub/" class="cs-nav-pill ">02 Intel Hub</a>
+        <a href="/projects/lead-response-os/" class="cs-nav-pill ">03 Lead OS</a>
+        <a href="/projects/newsletter-automation/" class="cs-nav-pill active">04 Newsletter</a>
+        <a href="/projects/outbound-gtm-audit/" class="cs-nav-pill ">05 Audit</a>
+        <a href="/projects/candidate-screening/" class="cs-nav-pill ">06 Screening</a>
+      </nav>
+
+      <div class="cs-header-right">
+        <a href="/Varun_Murugan_GTM_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-pill-btn">
+          <span>RESUME (PDF)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cs-main-container" id="main-content">
+
+    <section class="cs-hero-section">
+      <div class="cs-hero-kicker-row">
+        <span class="cs-meta-pill primary">CLIENT ENGAGEMENT · SINGAPORE</span>
+        <span class="cs-meta-pill subtle">WALKTHROUGH READY</span>
+      </div>
+
+      <h1 class="cs-main-title">Autonomous AI Newsletter Operations</h1>
+      <p class="cs-main-tagline">Automated newsletter research, curation, and staging with AI-powered editorial operations.</p>
+
+      <div class="cs-tags-row">
+        <span class="cs-tag-pill">Beehiiv</span><span class="cs-tag-pill">n8n</span><span class="cs-tag-pill">OpenAI</span><span class="cs-tag-pill">Make</span><span class="cs-tag-pill">RSS Parsing</span><span class="cs-tag-pill">REST APIs</span>
+      </div>
+
+      <div class="cs-quick-meta-grid">
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">CLIENT / CONTEXT</span>
+          <span class="cs-meta-value">Ivanna Dela Torre (Digital Media)</span>
+        </div>
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">STATUS & TIMELINE</span>
+          <span class="cs-meta-value">Weekly Production Production Pipeline</span>
+        </div>
+        <div class="cs-meta-cell highlight">
+          <span class="cs-meta-label">KEY IMPACT / OUTCOME</span>
+          <span class="cs-meta-value-metric">6 hrs/wk freed</span>
+          <span class="cs-meta-sub">100% on-time weekly publishing cadence</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Blueprint Visual Card -->
+    <section class="cs-architecture-stage" aria-label="System Architecture Blueprint">
+      <div class="cs-diagram-frame">
+        <div class="cs-diagram-topbar">
+          <span class="cs-diagram-title">FIGURE 1.0 — AUTONOMOUS AI NEWSLETTER OPERATIONS SYSTEM ARCHITECTURE BLUEPRINT</span>
+        </div>
+
+        <div class="cs-diagram-img-wrap">
+          <img src="/assets/newsletter-operations.jpg" alt="AI Newsletter Operations Architecture Diagram" class="cs-blueprint-img" width="1200" height="675" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="cs-diagram-footer">
+          <span class="cs-telemetry-tag">● PRODUCTION_SPEC_VALIDATED</span>
+          <span class="cs-telemetry-note">Deterministic State Machine · End-to-End Orchestration</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem & Solution Narrative -->
+    <section class="cs-narrative-section">
+      <div class="cs-two-col-grid">
+        <div class="cs-content-block problem-card">
+          <div class="cs-block-badge problem">
+            <span>⚠</span>
+            <span>THE BOTTLENECK</span>
+          </div>
+          <h2 class="cs-section-heading">The Problem: Manual Content Curation Consuming 8-10 Hours Weekly</h2>
+          <p class="cs-body-lead">Producing a high-quality weekly industry publication required tedious manual scanning of 50+ sources, manual summarization, and repetitive CMS staging.</p>
+          <ul class="cs-bullet-list">
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Scanning newsletters, tech blogs, and Twitter consumed entire working days.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Formatting and styling content in Beehiiv was error-prone and time-consuming.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Editorial fatigue threatened consistent weekly publishing deadlines.</span></li>
+          </ul>
+        </div>
+
+        <div class="cs-content-block solution-card">
+          <div class="cs-block-badge solution">
+            <span>⚙</span>
+            <span>SYSTEM ARCHITECTURE</span>
+          </div>
+          <h2 class="cs-section-heading">The Engineered Solution: Autonomous Research, AI Drafting & Beehiiv Staging</h2>
+          <p class="cs-body-lead">Developed an end-to-end editorial pipeline that ingests RSS feeds, categorizes stories using customized OpenAI prompt chains, and drafts formatted editions directly in Beehiiv.</p>
+          <div class="cs-workflows-list">
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 01</span>
+                  <strong class="cs-wf-name">Multi-Source Content Aggregation</strong>
+                </div>
+                <p class="cs-wf-desc">Parses 40+ RSS feeds, newsletters, and Reddit discussions on automated 6-hour cron intervals.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 02</span>
+                  <strong class="cs-wf-name">AI Summarization & Style Alignment</strong>
+                </div>
+                <p class="cs-wf-desc">OpenAI GPT-4 evaluates story relevance, drafts punchy takeaways, and matches the publication’s signature editorial voice.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 03</span>
+                  <strong class="cs-wf-name">Human-in-the-Loop Review Dashboard</strong>
+                </div>
+                <p class="cs-wf-desc">Presents structured summaries in Notion/Airtable for single-click editorial approval.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 04</span>
+                  <strong class="cs-wf-name">Beehiiv CMS Auto-Staging</strong>
+                </div>
+                <p class="cs-wf-desc">Dispatches finalized Markdown and HTML content via Beehiiv REST API into a formatted ready-to-send draft.</p>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Outcomes -->
+    <section class="cs-outcomes-section" aria-label="Production Outcomes">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">VERIFIED TELEMETRY</span>
+        <h3 class="cs-compact-headline">Production Outcomes & Performance Metrics</h3>
+      </div>
+      <div class="cs-outcomes-grid">
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">6h</span>
+            <span class="cs-metric-title">Editorial Hours Freed Every Week</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">100%</span>
+            <span class="cs-metric-title">On-Time Publishing Reliability</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">40+</span>
+            <span class="cs-metric-title">Automated Feeds Monitored Continuously</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">5★</span>
+            <span class="cs-metric-title">Client Feedback (Ivanna Dela Torre)</span>
+          </div>
+        
+      </div>
+    </section>
+
+    
+    <!-- Testimonial Quote -->
+    <section class="cs-testimonial-wrapper" aria-label="Client Testimonial">
+      <div class="cs-quote-card">
+        <span class="cs-quote-mark">“</span>
+        <p class="cs-quote-text">Varun automated our entire newsletter workflow from raw research to Beehiiv staging. His attention to operational reliability and tone consistency is unmatched.</p>
+        <div class="cs-quote-author-row">
+          <strong class="cs-quote-author">Ivanna Dela Torre</strong>
+          <span class="cs-quote-role">undefined</span>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Tech Stack Components -->
+    <section class="cs-stack-section" aria-label="Engineering Infrastructure">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">ENGINEERING INFRASTRUCTURE</span>
+        <h3 class="cs-compact-headline">Core Tech Stack & API Nodes</h3>
+      </div>
+      <div class="cs-tech-stack-grid">
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">n8n</strong>
+              <span class="cs-stack-node-role">Scheduled Orchestration & API Connector</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">Beehiiv API</strong>
+              <span class="cs-stack-node-role">Newsletter Staging & Post Management</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">OpenAI GPT-4</strong>
+              <span class="cs-stack-node-role">Contextual Summarization & Headline Crafting</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">Notion / Airtable</strong>
+              <span class="cs-stack-node-role">Human-in-the-Loop Approval Queue</span>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+
+    <!-- Navigation between Case Studies -->
+    <nav class="cs-adjacent-nav" aria-label="Adjacent Case Studies">
+      <a href="/projects/lead-response-os/" class="cs-nav-box prev">
+        <span class="nav-direction">← PREVIOUS CASE STUDY</span>
+        <span class="nav-dest-title">Deterministic Lead Response OS</span>
+      </a>
+      <a href="/projects/outbound-gtm-audit/" class="cs-nav-box next">
+        <span class="nav-direction">NEXT CASE STUDY →</span>
+        <span class="nav-dest-title">Strategic Outbound GTM & Architecture Teardown</span>
+      </a>
+    </nav>
+
+    <!-- Bottom Contact Ingress Banner -->
+    <section class="cs-contact-banner">
+      <div class="cs-contact-banner-inner">
+        <div>
+          <h3 class="cs-banner-title">Need a similar deterministic GTM architecture?</h3>
+          <p class="cs-banner-sub">Let's talk buying signal intelligence, n8n orchestration, and CRM sync for your revenue pipeline.</p>
+        </div>
+        <a href="/#transmission" class="spatial-btn primary-btn">
+          <span>Talk Architecture with Varun</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-inner">
+      <span>Varun Murugan P · GTM Engineer Portfolio</span>
+      <a href="/#case-studies" class="cs-footer-back">Return to Portfolio Overview ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>

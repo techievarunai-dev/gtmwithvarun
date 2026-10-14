@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Outbound GTM & Architecture Teardown — GTM Engineering Architecture Case Study | Varun Murugan P</title>
+  <meta name="description" content="Comprehensive audit, deliverability diagnostic, and architectural teardown of a SaaS outbound engine. Engineered by Varun Murugan P, Senior GTM Engineer.">
+  <meta name="keywords" content="GTM Scorecard, Automation Roadmap, System Architecture, Priority Matrix, Deliverability, GTM Engineer, Revenue Operations, AI Automation, Varun Murugan">
+  <meta name="author" content="Varun Murugan P">
+  <link rel="canonical" href="https://varunmurugan-gtm.vercel.app/projects/outbound-gtm-audit/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://varunmurugan-gtm.vercel.app/projects/outbound-gtm-audit/">
+  <meta property="og:title" content="Strategic Outbound GTM & Architecture Teardown — GTM Engineering Case Study">
+  <meta property="og:description" content="Comprehensive audit, deliverability diagnostic, and architectural teardown of a SaaS outbound engine.">
+  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/outbound-gtm-audit.jpg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Strategic Outbound GTM & Architecture Teardown — GTM Engineering Case Study">
+  <meta property="twitter:description" content="Comprehensive audit, deliverability diagnostic, and architectural teardown of a SaaS outbound engine.">
+  <meta property="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/outbound-gtm-audit.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- JSON-LD Structured Data for AEO / GEO & Google Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://varunmurugan-gtm.vercel.app/projects/outbound-gtm-audit/#article",
+        "headline": "Strategic Outbound GTM & Architecture Teardown — System Architecture Case Study",
+        "description": "Comprehensive audit, deliverability diagnostic, and architectural teardown of a SaaS outbound engine.",
+        "url": "https://varunmurugan-gtm.vercel.app/projects/outbound-gtm-audit/",
+        "image": "https://varunmurugan-gtm.vercel.app/assets/outbound-gtm-audit.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Varun Murugan P",
+          "url": "https://varunmurugan-gtm.vercel.app/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Varun Murugan P"
+        },
+        "about": [
+          "GTM Scorecard", "Automation Roadmap", "System Architecture", "Priority Matrix", "Deliverability"
+        ],
+        "keywords": "GTM Scorecard, Automation Roadmap, System Architecture, Priority Matrix, Deliverability, GTM Engineering, RevOps Automation"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://varunmurugan-gtm.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://varunmurugan-gtm.vercel.app/#case-studies"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Strategic Outbound GTM & Architecture Teardown",
+            "item": "https://varunmurugan-gtm.vercel.app/projects/outbound-gtm-audit/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="spatial-body case-study-body">
+
+  <header class="cs-header" role="banner">
+    <div class="cs-header-inner">
+      <div class="cs-header-left">
+        <a href="/#case-studies" class="cs-back-home-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Portfolio</span>
+        </a>
+        <div class="cs-header-divider"></div>
+        <span class="cs-active-label">CASE 05 / 06</span>
+      </div>
+
+      <nav class="cs-quick-nav" aria-label="Case Study Switcher">
+        <a href="/projects/us-insurance-outbound-system/" class="cs-nav-pill ">01 Insurance</a>
+        <a href="/projects/gtm-intelligence-hub/" class="cs-nav-pill ">02 Intel Hub</a>
+        <a href="/projects/lead-response-os/" class="cs-nav-pill ">03 Lead OS</a>
+        <a href="/projects/newsletter-automation/" class="cs-nav-pill ">04 Newsletter</a>
+        <a href="/projects/outbound-gtm-audit/" class="cs-nav-pill active">05 Audit</a>
+        <a href="/projects/candidate-screening/" class="cs-nav-pill ">06 Screening</a>
+      </nav>
+
+      <div class="cs-header-right">
+        <a href="/Varun_Murugan_GTM_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-pill-btn">
+          <span>RESUME (PDF)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cs-main-container" id="main-content">
+
+    <section class="cs-hero-section">
+      <div class="cs-hero-kicker-row">
+        <span class="cs-meta-pill primary">STRATEGIC GTM CASE STUDY</span>
+        <span class="cs-meta-pill subtle">FRAMEWORK BLUEPRINT</span>
+      </div>
+
+      <h1 class="cs-main-title">Strategic Outbound GTM & Architecture Teardown</h1>
+      <p class="cs-main-tagline">Comprehensive audit, deliverability diagnostic, and architectural teardown of a SaaS outbound engine.</p>
+
+      <div class="cs-tags-row">
+        <span class="cs-tag-pill">GTM Scorecard</span><span class="cs-tag-pill">Automation Roadmap</span><span class="cs-tag-pill">System Architecture</span><span class="cs-tag-pill">Priority Matrix</span><span class="cs-tag-pill">Deliverability</span>
+      </div>
+
+      <div class="cs-quick-meta-grid">
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">CLIENT / CONTEXT</span>
+          <span class="cs-meta-value">Strategic Assessment & Architecture Teardown</span>
+        </div>
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">STATUS & TIMELINE</span>
+          <span class="cs-meta-value">Comprehensive Blueprint</span>
+        </div>
+        <div class="cs-meta-cell highlight">
+          <span class="cs-meta-label">KEY IMPACT / OUTCOME</span>
+          <span class="cs-meta-value-metric">25-Page Blueprint</span>
+          <span class="cs-meta-sub">Full diagnostic across deliverability, data &amp; orchestration</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Blueprint Visual Card -->
+    <section class="cs-architecture-stage" aria-label="System Architecture Blueprint">
+      <div class="cs-diagram-frame">
+        <div class="cs-diagram-topbar">
+          <span class="cs-diagram-title">FIGURE 1.0 — STRATEGIC OUTBOUND GTM & ARCHITECTURE TEARDOWN SYSTEM ARCHITECTURE BLUEPRINT</span>
+        </div>
+
+        <div class="cs-diagram-img-wrap">
+          <img src="/assets/outbound-gtm-audit.jpg" alt="Outbound GTM Audit Architecture Diagram" class="cs-blueprint-img" width="1200" height="675" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="cs-diagram-footer">
+          <span class="cs-telemetry-tag">● PRODUCTION_SPEC_VALIDATED</span>
+          <span class="cs-telemetry-note">Deterministic State Machine · End-to-End Orchestration</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem & Solution Narrative -->
+    <section class="cs-narrative-section">
+      <div class="cs-two-col-grid">
+        <div class="cs-content-block problem-card">
+          <div class="cs-block-badge problem">
+            <span>⚠</span>
+            <span>THE BOTTLENECK</span>
+          </div>
+          <h2 class="cs-section-heading">The Problem: Declining Deliverability & Bloated GTM Tool Silos</h2>
+          <p class="cs-body-lead">A B2B software team was burning through domains with high bounce rates, duplicate CRM records, and zero visibility into outbound conversion bottlenecks.</p>
+          <ul class="cs-bullet-list">
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Domain sender reputation degraded due to unverified email lists and lack of SPF/DKIM/DMARC alignment.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Data silos between Apollo, HubSpot, and sequencing tools resulted in conflicting contact ownership.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Executive team lacked an objective engineering scorecard to guide revenue tech decisions.</span></li>
+          </ul>
+        </div>
+
+        <div class="cs-content-block solution-card">
+          <div class="cs-block-badge solution">
+            <span>⚙</span>
+            <span>SYSTEM ARCHITECTURE</span>
+          </div>
+          <h2 class="cs-section-heading">The Engineered Solution: Full-Stack GTM Diagnostic & Modern Architecture</h2>
+          <p class="cs-body-lead">Executed a deep technical audit evaluating deliverability health, ICP tiering, signal integration, and workflow orchestration, culminating in a prioritized execution roadmap.</p>
+          <div class="cs-workflows-list">
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 01</span>
+                  <strong class="cs-wf-name">Domain & Deliverability Diagnostic</strong>
+                </div>
+                <p class="cs-wf-desc">Audited DNS records, inbox warming protocols, and bounce thresholds to restore 99%+ inbox placement.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 02</span>
+                  <strong class="cs-wf-name">Data Hygiene & CRM Mapping Audit</strong>
+                </div>
+                <p class="cs-wf-desc">Identified duplicate fields and inconsistent lifecycle progression rules inside HubSpot.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 03</span>
+                  <strong class="cs-wf-name">Signal Architecture Framework</strong>
+                </div>
+                <p class="cs-wf-desc">Architected modern Clay + n8n waterfall to replace static list blasting with event-driven outbound.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 04</span>
+                  <strong class="cs-wf-name">Prioritized 90-Day Execution Roadmap</strong>
+                </div>
+                <p class="cs-wf-desc">Delivered an actionable engineering matrix categorized by impact, difficulty, and revenue leverage.</p>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Outcomes -->
+    <section class="cs-outcomes-section" aria-label="Production Outcomes">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">VERIFIED TELEMETRY</span>
+        <h3 class="cs-compact-headline">Production Outcomes & Performance Metrics</h3>
+      </div>
+      <div class="cs-outcomes-grid">
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">25</span>
+            <span class="cs-metric-title">Pages of Comprehensive Architectural Analysis</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">4</span>
+            <span class="cs-metric-title">Critical Data Leakage Points Remediated</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">99%</span>
+            <span class="cs-metric-title">Deliverability Hygiene Benchmark Established</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">90-Day</span>
+            <span class="cs-metric-title">Actionable Engineering Implementation Roadmap</span>
+          </div>
+        
+      </div>
+    </section>
+
+    
+
+    <!-- Tech Stack Components -->
+    <section class="cs-stack-section" aria-label="Engineering Infrastructure">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">ENGINEERING INFRASTRUCTURE</span>
+        <h3 class="cs-compact-headline">Core Tech Stack & API Nodes</h3>
+      </div>
+      <div class="cs-tech-stack-grid">
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">DNS & Deliverability Diagnostic</strong>
+              <span class="cs-stack-node-role">SPF, DKIM, DMARC & Inbox Placement Audit</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">GTM Scorecard Framework</strong>
+              <span class="cs-stack-node-role">Quantitative Revenue Operations Assessment</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">System Architecture Blueprint</strong>
+              <span class="cs-stack-node-role">Deterministic Data Flow Diagram</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">HubSpot CRM Audit</strong>
+              <span class="cs-stack-node-role">Field Deduplication & Lifecycle Optimization</span>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+
+    <!-- Navigation between Case Studies -->
+    <nav class="cs-adjacent-nav" aria-label="Adjacent Case Studies">
+      <a href="/projects/newsletter-automation/" class="cs-nav-box prev">
+        <span class="nav-direction">← PREVIOUS CASE STUDY</span>
+        <span class="nav-dest-title">Autonomous AI Newsletter Operations</span>
+      </a>
+      <a href="/projects/candidate-screening/" class="cs-nav-box next">
+        <span class="nav-direction">NEXT CASE STUDY →</span>
+        <span class="nav-dest-title">AI-Assisted Candidate Screening & Hiring Pipeline</span>
+      </a>
+    </nav>
+
+    <!-- Bottom Contact Ingress Banner -->
+    <section class="cs-contact-banner">
+      <div class="cs-contact-banner-inner">
+        <div>
+          <h3 class="cs-banner-title">Need a similar deterministic GTM architecture?</h3>
+          <p class="cs-banner-sub">Let's talk buying signal intelligence, n8n orchestration, and CRM sync for your revenue pipeline.</p>
+        </div>
+        <a href="/#transmission" class="spatial-btn primary-btn">
+          <span>Talk Architecture with Varun</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-inner">
+      <span>Varun Murugan P · GTM Engineer Portfolio</span>
+      <a href="/#case-studies" class="cs-footer-back">Return to Portfolio Overview ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>

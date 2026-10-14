@@ -1,0 +1,30 @@
+{
+  "name": "gtmwithvarun",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/generate-seo.js && vite build",
+    "generate-seo": "node scripts/generate-seo.js",
+    "set-domain": "node scripts/update-domain.js",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "gtm-engineer",
+    "revenue-operations",
+    "ai-automation",
+    "n8n",
+    "portfolio"
+  ],
+  "author": "Varun Murugan P",
+  "license": "ISC",
+  "description": "Personal portfolio of Varun Murugan — GTM Engineering, AI systems, and revenue automation.",
+  "devDependencies": {
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "three": "^0.186.1"
+  }
+}

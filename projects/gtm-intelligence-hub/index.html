@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered GTM Intelligence Hub — GTM Engineering Architecture Case Study | Varun Murugan P</title>
+  <meta name="description" content="Prioritized high-intent outbound engine using real-time buying signals and automated enrichment. Engineered by Varun Murugan P, Senior GTM Engineer.">
+  <meta name="keywords" content="n8n, OpenAI GPT-4, Clay, HubSpot, Slack, Webhooks, REST APIs, GTM Engineer, Revenue Operations, AI Automation, Varun Murugan">
+  <meta name="author" content="Varun Murugan P">
+  <link rel="canonical" href="https://varunmurugan-gtm.vercel.app/projects/gtm-intelligence-hub/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://varunmurugan-gtm.vercel.app/projects/gtm-intelligence-hub/">
+  <meta property="og:title" content="AI-Powered GTM Intelligence Hub — GTM Engineering Case Study">
+  <meta property="og:description" content="Prioritized high-intent outbound engine using real-time buying signals and automated enrichment.">
+  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/gtm-intelligence-hub.jpg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="AI-Powered GTM Intelligence Hub — GTM Engineering Case Study">
+  <meta property="twitter:description" content="Prioritized high-intent outbound engine using real-time buying signals and automated enrichment.">
+  <meta property="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/gtm-intelligence-hub.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- JSON-LD Structured Data for AEO / GEO & Google Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://varunmurugan-gtm.vercel.app/projects/gtm-intelligence-hub/#article",
+        "headline": "AI-Powered GTM Intelligence Hub — System Architecture Case Study",
+        "description": "Prioritized high-intent outbound engine using real-time buying signals and automated enrichment.",
+        "url": "https://varunmurugan-gtm.vercel.app/projects/gtm-intelligence-hub/",
+        "image": "https://varunmurugan-gtm.vercel.app/assets/gtm-intelligence-hub.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Varun Murugan P",
+          "url": "https://varunmurugan-gtm.vercel.app/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Varun Murugan P"
+        },
+        "about": [
+          "n8n", "OpenAI GPT-4", "Clay", "HubSpot", "Slack", "Webhooks", "REST APIs"
+        ],
+        "keywords": "n8n, OpenAI GPT-4, Clay, HubSpot, Slack, Webhooks, REST APIs, GTM Engineering, RevOps Automation"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://varunmurugan-gtm.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://varunmurugan-gtm.vercel.app/#case-studies"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI-Powered GTM Intelligence Hub",
+            "item": "https://varunmurugan-gtm.vercel.app/projects/gtm-intelligence-hub/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="spatial-body case-study-body">
+
+  <header class="cs-header" role="banner">
+    <div class="cs-header-inner">
+      <div class="cs-header-left">
+        <a href="/#case-studies" class="cs-back-home-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Portfolio</span>
+        </a>
+        <div class="cs-header-divider"></div>
+        <span class="cs-active-label">CASE 02 / 06</span>
+      </div>
+
+      <nav class="cs-quick-nav" aria-label="Case Study Switcher">
+        <a href="/projects/us-insurance-outbound-system/" class="cs-nav-pill ">01 Insurance</a>
+        <a href="/projects/gtm-intelligence-hub/" class="cs-nav-pill active">02 Intel Hub</a>
+        <a href="/projects/lead-response-os/" class="cs-nav-pill ">03 Lead OS</a>
+        <a href="/projects/newsletter-automation/" class="cs-nav-pill ">04 Newsletter</a>
+        <a href="/projects/outbound-gtm-audit/" class="cs-nav-pill ">05 Audit</a>
+        <a href="/projects/candidate-screening/" class="cs-nav-pill ">06 Screening</a>
+      </nav>
+
+      <div class="cs-header-right">
+        <a href="/Varun_Murugan_GTM_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-pill-btn">
+          <span>RESUME (PDF)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cs-main-container" id="main-content">
+
+    <section class="cs-hero-section">
+      <div class="cs-hero-kicker-row">
+        <span class="cs-meta-pill primary">PERSONAL PROJECT · R&D</span>
+        <span class="cs-meta-pill subtle">13 MIN WALKTHROUGH</span>
+      </div>
+
+      <h1 class="cs-main-title">AI-Powered GTM Intelligence Hub</h1>
+      <p class="cs-main-tagline">Prioritized high-intent outbound engine using real-time buying signals and automated enrichment.</p>
+
+      <div class="cs-tags-row">
+        <span class="cs-tag-pill">n8n</span><span class="cs-tag-pill">OpenAI GPT-4</span><span class="cs-tag-pill">Clay</span><span class="cs-tag-pill">HubSpot</span><span class="cs-tag-pill">Slack</span><span class="cs-tag-pill">Webhooks</span><span class="cs-tag-pill">REST APIs</span>
+      </div>
+
+      <div class="cs-quick-meta-grid">
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">CLIENT / CONTEXT</span>
+          <span class="cs-meta-value">Internal R&D / Open Framework</span>
+        </div>
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">STATUS & TIMELINE</span>
+          <span class="cs-meta-value">Continuous Production Deployment</span>
+        </div>
+        <div class="cs-meta-cell highlight">
+          <span class="cs-meta-label">KEY IMPACT / OUTCOME</span>
+          <span class="cs-meta-value-metric">94/100 Intent Score</span>
+          <span class="cs-meta-sub">Real-time buying signal enrichment in 118ms</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Blueprint Visual Card -->
+    <section class="cs-architecture-stage" aria-label="System Architecture Blueprint">
+      <div class="cs-diagram-frame">
+        <div class="cs-diagram-topbar">
+          <span class="cs-diagram-title">FIGURE 1.0 — AI-POWERED GTM INTELLIGENCE HUB SYSTEM ARCHITECTURE BLUEPRINT</span>
+        </div>
+
+        <div class="cs-diagram-img-wrap">
+          <img src="/assets/gtm-intelligence-hub.jpg" alt="AI-Powered GTM Intelligence Hub Architecture Diagram" class="cs-blueprint-img" width="1200" height="675" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="cs-diagram-footer">
+          <span class="cs-telemetry-tag">● PRODUCTION_SPEC_VALIDATED</span>
+          <span class="cs-telemetry-note">Deterministic State Machine · End-to-End Orchestration</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem & Solution Narrative -->
+    <section class="cs-narrative-section">
+      <div class="cs-two-col-grid">
+        <div class="cs-content-block problem-card">
+          <div class="cs-block-badge problem">
+            <span>⚠</span>
+            <span>THE BOTTLENECK</span>
+          </div>
+          <h2 class="cs-section-heading">The Problem: Cold Outreach Without Active Buying Signals</h2>
+          <p class="cs-body-lead">Generic outbound spray-and-pray generates abysmal 1-2% response rates because reps reach out without contextual timing or intent data.</p>
+          <ul class="cs-bullet-list">
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Reps spent 60% of their workday searching LinkedIn and job boards for intent triggers.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>HubSpot CRM records lacked dynamic technographic data and buying velocity indicators.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>High-value signals (e.g., VP Sales hire, RFP launch) were detected days or weeks too late.</span></li>
+          </ul>
+        </div>
+
+        <div class="cs-content-block solution-card">
+          <div class="cs-block-badge solution">
+            <span>⚙</span>
+            <span>SYSTEM ARCHITECTURE</span>
+          </div>
+          <h2 class="cs-section-heading">The Engineered Solution: Signal Listener + Multi-Provider Enrichment</h2>
+          <p class="cs-body-lead">Built an autonomous pipeline that listens for live signals, scores intent with GPT-4, enriches account context via Clay, and pushes enriched records straight to HubSpot and Slack.</p>
+          <div class="cs-workflows-list">
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 01</span>
+                  <strong class="cs-wf-name">Signal Ingress & Event Detection</strong>
+                </div>
+                <p class="cs-wf-desc">Webhooks and API pollers monitor hiring announcements, tech stack changes, and funding events across target accounts.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 02</span>
+                  <strong class="cs-wf-name">OpenAI Intent Scoring Node</strong>
+                </div>
+                <p class="cs-wf-desc">Custom system prompt evaluates account-to-ICP fit, urgency, and budget authority, generating an objective 0-100 score.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 03</span>
+                  <strong class="cs-wf-name">Clay Multi-Provider Enrichment</strong>
+                </div>
+                <p class="cs-wf-desc">Cascades data across Clearbit, Apollo, and LinkedIn to enrich company size, tech stack, and executive contact emails.</p>
+              </div>
+            
+              <div class="cs-workflow-card">
+                <div class="cs-wf-header">
+                  <span class="cs-wf-index">NODE 04</span>
+                  <strong class="cs-wf-name">HubSpot Upsert & Slack Alert</strong>
+                </div>
+                <p class="cs-wf-desc">Updates CRM records in 118ms and sends an urgent dossier to SDR Slack channels with personalized opening angles.</p>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Outcomes -->
+    <section class="cs-outcomes-section" aria-label="Production Outcomes">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">VERIFIED TELEMETRY</span>
+        <h3 class="cs-compact-headline">Production Outcomes & Performance Metrics</h3>
+      </div>
+      <div class="cs-outcomes-grid">
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">94%</span>
+            <span class="cs-metric-title">Intent Classification Accuracy</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">118ms</span>
+            <span class="cs-metric-title">Average CRM Enrichment Sync Speed</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">15h</span>
+            <span class="cs-metric-title">Manual Account Research Saved / Wk</span>
+          </div>
+        
+          <div class="cs-metric-card">
+            <span class="cs-metric-digit">3.8x</span>
+            <span class="cs-metric-title">Outbound Meeting Conversion Lift</span>
+          </div>
+        
+      </div>
+    </section>
+
+    
+
+    <!-- Tech Stack Components -->
+    <section class="cs-stack-section" aria-label="Engineering Infrastructure">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">ENGINEERING INFRASTRUCTURE</span>
+        <h3 class="cs-compact-headline">Core Tech Stack & API Nodes</h3>
+      </div>
+      <div class="cs-tech-stack-grid">
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">n8n</strong>
+              <span class="cs-stack-node-role">Event-Driven Workflow Automation</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">Clay</strong>
+              <span class="cs-stack-node-role">Multi-Source Data Waterfall & Enrichment</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">OpenAI GPT-4</strong>
+              <span class="cs-stack-node-role">Intent Reasoning & Score Normalization</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">HubSpot CRM</strong>
+              <span class="cs-stack-node-role">Automated Contact & Company Upsert</span>
+            </div>
+          </div>
+        
+          <div class="cs-stack-cell">
+            <div class="cs-stack-node-dot"></div>
+            <div>
+              <strong class="cs-stack-node-title">Slack API</strong>
+              <span class="cs-stack-node-role">Urgent Signal Dispatch & SLA Notification</span>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+
+    <!-- Navigation between Case Studies -->
+    <nav class="cs-adjacent-nav" aria-label="Adjacent Case Studies">
+      <a href="/projects/us-insurance-outbound-system/" class="cs-nav-box prev">
+        <span class="nav-direction">← PREVIOUS CASE STUDY</span>
+        <span class="nav-dest-title">US Insurance Outbound System</span>
+      </a>
+      <a href="/projects/lead-response-os/" class="cs-nav-box next">
+        <span class="nav-direction">NEXT CASE STUDY →</span>
+        <span class="nav-dest-title">Deterministic Lead Response OS</span>
+      </a>
+    </nav>
+
+    <!-- Bottom Contact Ingress Banner -->
+    <section class="cs-contact-banner">
+      <div class="cs-contact-banner-inner">
+        <div>
+          <h3 class="cs-banner-title">Need a similar deterministic GTM architecture?</h3>
+          <p class="cs-banner-sub">Let's talk buying signal intelligence, n8n orchestration, and CRM sync for your revenue pipeline.</p>
+        </div>
+        <a href="/#transmission" class="spatial-btn primary-btn">
+          <span>Talk Architecture with Varun</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-inner">
+      <span>Varun Murugan P · GTM Engineer Portfolio</span>
+      <a href="/#case-studies" class="cs-footer-back">Return to Portfolio Overview ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
