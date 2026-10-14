@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "node scripts/generate-seo.js && vite build",
     "generate-seo": "node scripts/generate-seo.js",
+    "verify-seo": "node scripts/verify-seo-aeo.js",
     "set-domain": "node scripts/update-domain.js",
     "preview": "vite preview"
   },

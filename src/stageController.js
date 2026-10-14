@@ -257,7 +257,7 @@ export class SpatialScrollController {
     if (stickySubtitle) stickySubtitle.textContent = sub;
 
     // Dynamically update link redirects to the full case study page
-    const caseUrl = card.dataset.url || `/case-study.html?id=${card.dataset.slug || 'us-insurance-outbound-system'}`;
+    const caseUrl = card.dataset.url || `/projects/${card.dataset.slug || 'us-insurance-outbound-system'}/`;
     const stickyLink = document.getElementById('sticky-image-link');
     const stickyPrimaryBtn = document.getElementById('sticky-primary-case-btn');
     const stickyHeadingLink = document.getElementById('sticky-heading-link');

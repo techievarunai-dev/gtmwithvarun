@@ -134,10 +134,48 @@ export class CaseStudyPageManager {
         testimonialBox.style.display = 'block';
         this.setText('cs-testimonial-quote', `"${data.testimonial.quote}"`);
         this.setText('cs-testimonial-author', data.testimonial.author);
-        this.setText('cs-testimonial-role', data.testimonial.title);
+        this.setText('cs-testimonial-role', data.testimonial.role || data.testimonial.title);
       } else {
         testimonialBox.style.display = 'none';
       }
+    }
+
+    // 8b. Limitations & Technical Trade-offs
+    const limitationsList = document.getElementById('cs-limitations-list');
+    if (limitationsList && data.limitations) {
+      limitationsList.innerHTML = data.limitations
+        .map(lim => `<li class="cs-limitation-item"><span class="cs-limitation-dot">⚠</span><span>${lim}</span></li>`)
+        .join('');
+    }
+
+    // 8c. AEO / GEO Question-Based FAQ Grid
+    const faqGrid = document.getElementById('cs-faq-grid');
+    if (faqGrid && data.faq) {
+      faqGrid.innerHTML = data.faq
+        .map((f, idx) => `
+          <div class="cs-faq-card">
+            <h4 class="cs-faq-question">
+              <span class="cs-faq-q-badge">Q0${idx + 1}</span>
+              <span>${f.question}</span>
+            </h4>
+            <p class="cs-faq-answer">${f.answer}</p>
+          </div>
+        `).join('');
+    }
+
+    // 8d. Related Projects Grid
+    const relatedGrid = document.getElementById('cs-related-grid');
+    if (relatedGrid && data.relatedProjects) {
+      relatedGrid.innerHTML = data.relatedProjects
+        .map(rel => `
+          <a href="/projects/${rel.id}/" class="cs-related-card">
+            <div class="cs-related-title">
+              <span>${rel.title}</span>
+              <span>→</span>
+            </div>
+            <p class="cs-related-note">${rel.note}</p>
+          </a>
+        `).join('');
     }
 
     // 9. Previous & Next Project Navigation

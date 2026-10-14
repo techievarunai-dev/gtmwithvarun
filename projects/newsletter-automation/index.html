@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autonomous AI Newsletter Operations — GTM Engineering Architecture Case Study | Varun Murugan P</title>
-  <meta name="description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations. Engineered by Varun Murugan P, Senior GTM Engineer.">
-  <meta name="keywords" content="Beehiiv, n8n, OpenAI, Make, RSS Parsing, REST APIs, GTM Engineer, Revenue Operations, AI Automation, Varun Murugan">
+  <title>Autonomous AI Newsletter Operations — Automated Curation &amp; Beehiiv Staging | Varun Murugan P</title>
+  <meta name="description" content="End-to-end editorial automation using n8n, OpenAI, and Beehiiv to ingest 40+ sources, generate structured drafts, and save 6 hours/week for editors.">
+  <meta name="keywords" content="AI newsletter automation, Beehiiv automated staging, n8n editorial workflow, content curation automation, OpenAI brand voice, RevOps">
   <meta name="author" content="Varun Murugan P">
   <link rel="canonical" href="https://gtmwithvarun.vercel.app/projects/newsletter-automation/">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Varun Murugan P — GTM Engineer Portfolio">
   <meta property="og:url" content="https://gtmwithvarun.vercel.app/projects/newsletter-automation/">
-  <meta property="og:title" content="Autonomous AI Newsletter Operations — GTM Engineering Case Study">
-  <meta property="og:description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations.">
+  <meta property="og:title" content="Autonomous AI Newsletter Operations — Automated Curation &amp; Beehiiv Staging">
+  <meta property="og:description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations saving 6 hours/week.">
   <meta property="og:image" content="https://gtmwithvarun.vercel.app/assets/case-studies/newsletter-automation/hero-workflow.png">
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Autonomous AI Newsletter Operations — GTM Engineering Case Study">
-  <meta property="twitter:description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations.">
+  <meta property="twitter:title" content="Autonomous AI Newsletter Operations — Automated Curation &amp; Beehiiv Staging">
+  <meta property="twitter:description" content="Automated newsletter research, curation, and staging with AI-powered editorial operations saving 6 hours/week.">
   <meta property="twitter:image" content="https://gtmwithvarun.vercel.app/assets/case-studies/newsletter-automation/hero-workflow.png">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -35,9 +36,11 @@
         "@type": "TechArticle",
         "@id": "https://gtmwithvarun.vercel.app/projects/newsletter-automation/#article",
         "headline": "Autonomous AI Newsletter Operations — System Architecture Case Study",
-        "description": "Automated newsletter research, curation, and staging with AI-powered editorial operations.",
+        "description": "Automated newsletter research, curation, and staging with AI-powered editorial operations saving 6 hours per week.",
         "url": "https://gtmwithvarun.vercel.app/projects/newsletter-automation/",
         "image": "https://gtmwithvarun.vercel.app/assets/case-studies/newsletter-automation/hero-workflow.png",
+        "datePublished": "2026-02-01",
+        "dateModified": "2026-10-14",
         "author": {
           "@type": "Person",
           "name": "Varun Murugan P",
@@ -48,9 +51,9 @@
           "name": "Varun Murugan P"
         },
         "about": [
-          "Beehiiv", "n8n", "OpenAI", "Make", "RSS Parsing", "REST APIs"
+          "Beehiiv", "n8n", "OpenAI", "Buffer", "Google Sheets", "RSS Parsing", "REST APIs", "GTM Engineering"
         ],
-        "keywords": "Beehiiv, n8n, OpenAI, Make, RSS Parsing, REST APIs, GTM Engineering, RevOps Automation"
+        "keywords": "AI newsletter automation, Beehiiv automated staging, n8n editorial workflow, content curation automation, OpenAI brand voice"
       },
       {
         "@type": "BreadcrumbList",
@@ -72,6 +75,60 @@
             "position": 3,
             "name": "Autonomous AI Newsletter Operations",
             "item": "https://gtmwithvarun.vercel.app/projects/newsletter-automation/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://gtmwithvarun.vercel.app/projects/newsletter-automation/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you automate newsletter curation and drafting using n8n and OpenAI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An n8n schedule trigger polls over 40 RSS feeds and content endpoints on a regular cadence. Raw articles are normalized and processed through OpenAI GPT-4 with a specialized system prompt that summarizes key findings, matches the brand voice, and generates structured draft cards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Beehiiv REST API enable automated draft staging?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Using Beehiiv’s API endpoint `/posts`, n8n programmatically uploads HTML and markdown content directly into the publication backend as a draft post, including title, subtitle, thumbnail image, and content blocks ready for editorial preview."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you maintain a consistent brand voice when using AI for content creation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Brand voice consistency is achieved through few-shot prompt examples, clear constraints against generic AI clichés, and explicit formatting rubrics (e.g., bulleted takeaways, bold technical terms, and punchy editorial commentary)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is human-in-the-loop review essential for AI-assisted editorial workflows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While AI drastically reduces curation and drafting time, human editors ensure nuanced judgment, fact-check claims, and preserve editorial reputation before any newsletter reaches subscribers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can media companies scale content operations without expanding headcount?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By automating repetitive ingestion, drafting, and CMS staging, editors can shift their time from administrative formatting to high-value analysis and investigative journalism, effectively doubling publication output."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you handle RSS feed failures or broken sources in an automated pipeline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "n8n utilizes try-catch error routing nodes. If a specific RSS endpoint returns a 404 or invalid XML, the error is logged to Google Sheets and bypassed without stopping the remaining 39+ feeds."
+            }
           }
         ]
       }
@@ -96,12 +153,12 @@
       </div>
 
       <nav class="cs-quick-nav" aria-label="Case Study Switcher">
-        <a href="/projects/us-insurance-outbound-system/" class="cs-nav-pill ">01 Insurance</a>
-        <a href="/projects/gtm-intelligence-hub/" class="cs-nav-pill ">02 Intel Hub</a>
-        <a href="/projects/lead-response-os/" class="cs-nav-pill ">03 Lead OS</a>
+        <a href="/projects/us-insurance-outbound-system/" class="cs-nav-pill">01 Insurance</a>
+        <a href="/projects/gtm-intelligence-hub/" class="cs-nav-pill">02 Intel Hub</a>
+        <a href="/projects/lead-response-os/" class="cs-nav-pill">03 Lead OS</a>
         <a href="/projects/newsletter-automation/" class="cs-nav-pill active">04 Newsletter</a>
-        <a href="/projects/outbound-gtm-audit/" class="cs-nav-pill ">05 Audit</a>
-        <a href="/projects/candidate-screening/" class="cs-nav-pill ">06 Screening</a>
+        <a href="/projects/outbound-gtm-audit/" class="cs-nav-pill">05 Audit</a>
+        <a href="/projects/candidate-screening/" class="cs-nav-pill">06 Screening</a>
       </nav>
 
       <div class="cs-header-right">
@@ -114,6 +171,15 @@
 
   <main class="cs-main-container" id="main-content">
 
+    <!-- Project Context Callout -->
+    <div class="cs-context-callout">
+      <span class="cs-context-callout-icon">📰</span>
+      <div class="cs-context-callout-content">
+        <div class="cs-context-callout-title">Verified Client Engagement · Digital Media (Singapore)</div>
+        <p class="cs-context-callout-text">Production editorial pipeline engineered for Ivanna Dela Torre. Automates multi-source RSS ingestion, OpenAI brand voice synthesis, and direct Beehiiv CMS draft staging, saving 6 hours per week of manual publishing labor.</p>
+      </div>
+    </div>
+
     <section class="cs-hero-section">
       <div class="cs-hero-kicker-row">
         <span class="cs-meta-pill primary">CLIENT ENGAGEMENT · SINGAPORE</span>
@@ -124,7 +190,12 @@
       <p class="cs-main-tagline">Automated newsletter research, curation, and staging with AI-powered editorial operations.</p>
 
       <div class="cs-tags-row">
-        <span class="cs-tag-pill">Beehiiv</span><span class="cs-tag-pill">n8n</span><span class="cs-tag-pill">OpenAI</span><span class="cs-tag-pill">Make</span><span class="cs-tag-pill">RSS Parsing</span><span class="cs-tag-pill">REST APIs</span>
+        <span class="cs-tag-pill">Beehiiv</span>
+        <span class="cs-tag-pill">n8n</span>
+        <span class="cs-tag-pill">OpenAI</span>
+        <span class="cs-tag-pill">Make</span>
+        <span class="cs-tag-pill">RSS Parsing</span>
+        <span class="cs-tag-pill">REST APIs</span>
       </div>
 
       <div class="cs-quick-meta-grid">
@@ -133,8 +204,8 @@
           <span class="cs-meta-value">Ivanna Dela Torre (Digital Media)</span>
         </div>
         <div class="cs-meta-cell">
-          <span class="cs-meta-label">STATUS & TIMELINE</span>
-          <span class="cs-meta-value">Weekly Production Production Pipeline</span>
+          <span class="cs-meta-label">STATUS &amp; TIMELINE</span>
+          <span class="cs-meta-value">Weekly Production Pipeline</span>
         </div>
         <div class="cs-meta-cell highlight">
           <span class="cs-meta-label">KEY IMPACT / OUTCOME</span>
@@ -152,7 +223,7 @@
         </div>
 
         <div class="cs-diagram-img-wrap">
-          <img src="/assets/case-studies/newsletter-automation/hero-workflow.png" alt="AI Newsletter Operations Architecture Diagram" class="cs-blueprint-img" width="1200" height="675" fetchpriority="high" decoding="async">
+          <img src="/assets/case-studies/newsletter-automation/hero-workflow.png" alt="AI Newsletter Operations Workflow Architecture Diagram in n8n" class="cs-blueprint-img" width="1200" height="675" fetchpriority="high" decoding="async">
         </div>
 
         <div class="cs-diagram-footer">
@@ -162,7 +233,7 @@
       </div>
     </section>
 
-    <!-- Problem & Solution Narrative -->
+    <!-- Problem & Solution Narrative with Question Headings -->
     <section class="cs-narrative-section">
       <div class="cs-two-col-grid">
         <div class="cs-content-block problem-card">
@@ -170,10 +241,12 @@
             <span>⚠</span>
             <span>THE BOTTLENECK</span>
           </div>
-          <h2 class="cs-section-heading">The Problem: Manual Content Curation Consuming 8-10 Hours Weekly</h2>
+          <h2 class="cs-section-heading">Why was manual content curation consuming 8-10 hours weekly?</h2>
           <p class="cs-body-lead">Producing a high-quality weekly industry publication required tedious manual scanning of 50+ sources, manual summarization, and repetitive CMS staging.</p>
           <ul class="cs-bullet-list">
-            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Scanning newsletters, tech blogs, and Twitter consumed entire working days.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Formatting and styling content in Beehiiv was error-prone and time-consuming.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Editorial fatigue threatened consistent weekly publishing deadlines.</span></li>
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Scanning newsletters, tech blogs, and Twitter consumed entire working days.</span></li>
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Formatting and styling content in Beehiiv was error-prone and time-consuming.</span></li>
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Editorial fatigue threatened consistent weekly publishing deadlines.</span></li>
           </ul>
         </div>
 
@@ -182,42 +255,37 @@
             <span>⚙</span>
             <span>SYSTEM ARCHITECTURE</span>
           </div>
-          <h2 class="cs-section-heading">The Engineered Solution: Autonomous Research, AI Drafting & Beehiiv Staging</h2>
+          <h2 class="cs-section-heading">How does the autonomous pipeline curate, draft, and stage in Beehiiv?</h2>
           <p class="cs-body-lead">Developed an end-to-end editorial pipeline that ingests RSS feeds, categorizes stories using customized OpenAI prompt chains, and drafts formatted editions directly in Beehiiv.</p>
           <div class="cs-workflows-list">
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 01</span>
-                  <strong class="cs-wf-name">Multi-Source Content Aggregation</strong>
-                </div>
-                <p class="cs-wf-desc">Parses 40+ RSS feeds, newsletters, and Reddit discussions on automated 6-hour cron intervals.</p>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 01</span>
+                <strong class="cs-wf-name">Multi-Source Content Aggregation</strong>
               </div>
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 02</span>
-                  <strong class="cs-wf-name">AI Summarization & Style Alignment</strong>
-                </div>
-                <p class="cs-wf-desc">OpenAI GPT-4 evaluates story relevance, drafts punchy takeaways, and matches the publication’s signature editorial voice.</p>
+              <p class="cs-wf-desc">Parses 40+ RSS feeds, newsletters, and Reddit discussions on automated 6-hour cron intervals.</p>
+            </div>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 02</span>
+                <strong class="cs-wf-name">AI Summarization &amp; Style Alignment</strong>
               </div>
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 03</span>
-                  <strong class="cs-wf-name">Human-in-the-Loop Review Dashboard</strong>
-                </div>
-                <p class="cs-wf-desc">Presents structured summaries in Notion/Airtable for single-click editorial approval.</p>
+              <p class="cs-wf-desc">OpenAI GPT-4 evaluates story relevance, drafts punchy takeaways, and matches the publication’s signature editorial voice.</p>
+            </div>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 03</span>
+                <strong class="cs-wf-name">Human-in-the-Loop Review Dashboard</strong>
               </div>
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 04</span>
-                  <strong class="cs-wf-name">Beehiiv CMS Auto-Staging</strong>
-                </div>
-                <p class="cs-wf-desc">Dispatches finalized Markdown and HTML content via Beehiiv REST API into a formatted ready-to-send draft.</p>
+              <p class="cs-wf-desc">Presents structured summaries in Notion/Airtable for single-click editorial approval.</p>
+            </div>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 04</span>
+                <strong class="cs-wf-name">Beehiiv CMS Auto-Staging</strong>
               </div>
-            
+              <p class="cs-wf-desc">Dispatches finalized Markdown and HTML content via Beehiiv REST API into a formatted ready-to-send draft.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -227,34 +295,28 @@
     <section class="cs-outcomes-section" aria-label="Production Outcomes">
       <div class="cs-section-header-compact">
         <span class="cs-mini-kicker">VERIFIED TELEMETRY</span>
-        <h3 class="cs-compact-headline">Production Outcomes & Performance Metrics</h3>
+        <h3 class="cs-compact-headline">Production Outcomes &amp; Performance Metrics</h3>
       </div>
       <div class="cs-outcomes-grid">
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">6h</span>
-            <span class="cs-metric-title">Editorial Hours Freed Every Week</span>
-          </div>
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">100%</span>
-            <span class="cs-metric-title">On-Time Publishing Reliability</span>
-          </div>
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">40+</span>
-            <span class="cs-metric-title">Automated Feeds Monitored Continuously</span>
-          </div>
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">5★</span>
-            <span class="cs-metric-title">Client Feedback (Ivanna Dela Torre)</span>
-          </div>
-        
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">6h</span>
+          <span class="cs-metric-title">Editorial Hours Freed Every Week</span>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">100%</span>
+          <span class="cs-metric-title">On-Time Publishing Reliability</span>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">40+</span>
+          <span class="cs-metric-title">Automated Feeds Monitored Continuously</span>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">5★</span>
+          <span class="cs-metric-title">Client Feedback (Ivanna Dela Torre)</span>
+        </div>
       </div>
     </section>
 
-    
     <!-- Testimonial Quote -->
     <section class="cs-testimonial-wrapper" aria-label="Client Testimonial">
       <div class="cs-quote-card">
@@ -262,52 +324,162 @@
         <p class="cs-quote-text">Varun automated our entire newsletter workflow from raw research to Beehiiv staging. His attention to operational reliability and tone consistency is unmatched.</p>
         <div class="cs-quote-author-row">
           <strong class="cs-quote-author">Ivanna Dela Torre</strong>
-          <span class="cs-quote-role">undefined</span>
+          <span class="cs-quote-role">Head of Content, Digital Media (Singapore)</span>
         </div>
       </div>
     </section>
-    
 
     <!-- Tech Stack Components -->
     <section class="cs-stack-section" aria-label="Engineering Infrastructure">
       <div class="cs-section-header-compact">
         <span class="cs-mini-kicker">ENGINEERING INFRASTRUCTURE</span>
-        <h3 class="cs-compact-headline">Core Tech Stack & API Nodes</h3>
+        <h3 class="cs-compact-headline">Core Tech Stack &amp; API Nodes</h3>
       </div>
       <div class="cs-tech-stack-grid">
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">n8n</strong>
-              <span class="cs-stack-node-role">Scheduled Orchestration & API Connector</span>
-            </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">n8n</strong>
+            <span class="cs-stack-node-role">Scheduled Orchestration &amp; API Connector</span>
           </div>
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">Beehiiv API</strong>
-              <span class="cs-stack-node-role">Newsletter Staging & Post Management</span>
-            </div>
+        </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">Beehiiv API</strong>
+            <span class="cs-stack-node-role">Newsletter Staging &amp; Post Management</span>
           </div>
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">OpenAI GPT-4</strong>
-              <span class="cs-stack-node-role">Contextual Summarization & Headline Crafting</span>
-            </div>
+        </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">OpenAI GPT-4</strong>
+            <span class="cs-stack-node-role">Contextual Summarization &amp; Headline Crafting</span>
           </div>
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">Notion / Airtable</strong>
-              <span class="cs-stack-node-role">Human-in-the-Loop Approval Queue</span>
-            </div>
+        </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">Buffer API</strong>
+            <span class="cs-stack-node-role">Multi-Channel Social Scheduling</span>
           </div>
-        
+        </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">Google Sheets</strong>
+            <span class="cs-stack-node-role">Topic Matrix &amp; Publishing Log</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Limitations & Trade-Offs -->
+    <section class="cs-limitations-section" aria-label="Technical Limitations and Trade-offs">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">ENGINEERING DISCIPLINE</span>
+        <h3 class="cs-compact-headline">Technical Constraints, Trade-Offs &amp; Operational Learnings</h3>
+      </div>
+      <p class="cs-body-lead" style="font-size: 14px; margin-bottom: 0;">
+        Real GTM engineering requires acknowledging architectural trade-offs, scaling boundaries, and failure modes rather than treating AI as magic.
+      </p>
+      <ul class="cs-limitations-list">
+        <li class="cs-limitation-item">
+          <span class="cs-limitation-dot">⚠</span>
+          <span><strong>Mandatory Editorial Sign-Off:</strong> The system produces staged drafts rather than unmonitored dispatches; human editors retain 100% final approval authority to ensure journalistic integrity.</span>
+        </li>
+        <li class="cs-limitation-item">
+          <span class="cs-limitation-dot">⚠</span>
+          <span><strong>Verified Time Savings Metric:</strong> The 6 hours/week saved represents measured editorial labor across research, drafting, and staging for the client's weekly publication.</span>
+        </li>
+        <li class="cs-limitation-item">
+          <span class="cs-limitation-dot">⚠</span>
+          <span><strong>RSS Ingestion Reliability:</strong> Web scraping and feed ingestion nodes require try-catch error routing to gracefully handle paywalls, broken XML feeds, and duplicate articles.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Question-Based Search & AEO FAQ Section -->
+    <section class="cs-faq-section" aria-label="Frequently Asked Questions">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">AEO &amp; SEARCH CITATION INDEX</span>
+        <h3 class="cs-compact-headline">Frequently Asked Questions &amp; Implementation Architecture</h3>
+      </div>
+      <p class="cs-body-lead" style="font-size: 14px; margin-bottom: 0;">
+        Direct, technical answers for sales leaders, engineers, and answer engines exploring this system architecture.
+      </p>
+      <div class="cs-faq-grid">
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q01</span>
+            <span>How do you automate newsletter curation and drafting using n8n and OpenAI?</span>
+          </h4>
+          <p class="cs-faq-answer">An n8n schedule trigger polls over 40 RSS feeds and content endpoints on a regular cadence. Raw articles are normalized and processed through OpenAI GPT-4 with a specialized system prompt that summarizes key findings, matches the brand voice, and generates structured draft cards.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q02</span>
+            <span>How does the Beehiiv REST API enable automated draft staging?</span>
+          </h4>
+          <p class="cs-faq-answer">Using Beehiiv’s API endpoint `/posts`, n8n programmatically uploads HTML and markdown content directly into the publication backend as a draft post, including title, subtitle, thumbnail image, and content blocks ready for editorial preview.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q03</span>
+            <span>How do you maintain a consistent brand voice when using AI for content creation?</span>
+          </h4>
+          <p class="cs-faq-answer">Brand voice consistency is achieved through few-shot prompt examples, clear constraints against generic AI clichés, and explicit formatting rubrics (e.g., bulleted takeaways, bold technical terms, and punchy editorial commentary).</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q04</span>
+            <span>Why is human-in-the-loop review essential for AI-assisted editorial workflows?</span>
+          </h4>
+          <p class="cs-faq-answer">While AI drastically reduces curation and drafting time, human editors ensure nuanced judgment, fact-check claims, and preserve editorial reputation before any newsletter reaches subscribers.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q05</span>
+            <span>How can media companies scale content operations without expanding headcount?</span>
+          </h4>
+          <p class="cs-faq-answer">By automating repetitive ingestion, drafting, and CMS staging, editors can shift their time from administrative formatting to high-value analysis and investigative journalism, effectively doubling publication output.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q06</span>
+            <span>How do you handle RSS feed failures or broken sources in an automated pipeline?</span>
+          </h4>
+          <p class="cs-faq-answer">n8n utilizes try-catch error routing nodes. If a specific RSS endpoint returns a 404 or invalid XML, the error is logged to Google Sheets and bypassed without stopping the remaining 39+ feeds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contextual Internal Linking & Related Work -->
+    <section class="cs-related-section" aria-label="Connected GTM Architecture">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">CONNECTED GTM ARCHITECTURE</span>
+        <h3 class="cs-compact-headline">Related Case Studies &amp; System Implementations</h3>
+      </div>
+      <div class="cs-related-grid">
+        <a href="/projects/candidate-screening/" class="cs-related-card">
+          <div class="cs-related-title">
+            <span>AI-Assisted Candidate Screening</span>
+            <span>→</span>
+          </div>
+          <p class="cs-related-note">Applies similar LLM rubric extraction and human-in-the-loop review patterns to recruitment.</p>
+        </a>
+        <a href="/projects/lead-response-os/" class="cs-related-card">
+          <div class="cs-related-title">
+            <span>Deterministic Lead Response OS</span>
+            <span>→</span>
+          </div>
+          <p class="cs-related-note">Demonstrates real-time API integrations and webhook-based workflow orchestration in n8n.</p>
+        </a>
       </div>
     </section>
 
@@ -319,7 +491,7 @@
       </a>
       <a href="/projects/outbound-gtm-audit/" class="cs-nav-box next">
         <span class="nav-direction">NEXT CASE STUDY →</span>
-        <span class="nav-dest-title">Strategic Outbound GTM & Architecture Teardown</span>
+        <span class="nav-dest-title">Strategic Outbound GTM &amp; Architecture Teardown</span>
       </a>
     </nav>
 

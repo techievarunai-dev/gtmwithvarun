@@ -6,6 +6,7 @@ export const CASE_STUDIES = {
     type: 'SANDBOX PROTOTYPE · EUBRICS CHALLENGE',
     runtime: '24 MIN WALKTHROUGH',
     badge: 'PROTOTYPE',
+    projectContext: 'Assessment Challenge (Eubrics) · Verified Sandbox Prototype',
     tagline: 'Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.',
     client: 'Assessment Challenge (Eubrics)',
     timeline: 'Verified Sandbox Prototype',
@@ -16,6 +17,8 @@ export const CASE_STUDIES = {
     primaryMetric: '4 Workflows · 0 Errors',
     metricSubtitle: 'Deterministic state progression & SLA alerting',
     tags: ['n8n', 'Apollo', 'Google Sheets', 'Gmail', 'AI / LLM', 'JavaScript', 'REST APIs'],
+    searchIntent: 'Automated B2B outbound workflows, deterministic state machines, and AI reply classification.',
+    targetAudience: 'Heads of Sales, Outbound Growth Leaders, and RevOps Engineers evaluating account-based automation.',
     evidenceGallery: [
       {
         id: 'wf1',
@@ -135,6 +138,41 @@ export const CASE_STUDIES = {
       { num: '<3m', label: 'Reply SLA Notification Speed' },
       { num: '0', label: 'Duplicate Email Send Incidents' }
     ],
+    limitations: [
+      'Built as an interview challenge / sandbox prototype using Google Sheets as the state store; enterprise deployments with >50,000 active prospects require PostgreSQL or Supabase for high-throughput locking.',
+      'Single-inbox Gmail dispatch is suited for controlled account-based batches (<50 sends/day); production volume requires distributed secondary inbox pools with warmup management (e.g. Smartlead or Instantly).',
+      'AI sentiment triage uses temperature=0 and JSON schema validation, but ambiguous edge cases (e.g. conditional interest depending on pricing) are routed to a human SDR review queue.'
+    ],
+    faq: [
+      {
+        question: 'How do you build an ABM outbound workflow with n8n and Apollo?',
+        answer: 'You connect Apollo API query nodes to fetch ICP-qualified commercial insurance leaders filtered by company headcount, revenue, and state licensing. n8n normalizes the payload, runs deduplication against the central state store, and enrolls approved contacts into the sequence queue.'
+      },
+      {
+        question: 'How does AI classify sales email replies (positive, negative, bounce, OOO)?',
+        answer: 'Incoming replies trigger a webhook in n8n, which extracts the email body, strips signatures, and passes the text to OpenAI GPT-4o with strict schema enforcement. The model categorizes intent into Positive (triggers SDR Slack alert), Negative (updates suppression list), Out of Office (snoozes sequence until return date), or Bounce (flags invalid email in CRM).'
+      },
+      {
+        question: 'Why use a deterministic state machine instead of basic marketing automation?',
+        answer: 'Basic email sequences lack fine-grained state control, leading to duplicate sends when multiple triggers overlap. A deterministic state machine checks contact status, step count, and suppression tags prior to every dispatch, guaranteeing idempotency and preventing reputational damage.'
+      },
+      {
+        question: 'How do you prevent duplicate email touches in an automated sequence?',
+        answer: 'Each contact record possesses an immutable primary key (email + company domain) and a current step index. Before dispatching any email, Workflow 2 verifies that the previous touch timestamp is older than the required cadence delay and that no reply event has been recorded.'
+      },
+      {
+        question: 'What are the essential SLAs for managing sales email replies?',
+        answer: 'Key operational SLAs include: positive reply notification to sales rep in under 4 minutes, negative suppression applied across all sequence tracks in 100% of cases, and out-of-office return dates automatically rescheduled without manual human rescheduling.'
+      },
+      {
+        question: 'How can Google Sheets maintain state for outbound workflow automation prototypes?',
+        answer: 'In this sandbox prototype, Google Sheets serves as a transparent, auditable relational store with sheets for Prospects, Campaign Contacts, Email Templates, and SLA Rules. n8n reads and writes via structured row lookups, providing full auditability without complex database setup.'
+      }
+    ],
+    relatedProjects: [
+      { id: 'gtm-intelligence-hub', title: 'AI-Powered GTM Intelligence Hub', note: 'Supplies real-time buying signals to prioritize outbound accounts.' },
+      { id: 'outbound-gtm-audit', title: 'Strategic Outbound GTM Audit', note: 'Provides the diagnostic framework and deliverability hygiene rules.' }
+    ],
     nextId: 'gtm-intelligence-hub',
     prevId: 'candidate-screening'
   },
@@ -146,6 +184,7 @@ export const CASE_STUDIES = {
     type: 'PERSONAL PROJECT · R&D',
     runtime: '13 MIN WALKTHROUGH',
     badge: 'PERSONAL PROJECT',
+    projectContext: 'Internal R&D Framework · Personal Project (Open Architecture)',
     tagline: 'Continuous monitoring of buying signals, AI-driven CRM audit, and automated deal health scoring.',
     client: 'Internal R&D / Open Framework',
     timeline: 'Continuous Production Deployment',
@@ -163,6 +202,8 @@ export const CASE_STUDIES = {
     primaryMetric: '94/100 Intent Score',
     metricSubtitle: 'Real-time buying signal enrichment in 118ms',
     tags: ['n8n', 'OpenAI GPT-4', 'Clay', 'HubSpot', 'Slack', 'Airtable', 'Webhooks', 'REST APIs'],
+    searchIntent: 'AI-powered GTM intelligence, buying-signal automation, and account prioritization.',
+    targetAudience: 'Growth Leaders, Founders, and RevOps Architects looking to replace static cold lists with event-driven signals.',
     evidenceGallery: [
       {
         id: 'dashboard',
@@ -246,6 +287,41 @@ export const CASE_STUDIES = {
       { num: '15h', label: 'Manual Account Research Saved / Wk' },
       { num: '3.8x', label: 'Outbound Meeting Conversion Lift' }
     ],
+    limitations: [
+      'This architecture was built and deployed as a personal R&D framework; it demonstrates technical capability and open architecture patterns rather than a third-party enterprise engagement.',
+      'Signal freshness has an operational half-life of 5–7 business days; outreach must occur promptly before the trigger is commoditized by competitor tools.',
+      'API credit consumption in Clay and OpenAI must be capped with domain deduplication caches to prevent runaway enrichment costs on broad signal sweeps.'
+    ],
+    faq: [
+      {
+        question: 'How can AI identify and score B2B buying signals in real time?',
+        answer: 'The system uses webhooks and scheduled pollers to ingest signals such as job postings, leadership changes, and funding rounds. OpenAI GPT-4 evaluates the raw event against an ICP rubric, scoring relevance, budget authority, and timing urgency on a normalized 0–100 scale.'
+      },
+      {
+        question: 'How do you build an automated account research pipeline using n8n and Clay?',
+        answer: 'n8n acts as the primary orchestrator that catches signals and passes target domains to Clay’s enrichment waterfall. Clay queries multiple data providers (Apollo, Clearbit, LinkedIn) to extract verified decision-makers, tech stack, and headcount, returning a structured JSON payload to n8n.'
+      },
+      {
+        question: 'What is the difference between static prospect lists and event-driven outbound?',
+        answer: 'Static prospect lists go stale within 60–90 days and produce low response rates (1–2%) because outreach lacks context. Event-driven outbound triggers immediately when a high-intent event occurs (e.g. new VP of Sales hired), creating timely, relevant outreach that converts significantly higher.'
+      },
+      {
+        question: 'How does OpenAI evaluate account-to-ICP fit without hallucinations?',
+        answer: 'The model prompt uses strict temperature=0 settings, structured JSON Schema constraints, and explicit negative scoring rules. The LLM is provided only verified enrichment parameters (headcount, revenue, industry code) and must output a numeric breakdown explaining its score.'
+      },
+      {
+        question: 'How do you connect Clay, HubSpot, and Slack in a GTM automation workflow?',
+        answer: 'Once Clay finishes enriching an account, n8n receives the payload, executes an upsert against HubSpot CRM (matching by company domain to prevent duplicates), and simultaneously constructs a rich Slack Block Kit message sent to the #gtm-signals channel with talking points.'
+      },
+      {
+        question: 'Why is GTM intelligence crucial for modern revenue operations (RevOps)?',
+        answer: 'GTM intelligence bridges the gap between sales and marketing data, eliminating manual research waste, preventing CRM decay, and directing sales reps to accounts with active buying intent rather than cold databases.'
+      }
+    ],
+    relatedProjects: [
+      { id: 'lead-response-os', title: 'Deterministic Lead Response OS', note: 'Applies deterministic validation and rapid triage to inbound lead streams.' },
+      { id: 'us-insurance-outbound-system', title: 'US Insurance Outbound System', note: 'Orchestrates multi-touch cadences using enriched prospect data.' }
+    ],
     nextId: 'lead-response-os',
     prevId: 'us-insurance-outbound-system'
   },
@@ -257,6 +333,7 @@ export const CASE_STUDIES = {
     type: 'CLIENT ENGAGEMENT · ROMANIA',
     runtime: '2 MIN WALKTHROUGH',
     badge: 'CLIENT ENGAGEMENT',
+    projectContext: 'Verified Client Engagement (Nicolae Ionescu, B2B SaaS, Romania)',
     tagline: 'Reduced inbound speed-to-lead from 4 hours to under 3 minutes with 28 hours/week saved.',
     client: 'Nicolae Ionescu (B2B SaaS)',
     timeline: 'Production Deployed · Global Review',
@@ -267,6 +344,8 @@ export const CASE_STUDIES = {
     primaryMetric: '4h → <3m SLA',
     metricSubtitle: '28 hours/week freed for revenue reps',
     tags: ['n8n', 'HubSpot', 'Clay', 'OpenAI', 'Webhooks', 'JSON Schema', 'Slack', 'Jotform'],
+    searchIntent: 'AI lead-response and inbound qualification automation with n8n, Clay, and HubSpot.',
+    targetAudience: 'B2B SaaS Founders, Revenue Leaders, and Sales Operations Managers suffering from slow inbound response times.',
     evidenceGallery: [
       {
         id: 'full-workflow',
@@ -325,8 +404,44 @@ export const CASE_STUDIES = {
     testimonial: {
       quote: 'Varun engineered a deterministic lead response operating system that completely transformed our speed-to-lead. What used to take hours now executes in seconds with flawless reliability.',
       author: 'Nicolae Ionescu',
-      title: 'Founder & Revenue Leader, Romania'
+      title: 'Founder & Revenue Leader, Romania',
+      role: 'Founder & Revenue Leader (Romania)'
     },
+    limitations: [
+      'Enrichment hit rate depends on email provider type; personal webmail domains (gmail.com, yahoo.com) require secondary company extraction or manual rep prompts.',
+      'HubSpot API limits must be managed with batch queueing if sudden lead influxes occur (e.g. webinar broadcasts).',
+      'The 28 hours/week savings and 4-hour to <3-minute reduction were measured over the client’s inbound baseline volume; results vary based on team size and qualification criteria.'
+    ],
+    faq: [
+      {
+        question: 'How does an AI-powered inbound lead response workflow work in n8n?',
+        answer: 'When a prospect submits a demo request, a webhook delivers the raw data to n8n in under 40ms. The workflow validates the payload schema, invokes Clay for company and contact enrichment, prompts OpenAI to classify buyer intent, upserts the record into HubSpot, and triggers an urgent Slack alert with a 3-minute SLA timer.'
+      },
+      {
+        question: 'How can Clay enrich inbound leads before CRM synchronization?',
+        answer: 'Clay uses waterfall enrichment across multiple providers (Clearbit, Apollo, LinkedIn) to find company size, annual revenue, tech stack, and LinkedIn profile URLs. This data is merged into a unified object before touching the CRM, ensuring zero incomplete records enter HubSpot.'
+      },
+      {
+        question: 'How do you validate inbound lead data payloads to prevent pipeline crashes?',
+        answer: 'An avionics-inspired JSON Schema validator checks incoming fields (email format, company domain, required fields) at the webhook entry node. Any malformed payload is intercepted, sanitized, and logged to a dead-letter queue, preventing pipeline halts.'
+      },
+      {
+        question: 'How does automated speed-to-lead impact B2B sales conversion rates?',
+        answer: 'Research indicates that responding to an inbound inquiry within 5 minutes increases conversion rates by up to 8x compared to waiting 30 minutes. Automated qualification ensures reps reach high-intent buyers while their attention is highest.'
+      },
+      {
+        question: 'What happens when an inbound enrichment API or webhook fails?',
+        answer: 'The system implements exponential backoff retry nodes and a dead-letter queue in Airtable. If an enrichment endpoint times out, the workflow falls back to basic domain extraction, creates the HubSpot record, and alerts the SDR with a partial enrichment notice.'
+      },
+      {
+        question: 'How do you automate lead routing and sales rep alerts in HubSpot and Slack?',
+        answer: 'n8n determines account tier using ICP scoring rules. Tier-1 enterprise leads trigger high-priority Slack notifications in #gtm-inbound-urgent with rep @mentions, one-click calendar booking links, and a 3-minute response timer, while lower-tier leads receive automated nurturing.'
+      }
+    ],
+    relatedProjects: [
+      { id: 'gtm-intelligence-hub', title: 'AI-Powered GTM Intelligence Hub', note: 'Provides deep buying signals and account health monitoring.' },
+      { id: 'newsletter-automation', title: 'Autonomous AI Newsletter Operations', note: 'Shares the same event-driven n8n infrastructure and webhook architecture.' }
+    ],
     nextId: 'newsletter-automation',
     prevId: 'gtm-intelligence-hub'
   },
@@ -338,6 +453,7 @@ export const CASE_STUDIES = {
     type: 'CLIENT ENGAGEMENT · SINGAPORE',
     runtime: 'WALKTHROUGH READY',
     badge: 'CLIENT ENGAGEMENT',
+    projectContext: 'Verified Client Engagement (Ivanna Dela Torre, Head of Content, Digital Media, Singapore)',
     tagline: 'Automated newsletter research, curation, and staging with AI-powered editorial operations.',
     client: 'Ivanna Dela Torre (Digital Media)',
     timeline: 'Weekly Production Pipeline',
@@ -348,6 +464,8 @@ export const CASE_STUDIES = {
     primaryMetric: '6 hrs/wk freed',
     metricSubtitle: '100% on-time weekly publishing cadence',
     tags: ['Beehiiv', 'n8n', 'OpenAI', 'Buffer', 'Google Sheets', 'RSS Parsing', 'REST APIs'],
+    searchIntent: 'AI newsletter workflow automation, content curation, and CMS auto-staging.',
+    targetAudience: 'Media Companies, Publication Editors, and Content Marketing Teams looking to automate research and staging.',
     evidenceGallery: [
       {
         id: 'newsletter-arch',
@@ -406,8 +524,44 @@ export const CASE_STUDIES = {
     testimonial: {
       quote: 'Varun automated our entire newsletter workflow from raw research to Beehiiv staging. His attention to operational reliability and tone consistency is unmatched.',
       author: 'Ivanna Dela Torre',
-      title: 'Head of Content, Singapore'
+      title: 'Head of Content, Singapore',
+      role: 'Head of Content, Digital Media (Singapore)'
     },
+    limitations: [
+      'The system produces staged drafts, not unmonitored auto-sends; human editors maintain final sign-off authority to uphold journalistic integrity.',
+      'Reported time savings (~6 hours per week freed) were verified across the client’s editorial workflow; complex investigative issues still require manual research.',
+      'RSS parsing nodes must handle feed changes, dead links, and paywalled articles with automated exception logging.'
+    ],
+    faq: [
+      {
+        question: 'How do you automate newsletter curation and drafting using n8n and OpenAI?',
+        answer: 'An n8n schedule trigger polls over 40 RSS feeds and content endpoints on a regular cadence. Raw articles are normalized and processed through OpenAI GPT-4 with a specialized system prompt that summarizes key findings, matches the brand voice, and generates structured draft cards.'
+      },
+      {
+        question: 'How does the Beehiiv REST API enable automated draft staging?',
+        answer: 'Using Beehiiv’s API endpoint `/posts`, n8n programmatically uploads HTML and markdown content directly into the publication backend as a draft post, including title, subtitle, thumbnail image, and content blocks ready for editorial preview.'
+      },
+      {
+        question: 'How do you maintain a consistent brand voice when using AI for content creation?',
+        answer: 'Brand voice consistency is achieved through few-shot prompt examples, clear constraints against generic AI clichés, and explicit formatting rubrics (e.g., bulleted takeaways, bold technical terms, and punchy editorial commentary).'
+      },
+      {
+        question: 'Why is human-in-the-loop review essential for AI-assisted editorial workflows?',
+        answer: 'While AI drastically reduces curation and drafting time, human editors ensure nuanced judgment, fact-check claims, and preserve editorial reputation before any newsletter reaches subscribers.'
+      },
+      {
+        question: 'How can media companies scale content operations without expanding headcount?',
+        answer: 'By automating repetitive ingestion, drafting, and CMS staging, editors can shift their time from administrative formatting to high-value analysis and investigative journalism, effectively doubling publication output.'
+      },
+      {
+        question: 'How do you handle RSS feed failures or broken sources in an automated pipeline?',
+        answer: 'n8n utilizes try-catch error routing nodes. If a specific RSS endpoint returns a 404 or invalid XML, the error is logged to Google Sheets and bypassed without stopping the remaining 39+ feeds.'
+      }
+    ],
+    relatedProjects: [
+      { id: 'candidate-screening', title: 'AI-Assisted Candidate Screening', note: 'Applies similar LLM rubric extraction and human review patterns to hiring.' },
+      { id: 'lead-response-os', title: 'Deterministic Lead Response OS', note: 'Demonstrates real-time API integrations and webhook-based workflow orchestration.' }
+    ],
     nextId: 'outbound-gtm-audit',
     prevId: 'lead-response-os'
   },
@@ -419,6 +573,7 @@ export const CASE_STUDIES = {
     type: 'STRATEGIC GTM CASE STUDY',
     runtime: 'FRAMEWORK BLUEPRINT',
     badge: 'STRATEGIC GTM',
+    projectContext: 'Strategic Assessment & Architecture Teardown Deliverable (Diagnostic Blueprint, not deployed code)',
     tagline: 'Comprehensive audit, deliverability diagnostic, and architectural teardown of a SaaS outbound engine.',
     client: 'Strategic Assessment & Architecture Teardown',
     timeline: 'Comprehensive Blueprint',
@@ -429,6 +584,8 @@ export const CASE_STUDIES = {
     primaryMetric: '25-Page Blueprint',
     metricSubtitle: 'Full diagnostic across deliverability, data & orchestration',
     tags: ['GTM Scorecard', 'Automation Roadmap', 'System Architecture', 'Priority Matrix', 'Deliverability'],
+    searchIntent: 'B2B outbound GTM audit, sales process diagnosis, and automation strategy.',
+    targetAudience: 'SaaS Executives, VP Sales, and RevOps Leaders seeking an objective assessment of outbound conversion bottlenecks.',
     evidenceGallery: [
       {
         id: 'audit-framework',
@@ -483,6 +640,41 @@ export const CASE_STUDIES = {
       { num: '99%', label: 'Deliverability Hygiene Benchmark Established' },
       { num: '90-Day', label: 'Actionable Engineering Implementation Roadmap' }
     ],
+    limitations: [
+      'This deliverable was a strategic audit, diagnostic evaluation, and architectural blueprint—not a deployed software implementation; claims of automated deployment are deliberately excluded.',
+      'Outbound performance gains require executive buy-in to enforce data governance across SDR and marketing teams.',
+      'Domain deliverability recovery is not instantaneous; rebuilding sender reputation requires 4 to 6 weeks of disciplined inbox warming and low-volume sending.'
+    ],
+    faq: [
+      {
+        question: 'What is included in a B2B outbound GTM audit?',
+        answer: 'A comprehensive GTM audit evaluates four core pillars: technical domain deliverability (SPF/DKIM/DMARC, warmup, inbox reputation), data hygiene and CRM architecture (HubSpot deduplication, lifecycle stages), ICP and buying signal targeting, and workflow orchestration tooling.'
+      },
+      {
+        question: 'How do you diagnose and resolve email deliverability issues (SPF, DKIM, DMARC)?',
+        answer: 'Deliverability diagnosis inspects DNS records for correct SPF syntax, aligned 2048-bit DKIM keys, strict DMARC policies, and custom tracking domains. Resolving issues involves purging unverified prospect lists, configuring dedicated secondary sending domains, and implementing automated warmup pools.'
+      },
+      {
+        question: 'How do you identify data leakage and CRM hygiene bottlenecks in HubSpot?',
+        answer: 'By auditing field population completeness, property duplication, and lifecycle transition automation. Incomplete technographic data and conflicting rep ownership are identified and mapped into structured validation rules.'
+      },
+      {
+        question: 'What is the difference between an outbound strategy audit and software implementation?',
+        answer: 'An outbound audit is a strategic diagnostic deliverable that identifies systemic friction, data leakage, and technical vulnerabilities, providing a prioritized blueprint. Software implementation is the subsequent phase where automation scripts, APIs, and workflows are physically built and deployed.'
+      },
+      {
+        question: 'How do you define an Ideal Customer Profile (ICP) for modern outbound sales?',
+        answer: 'Modern ICPs go beyond firmographics (industry, headcount) to include technographic markers (current software tools), hiring signals (open roles indicating strategic priorities), and historical deal velocity from closed-won CRM records.'
+      },
+      {
+        question: 'How should revenue teams prioritize GTM automation initiatives?',
+        answer: 'Using an Impact vs. Complexity prioritization matrix. High-impact, low-complexity initiatives (such as deliverability fixes and webhook lead alerts) are executed in weeks 1–4, while complex multi-system workflows (e.g. multi-provider waterfalls) are scheduled for weeks 5–12.'
+      }
+    ],
+    relatedProjects: [
+      { id: 'us-insurance-outbound-system', title: 'US Insurance Outbound System', note: 'Represents the deterministic execution of the outbound cadence framework.' },
+      { id: 'gtm-intelligence-hub', title: 'AI-Powered GTM Intelligence Hub', note: 'Provides the signal-listening engine recommended in the audit blueprint.' }
+    ],
     nextId: 'candidate-screening',
     prevId: 'newsletter-automation'
   },
@@ -494,6 +686,7 @@ export const CASE_STUDIES = {
     type: 'CLIENT ENGAGEMENT · US (NAME WITHHELD)',
     runtime: 'WALKTHROUGH READY',
     badge: 'CLIENT ENGAGEMENT',
+    projectContext: 'Client Engagement · US Technology Recruitment Firm (Client identity withheld under NDA)',
     tagline: 'Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages.',
     client: 'US Technology Company (Name Withheld under NDA)',
     timeline: 'Production Pipeline Deployment',
@@ -501,9 +694,11 @@ export const CASE_STUDIES = {
     imageAlt: 'AI Candidate Screening Pipeline — Authentic System Architecture Diagram',
     isGenuine: true,
     evidenceType: 'AUTHENTIC_SYSTEM_ARCHITECTURE',
-    primaryMetric: '85% Screening Time Saved',
+    primaryMetric: '85% Screening Time Saved (Est.)',
     metricSubtitle: 'From 14-day turnaround to <24 hours',
     tags: ['n8n', 'OpenAI', 'Resume Parsing', 'Semantic Matching', 'Human-in-the-Loop', 'ATS Integration'],
+    searchIntent: 'AI-assisted resume screening with human review, semantic matching, and explainable scoring.',
+    targetAudience: 'Talent Acquisition Leaders, Recruitment Agencies, and Engineering Hiring Managers experiencing applicant volume overload.',
     evidenceGallery: [
       {
         id: 'candidate-arch',
@@ -553,10 +748,45 @@ export const CASE_STUDIES = {
       { name: 'Slack API', role: 'Human Recruiter Review Cards' }
     ],
     outcomes: [
-      { num: '85%', label: 'Reduction in Manual Resume Review Time' },
+      { num: '85%', label: 'Reduction in Manual Resume Review Time (Est.)' },
       { num: '<24h', label: 'Candidate Turnaround Time (down from 14 days)' },
       { num: '100%', label: 'Explainable Scoring Trail for Compliance' },
       { num: '0', label: 'Unreviewed Inbound Applications' }
+    ],
+    limitations: [
+      'The system operates strictly as an assistive evaluation copilot for human recruiters; it does NOT make autonomous hiring or rejection decisions.',
+      'Reported metrics (~85% review time reduction, from ~10m to ~2m per profile) represent operational estimates measured across 60-candidate screening batches, not independently verified academic studies.',
+      'Multi-column resume designs and creative graphics can affect OCR parsing accuracy; an automatic fallback flag alerts human recruiters to inspect unparseable files directly.'
+    ],
+    faq: [
+      {
+        question: 'How does AI-assisted candidate screening work with n8n and OpenAI?',
+        answer: 'When a candidate applies, n8n receives the resume attachment via webhook, downloads the file, and runs text extraction. OpenAI GPT-4 parses the text into standardized JSON, compares the candidate’s qualifications against an objective rubric, and generates a structured scorecard with explainable rationale.'
+      },
+      {
+        question: 'How do you ensure AI resume screening is explainable, unbiased, and compliant?',
+        answer: 'The system explicitly strips demographic indicators (such as name, gender, age, and graduation dates) before evaluation. The LLM is restricted to scoring defined technical competencies against an explicit rubric and must produce written justifications for every point awarded or deducted.'
+      },
+      {
+        question: 'Why is human-in-the-loop review essential for AI hiring workflows?',
+        answer: 'Human recruiters must retain 100% of final hiring and rejection decisions to ensure empathy, compliance with employment regulations, and contextual evaluation of non-traditional career paths.'
+      },
+      {
+        question: 'How does semantic matching differ from basic keyword resume search?',
+        answer: 'Traditional ATS keyword filters reject qualified candidates who use synonyms or different phrasing (e.g. \'Kubernetes clustering\' vs \'K8s orchestration\'). Semantic matching understands technical context and conceptual equivalence, providing a fairer evaluation.'
+      },
+      {
+        question: 'How do you parse unstructured PDF resumes into structured JSON schemas?',
+        answer: 'The workflow uses document extraction nodes to convert PDF streams to clean text, which is processed by OpenAI using structured JSON outputs (JSON mode) adhering to a strict schema for work history, skills, education, and notable projects.'
+      },
+      {
+        question: 'What are the ethical and operational limits of AI in recruitment?',
+        answer: 'AI should never be permitted to issue autonomous rejections or final hiring determinations without human sign-off. Models must be audited regularly for rubric drift, and candidates must be protected under strict data privacy and consent standards.'
+      }
+    ],
+    relatedProjects: [
+      { id: 'lead-response-os', title: 'Deterministic Lead Response OS', note: 'Uses the same avionics-grade webhook validation and rapid triage architecture.' },
+      { id: 'newsletter-automation', title: 'Autonomous AI Newsletter Operations', note: 'Applies similar prompt chaining and human-in-the-loop editorial patterns.' }
     ],
     nextId: 'us-insurance-outbound-system',
     prevId: 'outbound-gtm-audit'

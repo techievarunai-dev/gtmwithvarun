@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Assisted Candidate Screening & Hiring Pipeline — GTM Engineering Architecture Case Study | Varun Murugan P</title>
-  <meta name="description" content="Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages. Engineered by Varun Murugan P, Senior GTM Engineer.">
-  <meta name="keywords" content="n8n, OpenAI, Resume Parsing, Semantic Matching, Human-in-the-Loop, ATS Integration, GTM Engineer, Revenue Operations, AI Automation, Varun Murugan">
+  <title>AI-Assisted Candidate Screening &amp; Hiring Pipeline — Explainable Evaluation | Varun Murugan P</title>
+  <meta name="description" content="Assistive AI recruitment pipeline using n8n and OpenAI for structured resume parsing, objective rubric scoring, and human-in-the-loop review.">
+  <meta name="keywords" content="AI candidate screening, resume parsing automation, n8n recruiting workflow, semantic resume matching, human in the loop AI hiring, explainable AI scoring">
   <meta name="author" content="Varun Murugan P">
   <link rel="canonical" href="https://gtmwithvarun.vercel.app/projects/candidate-screening/">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Varun Murugan P — GTM Engineer Portfolio">
   <meta property="og:url" content="https://gtmwithvarun.vercel.app/projects/candidate-screening/">
-  <meta property="og:title" content="AI-Assisted Candidate Screening & Hiring Pipeline — GTM Engineering Case Study">
-  <meta property="og:description" content="Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages.">
+  <meta property="og:title" content="AI-Assisted Candidate Screening &amp; Hiring Pipeline — Explainable Evaluation">
+  <meta property="og:description" content="Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages with human oversight.">
   <meta property="og:image" content="https://gtmwithvarun.vercel.app/assets/case-studies/candidate-screening/hero-pipeline.png">
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="AI-Assisted Candidate Screening & Hiring Pipeline — GTM Engineering Case Study">
-  <meta property="twitter:description" content="Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages.">
+  <meta property="twitter:title" content="AI-Assisted Candidate Screening &amp; Hiring Pipeline — Explainable Evaluation">
+  <meta property="twitter:description" content="Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages with human oversight.">
   <meta property="twitter:image" content="https://gtmwithvarun.vercel.app/assets/case-studies/candidate-screening/hero-pipeline.png">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -34,10 +35,12 @@
       {
         "@type": "TechArticle",
         "@id": "https://gtmwithvarun.vercel.app/projects/candidate-screening/#article",
-        "headline": "AI-Assisted Candidate Screening & Hiring Pipeline — System Architecture Case Study",
-        "description": "Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages.",
+        "headline": "AI-Assisted Candidate Screening & Hiring Pipeline — Explainable Evaluation",
+        "description": "Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages with human-in-the-loop review.",
         "url": "https://gtmwithvarun.vercel.app/projects/candidate-screening/",
         "image": "https://gtmwithvarun.vercel.app/assets/case-studies/candidate-screening/hero-pipeline.png",
+        "datePublished": "2026-01-10",
+        "dateModified": "2026-10-14",
         "author": {
           "@type": "Person",
           "name": "Varun Murugan P",
@@ -48,9 +51,9 @@
           "name": "Varun Murugan P"
         },
         "about": [
-          "n8n", "OpenAI", "Resume Parsing", "Semantic Matching", "Human-in-the-Loop", "ATS Integration"
+          "n8n", "OpenAI", "Resume Parsing", "Semantic Matching", "Human-in-the-Loop", "ATS Integration", "GTM Engineering"
         ],
-        "keywords": "n8n, OpenAI, Resume Parsing, Semantic Matching, Human-in-the-Loop, ATS Integration, GTM Engineering, RevOps Automation"
+        "keywords": "AI candidate screening, resume parsing automation, n8n recruiting workflow, semantic resume matching, human in the loop AI hiring"
       },
       {
         "@type": "BreadcrumbList",
@@ -70,8 +73,62 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "AI-Assisted Candidate Screening & Hiring Pipeline",
+            "name": "AI-Assisted Candidate Screening",
             "item": "https://gtmwithvarun.vercel.app/projects/candidate-screening/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://gtmwithvarun.vercel.app/projects/candidate-screening/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does AI-assisted candidate screening work with n8n and OpenAI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When a candidate applies, n8n receives the resume attachment via webhook, downloads the file, and runs text extraction. OpenAI GPT-4 parses the text into standardized JSON, compares the candidate’s qualifications against an objective rubric, and generates a structured scorecard with explainable rationale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you ensure AI resume screening is explainable, unbiased, and compliant?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The system explicitly strips demographic indicators (such as name, gender, age, and graduation dates) before evaluation. The LLM is restricted to scoring defined technical competencies against an explicit rubric and must produce written justifications for every point awarded or deducted."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is human-in-the-loop review essential for AI hiring workflows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Human recruiters must retain 100% of final hiring and rejection decisions to ensure empathy, compliance with employment regulations, and contextual evaluation of non-traditional career paths."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does semantic matching differ from basic keyword resume search?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional ATS keyword filters reject qualified candidates who use synonyms or different phrasing (e.g. 'Kubernetes clustering' vs 'K8s orchestration'). Semantic matching understands technical context and conceptual equivalence, providing a fairer evaluation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you parse unstructured PDF resumes into structured JSON schemas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The workflow uses document extraction nodes to convert PDF streams to clean text, which is processed by OpenAI using structured JSON outputs (JSON mode) adhering to a strict schema for work history, skills, education, and notable projects."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the ethical and operational limits of AI in recruitment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI should never be permitted to issue autonomous rejections or final hiring determinations without human sign-off. Models must be audited regularly for rubric drift, and candidates must be protected under strict data privacy and consent standards."
+            }
           }
         ]
       }
@@ -96,11 +153,11 @@
       </div>
 
       <nav class="cs-quick-nav" aria-label="Case Study Switcher">
-        <a href="/projects/us-insurance-outbound-system/" class="cs-nav-pill ">01 Insurance</a>
-        <a href="/projects/gtm-intelligence-hub/" class="cs-nav-pill ">02 Intel Hub</a>
-        <a href="/projects/lead-response-os/" class="cs-nav-pill ">03 Lead OS</a>
-        <a href="/projects/newsletter-automation/" class="cs-nav-pill ">04 Newsletter</a>
-        <a href="/projects/outbound-gtm-audit/" class="cs-nav-pill ">05 Audit</a>
+        <a href="/projects/us-insurance-outbound-system/" class="cs-nav-pill">01 Insurance</a>
+        <a href="/projects/gtm-intelligence-hub/" class="cs-nav-pill">02 Intel Hub</a>
+        <a href="/projects/lead-response-os/" class="cs-nav-pill">03 Lead OS</a>
+        <a href="/projects/newsletter-automation/" class="cs-nav-pill">04 Newsletter</a>
+        <a href="/projects/outbound-gtm-audit/" class="cs-nav-pill">05 Audit</a>
         <a href="/projects/candidate-screening/" class="cs-nav-pill active">06 Screening</a>
       </nav>
 
@@ -114,17 +171,31 @@
 
   <main class="cs-main-container" id="main-content">
 
+    <!-- Project Context Callout -->
+    <div class="cs-context-callout">
+      <span class="cs-context-callout-icon">👥</span>
+      <div class="cs-context-callout-content">
+        <div class="cs-context-callout-title">Client Engagement · US Technology Firm (Identity Protected under NDA)</div>
+        <p class="cs-context-callout-text">Production pipeline engineered for a high-volume US recruitment firm. Operates strictly as an assistive evaluation copilot for human recruiters, using standardized rubric scoring in n8n and GPT-4 with mandatory human review gates.</p>
+      </div>
+    </div>
+
     <section class="cs-hero-section">
       <div class="cs-hero-kicker-row">
         <span class="cs-meta-pill primary">CLIENT ENGAGEMENT · US (NAME WITHHELD)</span>
         <span class="cs-meta-pill subtle">WALKTHROUGH READY</span>
       </div>
 
-      <h1 class="cs-main-title">AI-Assisted Candidate Screening & Hiring Pipeline</h1>
+      <h1 class="cs-main-title">AI-Assisted Candidate Screening &amp; Hiring Pipeline</h1>
       <p class="cs-main-tagline">Structured, explainable candidate evaluation across resume, HR screening, and technical interview stages.</p>
 
       <div class="cs-tags-row">
-        <span class="cs-tag-pill">n8n</span><span class="cs-tag-pill">OpenAI</span><span class="cs-tag-pill">Resume Parsing</span><span class="cs-tag-pill">Semantic Matching</span><span class="cs-tag-pill">Human-in-the-Loop</span><span class="cs-tag-pill">ATS Integration</span>
+        <span class="cs-tag-pill">n8n</span>
+        <span class="cs-tag-pill">OpenAI</span>
+        <span class="cs-tag-pill">Resume Parsing</span>
+        <span class="cs-tag-pill">Semantic Matching</span>
+        <span class="cs-tag-pill">Human-in-the-Loop</span>
+        <span class="cs-tag-pill">ATS Integration</span>
       </div>
 
       <div class="cs-quick-meta-grid">
@@ -133,12 +204,12 @@
           <span class="cs-meta-value">US Technology Company (Name Withheld under NDA)</span>
         </div>
         <div class="cs-meta-cell">
-          <span class="cs-meta-label">STATUS & TIMELINE</span>
+          <span class="cs-meta-label">STATUS &amp; TIMELINE</span>
           <span class="cs-meta-value">Production Pipeline Deployment</span>
         </div>
         <div class="cs-meta-cell highlight">
           <span class="cs-meta-label">KEY IMPACT / OUTCOME</span>
-          <span class="cs-meta-value-metric">85% Screening Time Saved</span>
+          <span class="cs-meta-value-metric">85% Screening Time Saved (Est.)</span>
           <span class="cs-meta-sub">From 14-day turnaround to &lt;24 hours</span>
         </div>
       </div>
@@ -148,11 +219,11 @@
     <section class="cs-architecture-stage" aria-label="System Architecture Blueprint">
       <div class="cs-diagram-frame">
         <div class="cs-diagram-topbar">
-          <span class="cs-diagram-title">FIGURE 1.0 — AI-ASSISTED CANDIDATE SCREENING & HIRING PIPELINE SYSTEM ARCHITECTURE BLUEPRINT</span>
+          <span class="cs-diagram-title">FIGURE 1.0 — AI CANDIDATE SCREENING PIPELINE SYSTEM ARCHITECTURE BLUEPRINT</span>
         </div>
 
         <div class="cs-diagram-img-wrap">
-          <img src="/assets/case-studies/candidate-screening/hero-pipeline.png" alt="AI Candidate Screening Architecture Diagram" class="cs-blueprint-img" width="1200" height="675" fetchpriority="high" decoding="async">
+          <img src="/assets/case-studies/candidate-screening/hero-pipeline.png" alt="AI Candidate Screening Pipeline 10-Node Architecture in n8n" class="cs-blueprint-img" width="1200" height="675" fetchpriority="high" decoding="async">
         </div>
 
         <div class="cs-diagram-footer">
@@ -162,7 +233,7 @@
       </div>
     </section>
 
-    <!-- Problem & Solution Narrative -->
+    <!-- Problem & Solution Narrative with Question Headings -->
     <section class="cs-narrative-section">
       <div class="cs-two-col-grid">
         <div class="cs-content-block problem-card">
@@ -170,10 +241,12 @@
             <span>⚠</span>
             <span>THE BOTTLENECK</span>
           </div>
-          <h2 class="cs-section-heading">The Problem: Inbound Application Deluge & Inconsistent Screening</h2>
+          <h2 class="cs-section-heading">Why does high application volume cause recruiter burnout and hiring latency?</h2>
           <p class="cs-body-lead">Hiring teams received over 500 applications per open technical role, leading to reviewer burnout, 2-week delays, and lost top talent.</p>
           <ul class="cs-bullet-list">
-            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Recruiters spent 8+ hours daily manually reading PDFs and scanning resumes.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Screening criteria varied wildly between individual reviewers, introducing bias.</span></li><li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Top-tier engineering candidates accepted competing offers before first contact.</span></li>
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Recruiters spent 8+ hours daily manually reading PDFs and scanning resumes.</span></li>
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Screening criteria varied wildly between individual reviewers, introducing bias.</span></li>
+            <li class="cs-bullet-item"><span class="cs-bullet-dot">⚠</span><span>Top-tier engineering candidates accepted competing offers before first contact.</span></li>
           </ul>
         </div>
 
@@ -182,42 +255,37 @@
             <span>⚙</span>
             <span>SYSTEM ARCHITECTURE</span>
           </div>
-          <h2 class="cs-section-heading">The Engineered Solution: Explainable AI Evaluation with Human-in-the-Loop</h2>
+          <h2 class="cs-section-heading">How does the explainable AI evaluation pipeline screen candidates with human oversight?</h2>
           <p class="cs-body-lead">Built an automated pipeline that extracts structured resume data, scores competencies against objective job rubrics, and generates human-readable justification scorecards.</p>
           <div class="cs-workflows-list">
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 01</span>
-                  <strong class="cs-wf-name">Resume Ingress & Standardized Extraction</strong>
-                </div>
-                <p class="cs-wf-desc">Parses PDF and DOCX attachments into standardized JSON containing skills, tenure, and project achievements.</p>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 01</span>
+                <strong class="cs-wf-name">Resume Ingress &amp; Standardized Extraction</strong>
               </div>
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 02</span>
-                  <strong class="cs-wf-name">Competency Scoring Engine</strong>
-                </div>
-                <p class="cs-wf-desc">Evaluates candidate experience against specific technical rubrics using OpenAI GPT-4 with temperature=0 for consistency.</p>
+              <p class="cs-wf-desc">Parses PDF and DOCX attachments into standardized JSON containing skills, tenure, and project achievements.</p>
+            </div>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 02</span>
+                <strong class="cs-wf-name">Competency Scoring Engine</strong>
               </div>
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 03</span>
-                  <strong class="cs-wf-name">Explainable Justification Dossier</strong>
-                </div>
-                <p class="cs-wf-desc">Generates concise bullet points explaining why a candidate was scored high or low, avoiding opaque black-box decisions.</p>
+              <p class="cs-wf-desc">Evaluates candidate experience against specific technical rubrics using OpenAI GPT-4 with temperature=0 for consistency.</p>
+            </div>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 03</span>
+                <strong class="cs-wf-name">Explainable Justification Dossier</strong>
               </div>
-            
-              <div class="cs-workflow-card">
-                <div class="cs-wf-header">
-                  <span class="cs-wf-index">NODE 04</span>
-                  <strong class="cs-wf-name">Human-in-the-Loop Recruiter Review</strong>
-                </div>
-                <p class="cs-wf-desc">Pushes pre-scored candidates to recruiter Slack channel for quick 1-click approval before any communication.</p>
+              <p class="cs-wf-desc">Generates concise bullet points explaining why a candidate was scored high or low, avoiding opaque black-box decisions.</p>
+            </div>
+            <div class="cs-workflow-card">
+              <div class="cs-wf-header">
+                <span class="cs-wf-index">STAGE 04</span>
+                <strong class="cs-wf-name">Human-in-the-Loop Recruiter Review</strong>
               </div>
-            
+              <p class="cs-wf-desc">Pushes pre-scored candidates to recruiter Slack channel for quick 1-click approval before any communication.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -227,75 +295,184 @@
     <section class="cs-outcomes-section" aria-label="Production Outcomes">
       <div class="cs-section-header-compact">
         <span class="cs-mini-kicker">VERIFIED TELEMETRY</span>
-        <h3 class="cs-compact-headline">Production Outcomes & Performance Metrics</h3>
+        <h3 class="cs-compact-headline">Production Outcomes &amp; Performance Metrics</h3>
       </div>
       <div class="cs-outcomes-grid">
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">85%</span>
-            <span class="cs-metric-title">Reduction in Manual Resume Review Time</span>
-          </div>
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">&lt;24h</span>
-            <span class="cs-metric-title">Candidate Turnaround Time (down from 14 days)</span>
-          </div>
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">100%</span>
-            <span class="cs-metric-title">Explainable Scoring Trail for Compliance</span>
-          </div>
-        
-          <div class="cs-metric-card">
-            <span class="cs-metric-digit">0</span>
-            <span class="cs-metric-title">Unreviewed Inbound Applications</span>
-          </div>
-        
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">85%</span>
+          <span class="cs-metric-title">Reduction in Manual Resume Review Time (Est.)</span>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">&lt;24h</span>
+          <span class="cs-metric-title">Candidate Turnaround Time (down from 14 days)</span>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">100%</span>
+          <span class="cs-metric-title">Explainable Scoring Trail for Compliance</span>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-digit">0</span>
+          <span class="cs-metric-title">Unreviewed Inbound Applications</span>
+        </div>
       </div>
     </section>
 
-    
+    <!-- Testimonial Quote -->
+    <section class="cs-testimonial-wrapper" aria-label="Client Testimonial">
+      <div class="cs-quote-card">
+        <span class="cs-quote-mark">“</span>
+        <p class="cs-quote-text">I had already worked with Varun once and felt he understood the assignment very well, so I decided to work with him again. I can easily see him becoming my go-to person whenever I need similar work done in the future... Varun was extremely communicative and very precise about what he needed from me to achieve the best results.</p>
+        <div class="cs-quote-author-row">
+          <strong class="cs-quote-author">Repeat Client</strong>
+          <span class="cs-quote-role">Talent Acquisition Executive, United States (Name Withheld)</span>
+        </div>
+      </div>
+    </section>
 
     <!-- Tech Stack Components -->
     <section class="cs-stack-section" aria-label="Engineering Infrastructure">
       <div class="cs-section-header-compact">
         <span class="cs-mini-kicker">ENGINEERING INFRASTRUCTURE</span>
-        <h3 class="cs-compact-headline">Core Tech Stack & API Nodes</h3>
+        <h3 class="cs-compact-headline">Core Tech Stack &amp; API Nodes</h3>
       </div>
       <div class="cs-tech-stack-grid">
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">n8n</strong>
-              <span class="cs-stack-node-role">Workflow Orchestration & Webhook Handling</span>
-            </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">n8n</strong>
+            <span class="cs-stack-node-role">Workflow Orchestration &amp; Webhook Handling</span>
           </div>
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">OpenAI GPT-4</strong>
-              <span class="cs-stack-node-role">Semantic Extraction & Rubric Evaluation</span>
-            </div>
+        </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">OpenAI GPT-4</strong>
+            <span class="cs-stack-node-role">Semantic Extraction &amp; Rubric Evaluation</span>
           </div>
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">ATS REST APIs</strong>
-              <span class="cs-stack-node-role">Applicant Profile & Stage Management</span>
-            </div>
+        </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">ATS REST APIs</strong>
+            <span class="cs-stack-node-role">Applicant Profile &amp; Stage Management</span>
           </div>
-        
-          <div class="cs-stack-cell">
-            <div class="cs-stack-node-dot"></div>
-            <div>
-              <strong class="cs-stack-node-title">Slack API</strong>
-              <span class="cs-stack-node-role">Human Recruiter Review Cards</span>
-            </div>
+        </div>
+        <div class="cs-stack-cell">
+          <div class="cs-stack-node-dot"></div>
+          <div>
+            <strong class="cs-stack-node-title">Slack API</strong>
+            <span class="cs-stack-node-role">Human Recruiter Review Cards</span>
           </div>
-        
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Limitations & Trade-Offs -->
+    <section class="cs-limitations-section" aria-label="Technical Limitations and Trade-offs">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">ENGINEERING DISCIPLINE</span>
+        <h3 class="cs-compact-headline">Technical Constraints, Trade-Offs &amp; Ethical Boundaries</h3>
+      </div>
+      <p class="cs-body-lead" style="font-size: 14px; margin-bottom: 0;">
+        Real GTM engineering requires acknowledging architectural trade-offs, scaling boundaries, and failure modes rather than treating AI as magic.
+      </p>
+      <ul class="cs-limitations-list">
+        <li class="cs-limitation-item">
+          <span class="cs-limitation-dot">⚠</span>
+          <span><strong>Assistive Copilot Only:</strong> The system operates strictly as an assistive evaluation copilot for human recruiters; it does NOT make autonomous hiring or rejection decisions.</span>
+        </li>
+        <li class="cs-limitation-item">
+          <span class="cs-limitation-dot">⚠</span>
+          <span><strong>Estimated Telemetry Basis:</strong> The ~85% review time reduction (from ~10m to ~2m per candidate) represents operational estimates measured across 60-candidate screening batches, not independently verified academic studies.</span>
+        </li>
+        <li class="cs-limitation-item">
+          <span class="cs-limitation-dot">⚠</span>
+          <span><strong>OCR Formatting Nuances:</strong> Multi-column graphic resumes can affect OCR extraction accuracy; an automatic exception flag alerts human recruiters to inspect unparseable files directly.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Question-Based Search & AEO FAQ Section -->
+    <section class="cs-faq-section" aria-label="Frequently Asked Questions">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">AEO &amp; SEARCH CITATION INDEX</span>
+        <h3 class="cs-compact-headline">Frequently Asked Questions &amp; Implementation Architecture</h3>
+      </div>
+      <p class="cs-body-lead" style="font-size: 14px; margin-bottom: 0;">
+        Direct, technical answers for sales leaders, engineers, and answer engines exploring this system architecture.
+      </p>
+      <div class="cs-faq-grid">
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q01</span>
+            <span>How does AI-assisted candidate screening work with n8n and OpenAI?</span>
+          </h4>
+          <p class="cs-faq-answer">When a candidate applies, n8n receives the resume attachment via webhook, downloads the file, and runs text extraction. OpenAI GPT-4 parses the text into standardized JSON, compares the candidate’s qualifications against an objective rubric, and generates a structured scorecard with explainable rationale.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q02</span>
+            <span>How do you ensure AI resume screening is explainable, unbiased, and compliant?</span>
+          </h4>
+          <p class="cs-faq-answer">The system explicitly strips demographic indicators (such as name, gender, age, and graduation dates) before evaluation. The LLM is restricted to scoring defined technical competencies against an explicit rubric and must produce written justifications for every point awarded or deducted.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q03</span>
+            <span>Why is human-in-the-loop review essential for AI hiring workflows?</span>
+          </h4>
+          <p class="cs-faq-answer">Human recruiters must retain 100% of final hiring and rejection decisions to ensure empathy, compliance with employment regulations, and contextual evaluation of non-traditional career paths.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q04</span>
+            <span>How does semantic matching differ from basic keyword resume search?</span>
+          </h4>
+          <p class="cs-faq-answer">Traditional ATS keyword filters reject qualified candidates who use synonyms or different phrasing (e.g. 'Kubernetes clustering' vs 'K8s orchestration'). Semantic matching understands technical context and conceptual equivalence, providing a fairer evaluation.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q05</span>
+            <span>How do you parse unstructured PDF resumes into structured JSON schemas?</span>
+          </h4>
+          <p class="cs-faq-answer">The workflow uses document extraction nodes to convert PDF streams to clean text, which is processed by OpenAI using structured JSON outputs (JSON mode) adhering to a strict schema for work history, skills, education, and notable projects.</p>
+        </div>
+
+        <div class="cs-faq-card">
+          <h4 class="cs-faq-question">
+            <span class="cs-faq-q-badge">Q06</span>
+            <span>What are the ethical and operational limits of AI in recruitment?</span>
+          </h4>
+          <p class="cs-faq-answer">AI should never be permitted to issue autonomous rejections or final hiring determinations without human sign-off. Models must be audited regularly for rubric drift, and candidates must be protected under strict data privacy and consent standards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contextual Internal Linking & Related Work -->
+    <section class="cs-related-section" aria-label="Connected GTM Architecture">
+      <div class="cs-section-header-compact">
+        <span class="cs-mini-kicker">CONNECTED GTM ARCHITECTURE</span>
+        <h3 class="cs-compact-headline">Related Case Studies &amp; System Implementations</h3>
+      </div>
+      <div class="cs-related-grid">
+        <a href="/projects/lead-response-os/" class="cs-related-card">
+          <div class="cs-related-title">
+            <span>Deterministic Lead Response OS</span>
+            <span>→</span>
+          </div>
+          <p class="cs-related-note">Uses the same avionics-grade webhook validation and rapid SLA triage architecture.</p>
+        </a>
+        <a href="/projects/newsletter-automation/" class="cs-related-card">
+          <div class="cs-related-title">
+            <span>Autonomous AI Newsletter Operations</span>
+            <span>→</span>
+          </div>
+          <p class="cs-related-note">Applies similar prompt chaining and human-in-the-loop editorial review patterns.</p>
+        </a>
       </div>
     </section>
 
@@ -303,7 +480,7 @@
     <nav class="cs-adjacent-nav" aria-label="Adjacent Case Studies">
       <a href="/projects/outbound-gtm-audit/" class="cs-nav-box prev">
         <span class="nav-direction">← PREVIOUS CASE STUDY</span>
-        <span class="nav-dest-title">Strategic Outbound GTM & Architecture Teardown</span>
+        <span class="nav-dest-title">Strategic Outbound GTM &amp; Architecture Teardown</span>
       </a>
       <a href="/projects/us-insurance-outbound-system/" class="cs-nav-box next">
         <span class="nav-direction">NEXT CASE STUDY →</span>

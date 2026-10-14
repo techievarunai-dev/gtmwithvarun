@@ -55,8 +55,8 @@ const routes = [
     lastmod: '2026-10-14',
     image: {
       loc: '/assets/case-studies/lead-response-os/hero-workflow.png',
-      title: 'Autonomous Lead Response OS Architecture',
-      caption: 'Sub-2-minute inbound lead qualification and routing engine'
+      title: 'Deterministic Lead Response OS Architecture',
+      caption: 'Sub-3-minute inbound lead qualification and routing engine with n8n and HubSpot'
     }
   },
   {

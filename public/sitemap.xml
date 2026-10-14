@@ -33,8 +33,8 @@
     <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://gtmwithvarun.vercel.app/assets/case-studies/lead-response-os/hero-workflow.png</image:loc>
-      <image:title>Autonomous Lead Response OS Architecture</image:title>
-      <image:caption>Sub-2-minute inbound lead qualification and routing engine</image:caption>
+      <image:title>Deterministic Lead Response OS Architecture</image:title>
+      <image:caption>Sub-3-minute inbound lead qualification and routing engine with n8n and HubSpot</image:caption>
     </image:image>
   </url>
   <url>

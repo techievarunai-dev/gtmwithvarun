@@ -8275,4 +8275,211 @@ a.detail-text:hover {
   }
 }
 
+/* ========================================================
+   CASE STUDY ENHANCEMENTS: AEO / GEO FAQ & CONTEXT MODULES
+   ======================================================== */
+.cs-context-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-surface-inset);
+  border: 1px solid rgba(0, 82, 255, 0.12);
+  border-left: 3px solid var(--accent-blue);
+  border-radius: var(--radius-subcard);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.cs-context-callout-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cs-context-callout-content {
+  flex: 1;
+}
+
+.cs-context-callout-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 4px;
+}
+
+.cs-context-callout-text {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* FAQ Section */
+.cs-faq-section {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-card-bright);
+  outline: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 34px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.cs-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.cs-faq-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-subcard);
+  padding: 22px 24px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cs-faq-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 82, 255, 0.06);
+  border-color: rgba(0, 82, 255, 0.2);
+}
+
+.cs-faq-question {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cs-faq-q-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  background: var(--accent-blue-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.cs-faq-answer {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Limitations & Technical Decisions Section */
+.cs-limitations-section {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-card-bright);
+  outline: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 34px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.cs-limitations-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-limitation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.cs-limitation-dot {
+  color: #f59e0b;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Related Work Section */
+.cs-related-section {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-card-bright);
+  outline: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 34px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.cs-related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cs-related-card {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-subcard);
+  padding: 20px 22px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.cs-related-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 6px 18px rgba(0, 82, 255, 0.08);
+}
+
+.cs-related-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cs-related-note {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .cs-faq-grid,
+  .cs-related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
