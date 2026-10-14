@@ -232,6 +232,7 @@ export class ThreeSceneManager {
 
   animate() {
     requestAnimationFrame(this.animate.bind(this));
+    if (document.hidden) return;
 
     const time = performance.now() * 0.001;
 

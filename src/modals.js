@@ -37,17 +37,37 @@ export class ModalManager {
     const btnVideoPlay = document.getElementById('btn-trigger-walkthrough-modal');
     if (btnVideoPlay) {
       btnVideoPlay.addEventListener('click', () => {
-        // Read active showcase title and poster
+        // Read active showcase title, poster, and videoSrc
         const titleEl = document.getElementById('walkthrough-active-title');
         const posterEl = document.getElementById('walkthrough-bg-poster');
+        const videoSrc = btnVideoPlay.dataset.videoSrc || '';
 
         const modalTitle = document.getElementById('modal-player-title');
         const playerHeadline = document.getElementById('player-active-headline');
         const playerPoster = document.getElementById('player-poster-img');
+        const html5Video = document.getElementById('modal-html5-video');
+        const placeholderSlot = document.getElementById('video-placeholder-slot');
 
-        if (titleEl && modalTitle) modalTitle.textContent = titleEl.textContent;
-        if (titleEl && playerHeadline) playerHeadline.textContent = titleEl.textContent;
+        const displayTitle = titleEl ? titleEl.textContent : (btnVideoPlay.dataset.title || 'Project Walkthrough');
+        if (modalTitle) modalTitle.textContent = displayTitle;
+        if (playerHeadline) playerHeadline.textContent = displayTitle;
         if (posterEl && playerPoster) playerPoster.src = posterEl.src;
+
+        if (videoSrc && html5Video) {
+          html5Video.src = videoSrc;
+          html5Video.poster = posterEl ? posterEl.src : '';
+          html5Video.style.display = 'block';
+          if (placeholderSlot) placeholderSlot.style.display = 'none';
+          html5Video.load();
+          html5Video.play().catch(() => {});
+        } else {
+          if (html5Video) {
+            html5Video.pause();
+            html5Video.removeAttribute('src');
+            html5Video.style.display = 'none';
+          }
+          if (placeholderSlot) placeholderSlot.style.display = 'flex';
+        }
 
         this.open('modal-walkthrough-player');
       });
@@ -104,6 +124,13 @@ export class ModalManager {
       this.activeModal = null;
       document.body.style.overflow = '';
       return;
+    }
+
+    if (targetId === 'modal-walkthrough-player') {
+      const html5Video = document.getElementById('modal-html5-video');
+      if (html5Video) {
+        html5Video.pause();
+      }
     }
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

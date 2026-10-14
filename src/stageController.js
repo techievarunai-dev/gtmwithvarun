@@ -43,6 +43,7 @@ export class SpatialScrollController {
       end: 'bottom bottom',
       onUpdate: (self) => {
         const p = self.progress;
+        this.currentScrollProgress = p;
         
         // Update 3D Three.js camera position along spline
         if (this.threeScene) {

@@ -20,66 +20,66 @@
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/projects/us-insurance-outbound-system/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg</image:loc>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png</image:loc>
       <image:title>US Insurance Outbound System Architecture</image:title>
       <image:caption>Deterministic 4-Workflow n8n outbound architecture with AI reply triage</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/projects/gtm-intelligence-hub/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://varunmurugan-gtm.vercel.app/assets/gtm-intelligence-hub.jpg</image:loc>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/gtm-intelligence-hub/hero-dashboard.png</image:loc>
       <image:title>AI-Powered GTM Intelligence Hub Architecture</image:title>
       <image:caption>Real-time buying signal enrichment and high-intent outbound scoring</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/projects/lead-response-os/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://varunmurugan-gtm.vercel.app/assets/lead-response-os.jpg</image:loc>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/lead-response-os/hero-workflow.png</image:loc>
       <image:title>Autonomous Lead Response OS Architecture</image:title>
       <image:caption>Sub-2-minute inbound lead qualification and routing engine</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/projects/newsletter-automation/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://varunmurugan-gtm.vercel.app/assets/newsletter-operations.jpg</image:loc>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/newsletter-automation/hero-workflow.png</image:loc>
       <image:title>AI Newsletter Operations System Architecture</image:title>
       <image:caption>Automated multi-channel newsletter curation, drafting, and distribution</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/projects/outbound-gtm-audit/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://varunmurugan-gtm.vercel.app/assets/outbound-gtm-audit.jpg</image:loc>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/outbound-gtm-audit/hero-framework.jpg</image:loc>
       <image:title>Outbound GTM Systems Audit Architecture</image:title>
       <image:caption>Diagnostic audit framework for deliverability, CRM hygiene, and pipeline leakage</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/projects/candidate-screening/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://varunmurugan-gtm.vercel.app/assets/candidate-screening.jpg</image:loc>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/candidate-screening/hero-pipeline.png</image:loc>
       <image:title>AI Candidate Screening System Architecture</image:title>
       <image:caption>Automated resume extraction and objective rubric scoring pipeline</image:caption>
     </image:image>
@@ -95,35 +95,65 @@
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/varun-portrait.jpg</image:loc>
+      <image:title>What Is a GTM Engineer? A Practical Guide</image:title>
+      <image:caption>Varun Murugan P - GTM Engineering Practice Guide</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/blog/how-to-build-an-ai-powered-lead-response-system/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/lead-response-os/hero-workflow.png</image:loc>
+      <image:title>How to Build an AI-Powered Lead Response System</image:title>
+      <image:caption>Autonomous Lead Response OS Architecture</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/blog/inside-an-ai-powered-gtm-intelligence-hub/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/gtm-intelligence-hub/hero-dashboard.png</image:loc>
+      <image:title>Inside an AI-Powered GTM Intelligence Hub</image:title>
+      <image:caption>AI-Powered GTM Intelligence Hub Architecture Blueprint</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/blog/building-an-automated-outbound-system/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png</image:loc>
+      <image:title>Building an Automated Outbound System: Architecture and Lessons</image:title>
+      <image:caption>US Insurance Outbound System Architecture</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/blog/gtm-engineering-vs-revops/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/outbound-gtm-audit/hero-framework.jpg</image:loc>
+      <image:title>GTM Engineering vs. RevOps: Roles, Responsibilities, and Tools</image:title>
+      <image:caption>GTM Engineering vs RevOps Framework Blueprint</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://varunmurugan-gtm.vercel.app/assets/case-studies/us-insurance-outbound-system/workflow-2-sequence-engine.png</image:loc>
+      <image:title>Building GTM Automation Workflows with n8n</image:title>
+      <image:caption>n8n Workflow Engineering Blueprint</image:caption>
+    </image:image>
   </url>
 </urlset>

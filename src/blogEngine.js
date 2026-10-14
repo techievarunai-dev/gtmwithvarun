@@ -1,5 +1,9 @@
 import { BLOG_CATEGORIES, BLOG_ARTICLES, getPublishedArticles } from './blogData.js';
 import { initMobileNav } from './navController.js';
+import { initSpeedInsights } from './speedInsights.js';
+
+// Initialize Real-User Performance Monitoring (Vercel Speed Insights)
+initSpeedInsights();
 
 export class BlogEngine {
   constructor() {

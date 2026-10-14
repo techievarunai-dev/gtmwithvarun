@@ -17,13 +17,13 @@
   <meta property="og:url" content="https://varunmurugan-gtm.vercel.app/case-study.html">
   <meta property="og:title" content="US Insurance Outbound System — GTM Engineering Case Study">
   <meta property="og:description" content="Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.">
-  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg">
+  <meta property="og:image" content="https://varunmurugan-gtm.vercel.app/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png">
 
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="US Insurance Outbound System — GTM Engineering Case Study">
   <meta name="twitter:description" content="Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.">
-  <meta name="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg">
+  <meta name="twitter:image" content="https://varunmurugan-gtm.vercel.app/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="manifest" href="/site.webmanifest">
@@ -46,7 +46,7 @@
         "headline": "US Insurance Outbound System — System Architecture Case Study",
         "description": "Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling.",
         "url": "https://varunmurugan-gtm.vercel.app/case-study.html",
-        "image": "https://varunmurugan-gtm.vercel.app/assets/us-insurance-system.jpg",
+        "image": "https://varunmurugan-gtm.vercel.app/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png",
         "author": {
           "@type": "Person",
           "name": "Varun Murugan P",
@@ -139,17 +139,7 @@
   <!-- Main Case Study Content Container -->
   <main class="cs-main-container">
 
-    <!-- Temporary Placeholder Notice -->
-    <div class="cs-placeholder-banner">
-      <div class="cs-banner-content">
-        <span class="cs-banner-icon">⚡</span>
-        <div>
-          <strong>ARCHITECTURAL CASE STUDY PLACEHOLDER</strong>
-          <p>This deep-dive page contains the verified system blueprint, workflows, and metrics. Expanded client videos and detailed project assets can be continuously plugged in here.</p>
-        </div>
-      </div>
-      <a href="/index.html#transmission" class="cs-banner-cta">Talk Architecture →</a>
-    </div>
+
 
     <!-- Case Study Hero Block -->
     <section class="cs-hero-section">
@@ -182,29 +172,66 @@
       </div>
     </section>
 
-    <!-- Architecture Blueprint Visual Card -->
-    <section class="cs-architecture-stage">
+    <!-- Dedicated Video Walkthrough Stage (renders when project has walkthrough video) -->
+    <section class="cs-video-stage" id="cs-video-stage" style="display:none;" aria-label="System Walkthrough Video">
+      <div class="cs-video-card-frame">
+        <div class="cs-video-topbar">
+          <div class="cs-video-kicker-group">
+            <span class="cs-video-pulse-dot"></span>
+            <span class="cs-video-tag-text">AUTHENTIC RECORDED WALKTHROUGH</span>
+          </div>
+          <span class="cs-video-duration-pill" id="cs-video-duration-pill">13 MIN NARRATED DEMO</span>
+        </div>
+        <div class="cs-video-player-wrap">
+          <video id="cs-embedded-video" class="cs-html5-video" controls preload="metadata" playsinline poster="/assets/case-studies/gtm-intelligence-hub/video-poster.jpg">
+            <source src="/assets/case-studies/gtm-intelligence-hub/gtm-hub-walkthrough.mp4" type="video/mp4" id="cs-video-source">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="cs-video-footer">
+          <div class="cs-video-footer-meta">
+            <h4 class="cs-video-caption-title" id="cs-video-caption-title">AI-Powered GTM Intelligence Hub — Complete Architecture Walkthrough</h4>
+            <p class="cs-video-caption-sub" id="cs-video-caption-sub">Live screen recording and technical narration demonstrating continuous signal ingress, Airtable operations monitoring, and AI deal health scoring.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Blueprint & Evidence Gallery Stage -->
+    <section class="cs-architecture-stage" aria-label="System Architecture & Workflow Evidence Gallery">
+      
+      <!-- Evidence Gallery Tabs Bar (renders dynamically for multi-workflow projects) -->
+      <div class="cs-evidence-tabs-bar" id="cs-evidence-tabs" role="tablist" aria-label="Workflow & Data Views"></div>
+
       <div class="cs-diagram-frame">
         <div class="cs-diagram-topbar">
-          <span class="cs-diagram-title" id="cs-diagram-caption">FIGURE 1.0 — US INSURANCE OUTBOUND SYSTEM ARCHITECTURE BLUEPRINT</span>
-          <button type="button" class="cs-zoom-btn" id="btn-zoom-diagram">
+          <div class="cs-diagram-kicker-group">
+            <span class="cs-evidence-tag-pill" id="cs-evidence-tag-pill">GENUINE WORKFLOW EVIDENCE</span>
+            <span class="cs-diagram-title" id="cs-diagram-caption">FIGURE 1.0 — SYSTEM ARCHITECTURE BLUEPRINT</span>
+          </div>
+          <button type="button" class="cs-zoom-btn" id="btn-zoom-diagram" aria-label="Enlarge Blueprint in Lightbox">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="15 3 21 3 21 9"></polyline>
               <polyline points="9 21 3 21 3 15"></polyline>
               <line x1="21" y1="3" x2="14" y2="10"></line>
               <line x1="3" y1="21" x2="10" y2="14"></line>
             </svg>
-            <span>Click to Enlarge Blueprint</span>
+            <span>Click to Enlarge</span>
           </button>
         </div>
 
-        <div class="cs-diagram-img-wrap">
-          <img src="/assets/us-insurance-system.jpg" alt="Case Study System Architecture Diagram" class="cs-blueprint-img" id="cs-diagram-img">
+        <div class="cs-diagram-img-wrap" id="cs-diagram-wrap">
+          <img src="/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png" alt="Case Study System Architecture Diagram" class="cs-blueprint-img" id="cs-diagram-img" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <!-- Dynamic Evidence Description -->
+        <div class="cs-evidence-active-desc" id="cs-evidence-active-desc">
+          <p class="cs-evidence-desc-text" id="cs-evidence-desc-text">Daily trigger fetches verified commercial insurance leaders, evaluates headcount and licensing through an ICP Acceptance Gate, deduplicates contacts, and prepares sequence queues.</p>
         </div>
 
         <div class="cs-diagram-footer">
-          <span class="cs-telemetry-tag">● PRODUCTION_SPEC_VALIDATED</span>
-          <span class="cs-telemetry-note">Deterministic State Machine · End-to-End Orchestration</span>
+          <span class="cs-telemetry-tag" id="cs-telemetry-status-badge">● VERIFIED_PRODUCTION_EVIDENCE</span>
+          <span class="cs-telemetry-note" id="cs-telemetry-note-text">High-Resolution Production Screenshot · Click to inspect node schemas</span>
         </div>
       </div>
     </section>
@@ -305,7 +332,7 @@
   <div class="cs-lightbox-overlay" id="cs-lightbox-modal" aria-hidden="true">
     <div class="cs-lightbox-dialog">
       <button type="button" class="cs-lightbox-close-btn" id="cs-lightbox-close" aria-label="Close enlarged blueprint">✕</button>
-      <img src="/assets/us-insurance-system.jpg" alt="Enlarged System Blueprint" class="cs-lightbox-full-img" id="lightbox-img">
+      <img src="/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png" alt="Enlarged System Blueprint" class="cs-lightbox-full-img" id="lightbox-img">
     </div>
   </div>
 

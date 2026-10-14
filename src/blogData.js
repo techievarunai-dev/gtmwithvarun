@@ -218,7 +218,7 @@ telemetry:
     publishedAt: '2026-10-04',
     updatedAt: '2026-10-11',
     readTime: '8 min read',
-    coverImage: '/assets/lead-response-os.jpg',
+    coverImage: '/assets/case-studies/lead-response-os/hero-workflow.png',
     coverAlt: 'Autonomous Lead Response OS Architecture',
     tags: ['AI Automation', 'Speed to Lead', 'n8n', 'HubSpot', 'Clay', 'GPT-4'],
     author: {
@@ -250,7 +250,7 @@ telemetry:
       <section id="system-overview">
         <h2>System Architecture Blueprint</h2>
         <div class="article-diagram-wrapper">
-          <img src="/assets/lead-response-os.jpg" alt="Autonomous Lead Response OS Blueprint" class="article-inline-diagram" width="1200" height="675" loading="lazy">
+          <img src="/assets/case-studies/lead-response-os/hero-workflow.png" alt="Autonomous Lead Response OS Blueprint" class="article-inline-diagram" width="1200" height="675" loading="lazy">
           <span class="diagram-caption">FIGURE 1.0 — Inbound Webhook, Enrichment Waterfall, and GPT-4 Triage Pipeline</span>
         </div>
         <p>
@@ -343,7 +343,7 @@ return {
     publishedAt: '2026-09-28',
     updatedAt: '2026-10-09',
     readTime: '10 min read',
-    coverImage: '/assets/gtm-intelligence-hub.jpg',
+    coverImage: '/assets/case-studies/gtm-intelligence-hub/hero-dashboard.png',
     coverAlt: 'AI-Powered GTM Intelligence Hub Architecture Blueprint',
     tags: ['GTM Intelligence', 'Buying Signals', 'Clay', 'n8n', 'OpenAI', 'Slack'],
     author: {
@@ -382,7 +382,7 @@ return {
             <thead>
               <tr>
                 <th>Signal Type</th>
-                <th>Detection Mechanism</th>
+                <th>Detection mechanism</th>
                 <th>Signal Weight</th>
               </tr>
             </thead>
@@ -415,7 +415,7 @@ return {
       <section id="architecture-deepdive">
         <h2>Ingestion & Intent Scoring Engine</h2>
         <div class="article-diagram-wrapper">
-          <img src="/assets/gtm-intelligence-hub.jpg" alt="AI-Powered GTM Intelligence Hub Architecture" class="article-inline-diagram" width="1200" height="675" loading="lazy">
+          <img src="/assets/case-studies/gtm-intelligence-hub/hero-dashboard.png" alt="AI-Powered GTM Intelligence Hub Architecture" class="article-inline-diagram" width="1200" height="675" loading="lazy">
           <span class="diagram-caption">FIGURE 2.0 — Live Signal Ingress to CRM Orchestration Pipeline</span>
         </div>
         <p>
@@ -458,7 +458,7 @@ return {
     publishedAt: '2026-09-20',
     updatedAt: '2026-10-06',
     readTime: '9 min read',
-    coverImage: '/assets/us-insurance-system.jpg',
+    coverImage: '/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png',
     coverAlt: 'US Insurance Outbound System Architecture',
     tags: ['n8n', 'Apollo', 'Outbound', 'State Store', 'AI Triage', 'JavaScript'],
     author: {
@@ -487,7 +487,7 @@ return {
       <section id="four-workflow-architecture">
         <h2>The 4-Workflow System Design</h2>
         <div class="article-diagram-wrapper">
-          <img src="/assets/us-insurance-system.jpg" alt="US Insurance Outbound System Architecture" class="article-inline-diagram" width="1200" height="675" loading="lazy">
+          <img src="/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png" alt="US Insurance Outbound System Architecture" class="article-inline-diagram" width="1200" height="675" loading="lazy">
           <span class="diagram-caption">FIGURE 3.0 — 4-Workflow Orchestration in n8n</span>
         </div>
         <p>
@@ -566,7 +566,7 @@ switch (llmOutput.sentiment) {
     publishedAt: '2026-09-12',
     updatedAt: '2026-10-02',
     readTime: '7 min read',
-    coverImage: '/assets/outbound-gtm-audit.jpg',
+    coverImage: '/assets/case-studies/outbound-gtm-audit/hero-framework.jpg',
     coverAlt: 'GTM Engineering vs RevOps Framework Blueprint',
     tags: ['RevOps', 'GTM Engineering', 'Organizational Design', 'Team Structure'],
     author: {
@@ -666,7 +666,7 @@ switch (llmOutput.sentiment) {
     publishedAt: '2026-09-02',
     updatedAt: '2026-09-25',
     readTime: '8 min read',
-    coverImage: '/assets/us-insurance-system.jpg',
+    coverImage: '/assets/case-studies/us-insurance-outbound-system/workflow-2-sequence-engine.png',
     coverAlt: 'n8n Workflow Engineering Blueprint',
     tags: ['n8n', 'Node.js', 'Docker', 'Webhooks', 'REST APIs', 'Error Handling'],
     author: {
@@ -778,7 +778,7 @@ return {
     publishedAt: '2026-10-20',
     updatedAt: '2026-10-20',
     readTime: '6 min read',
-    coverImage: '/assets/candidate-screening.jpg',
+    coverImage: '/assets/case-studies/candidate-screening/hero-pipeline.png',
     coverAlt: 'AI Lead Generation Architecture Preview',
     tags: ['Lead Generation', 'Deliverability', 'Cold Outbound', 'AI Personalization'],
     author: {

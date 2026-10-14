@@ -41,11 +41,11 @@ const routes = [
   {
     path: '/projects/us-insurance-outbound-system/',
     sourceFile: 'projects/us-insurance-outbound-system/index.html',
-    lastmod: '2026-10-13',
+    lastmod: '2026-10-14',
     changefreq: 'monthly',
     priority: '0.85',
     image: {
-      loc: '/assets/us-insurance-system.jpg',
+      loc: '/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png',
       title: 'US Insurance Outbound System Architecture',
       caption: 'Deterministic 4-Workflow n8n outbound architecture with AI reply triage'
     }
@@ -53,11 +53,11 @@ const routes = [
   {
     path: '/projects/gtm-intelligence-hub/',
     sourceFile: 'projects/gtm-intelligence-hub/index.html',
-    lastmod: '2026-10-13',
+    lastmod: '2026-10-14',
     changefreq: 'monthly',
     priority: '0.85',
     image: {
-      loc: '/assets/gtm-intelligence-hub.jpg',
+      loc: '/assets/case-studies/gtm-intelligence-hub/hero-dashboard.png',
       title: 'AI-Powered GTM Intelligence Hub Architecture',
       caption: 'Real-time buying signal enrichment and high-intent outbound scoring'
     }
@@ -65,11 +65,11 @@ const routes = [
   {
     path: '/projects/lead-response-os/',
     sourceFile: 'projects/lead-response-os/index.html',
-    lastmod: '2026-10-13',
+    lastmod: '2026-10-14',
     changefreq: 'monthly',
     priority: '0.85',
     image: {
-      loc: '/assets/lead-response-os.jpg',
+      loc: '/assets/case-studies/lead-response-os/hero-workflow.png',
       title: 'Autonomous Lead Response OS Architecture',
       caption: 'Sub-2-minute inbound lead qualification and routing engine'
     }
@@ -77,11 +77,11 @@ const routes = [
   {
     path: '/projects/newsletter-automation/',
     sourceFile: 'projects/newsletter-automation/index.html',
-    lastmod: '2026-10-13',
+    lastmod: '2026-10-14',
     changefreq: 'monthly',
     priority: '0.85',
     image: {
-      loc: '/assets/newsletter-operations.jpg',
+      loc: '/assets/case-studies/newsletter-automation/hero-workflow.png',
       title: 'AI Newsletter Operations System Architecture',
       caption: 'Automated multi-channel newsletter curation, drafting, and distribution'
     }
@@ -89,11 +89,11 @@ const routes = [
   {
     path: '/projects/outbound-gtm-audit/',
     sourceFile: 'projects/outbound-gtm-audit/index.html',
-    lastmod: '2026-10-13',
+    lastmod: '2026-10-14',
     changefreq: 'monthly',
     priority: '0.85',
     image: {
-      loc: '/assets/outbound-gtm-audit.jpg',
+      loc: '/assets/case-studies/outbound-gtm-audit/hero-framework.jpg',
       title: 'Outbound GTM Systems Audit Architecture',
       caption: 'Diagnostic audit framework for deliverability, CRM hygiene, and pipeline leakage'
     }
@@ -101,11 +101,11 @@ const routes = [
   {
     path: '/projects/candidate-screening/',
     sourceFile: 'projects/candidate-screening/index.html',
-    lastmod: '2026-10-13',
+    lastmod: '2026-10-14',
     changefreq: 'monthly',
     priority: '0.85',
     image: {
-      loc: '/assets/candidate-screening.jpg',
+      loc: '/assets/case-studies/candidate-screening/hero-pipeline.png',
       title: 'AI Candidate Screening System Architecture',
       caption: 'Automated resume extraction and objective rubric scoring pipeline'
     }
@@ -128,7 +128,12 @@ publishedArticles.forEach(article => {
     sourceFile: `blog/${article.slug}/index.html`,
     lastmod: article.updatedAt || article.publishedAt || '2026-10-14',
     changefreq: 'monthly',
-    priority: article.featured ? '0.85' : '0.80'
+    priority: article.featured ? '0.85' : '0.80',
+    image: article.coverImage ? {
+      loc: article.coverImage,
+      title: article.title,
+      caption: article.coverAlt || article.excerpt
+    } : undefined
   });
 });
 

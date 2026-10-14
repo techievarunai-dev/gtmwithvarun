@@ -74,7 +74,7 @@ export class WorkflowSimulator {
         tag: 'INTERVIEW ASSESSMENT – EUBRICS CHALLENGE',
         desc: 'Architected a 4-workflow ABM system in n8n connecting Apollo qualification, Google Sheets deterministic state store, and AI reply classification.',
         duration: '24 MIN WALKTHROUGH',
-        poster: '/assets/us-insurance-system.jpg'
+        poster: '/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png'
       },
       {
         idx: 1,
@@ -82,7 +82,8 @@ export class WorkflowSimulator {
         tag: 'PERSONAL PROJECT',
         desc: 'Built continuous monitoring of buying signals, company enrichment via Clay, OpenAI account scoring, and automated Slack alert dispatch.',
         duration: '13 MIN WALKTHROUGH',
-        poster: '/assets/gtm-intelligence-hub.jpg'
+        poster: '/assets/case-studies/gtm-intelligence-hub/video-poster.jpg',
+        videoSrc: '/assets/case-studies/gtm-intelligence-hub/gtm-hub-walkthrough.mp4'
       },
       {
         idx: 2,
@@ -90,7 +91,7 @@ export class WorkflowSimulator {
         tag: 'CLIENT ENGAGEMENT – ROMANIA',
         desc: 'Webhook-driven workflow enriching leads with Clay, intent classification with OpenAI, reducing response SLA from 4 hours to under 3 minutes.',
         duration: '2 MIN WALKTHROUGH',
-        poster: '/assets/lead-response-os.jpg'
+        poster: '/assets/case-studies/lead-response-os/hero-workflow.png'
       }
     ];
 
@@ -155,6 +156,9 @@ export class WorkflowSimulator {
         this.setActiveShowcase(pIdx);
       });
     });
+
+    // Prime initial showcase metadata
+    this.setActiveShowcase(0);
   }
 
   /**
@@ -302,6 +306,7 @@ export class WorkflowSimulator {
     const runtimeEl = document.getElementById('walkthrough-runtime-badge');
     const descEl = document.querySelector('.video-card-desc');
     const tagEl = document.querySelector('.video-tag');
+    const playBtn = document.getElementById('btn-trigger-walkthrough-modal');
 
     if (posterEl && posterEl.getAttribute('src') !== proj.poster) {
       posterEl.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
@@ -317,5 +322,10 @@ export class WorkflowSimulator {
     if (runtimeEl) runtimeEl.textContent = proj.duration;
     if (descEl && proj.desc) descEl.textContent = proj.desc;
     if (tagEl && proj.tag) tagEl.textContent = proj.tag;
+    if (playBtn) {
+      playBtn.dataset.videoSrc = proj.videoSrc || '';
+      playBtn.dataset.poster = proj.poster || '';
+      playBtn.dataset.title = proj.title || '';
+    }
   }
 }

@@ -1,5 +1,9 @@
 import { CASE_STUDIES } from './caseStudiesData.js';
 import { SITE_CONFIG } from './siteConfig.js';
+import { initSpeedInsights } from './speedInsights.js';
+
+// Initialize Real-User Performance Monitoring (Vercel Speed Insights)
+initSpeedInsights();
 
 export class CaseStudyPageManager {
   constructor() {
@@ -66,21 +70,11 @@ export class CaseStudyPageManager {
       tagsContainer.innerHTML = data.tags.map(t => `<span class="cs-tag-pill">${t}</span>`).join('');
     }
 
-    // 3. Architecture Diagram Image
-    const imgEl = document.getElementById('cs-diagram-img');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const captionEl = document.getElementById('cs-diagram-caption');
-    if (imgEl) {
-      imgEl.src = data.image;
-      imgEl.alt = data.imageAlt;
-    }
-    if (lightboxImg) {
-      lightboxImg.src = data.image;
-      lightboxImg.alt = data.imageAlt;
-    }
-    if (captionEl) {
-      captionEl.textContent = `FIGURE 1.0 — ${data.title.toUpperCase()} SYSTEM ARCHITECTURE BLUEPRINT`;
-    }
+    // 3. Render Dedicated Video Walkthrough (if available)
+    this.renderVideo(data);
+
+    // 4. Render Architecture Diagram & Evidence Gallery Tabs
+    this.renderEvidenceGallery(data);
 
     // 4. Problem Section
     this.setText('cs-problem-headline', data.problem.headline);
@@ -176,6 +170,122 @@ export class CaseStudyPageManager {
 
     // Scroll to top smoothly if switching
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  renderVideo(data) {
+    const videoStage = document.getElementById('cs-video-stage');
+    const videoEl = document.getElementById('cs-embedded-video');
+    const sourceEl = document.getElementById('cs-video-source');
+    const durationPill = document.getElementById('cs-video-duration-pill');
+    const titleEl = document.getElementById('cs-video-caption-title');
+    const subEl = document.getElementById('cs-video-caption-sub');
+
+    if (!videoStage || !videoEl) return;
+
+    if (data.video && data.video.src) {
+      videoStage.style.display = 'block';
+      if (sourceEl) sourceEl.src = data.video.src;
+      videoEl.poster = data.video.poster || '';
+      videoEl.load();
+      if (durationPill) durationPill.textContent = data.video.duration || 'NARRATED WALKTHROUGH';
+      if (titleEl) titleEl.textContent = data.video.title || `${data.title} — Walkthrough Video`;
+      if (subEl) subEl.textContent = 'Live screencast and architectural explanation by Varun Murugan.';
+    } else {
+      if (!videoEl.paused) videoEl.pause();
+      videoStage.style.display = 'none';
+    }
+  }
+
+  renderEvidenceGallery(data) {
+    const tabsContainer = document.getElementById('cs-evidence-tabs');
+    const imgEl = document.getElementById('cs-diagram-img');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const captionEl = document.getElementById('cs-diagram-caption');
+    const tagPill = document.getElementById('cs-evidence-tag-pill');
+    const descText = document.getElementById('cs-evidence-desc-text');
+    const statusBadge = document.getElementById('cs-telemetry-status-badge');
+    const noteText = document.getElementById('cs-telemetry-note-text');
+
+    if (!imgEl) return;
+
+    const gallery = data.evidenceGallery || [];
+
+    // Authenticity Badging
+    if (statusBadge) {
+      statusBadge.textContent = data.isGenuine ? '● VERIFIED_PRODUCTION_EVIDENCE' : '● STRATEGIC_FRAMEWORK_BLUEPRINT';
+    }
+    if (noteText) {
+      noteText.textContent = data.isGenuine
+        ? 'High-Resolution Production Screenshot · Click to inspect node schemas'
+        : 'Strategic Diagnostic Framework Blueprint · Architectural Reference';
+    }
+
+    if (!tabsContainer || gallery.length <= 1) {
+      if (tabsContainer) tabsContainer.style.display = 'none';
+      imgEl.src = data.image;
+      imgEl.alt = data.imageAlt;
+      if (lightboxImg) {
+        lightboxImg.src = data.image;
+        lightboxImg.alt = data.imageAlt;
+      }
+      if (captionEl) {
+        captionEl.textContent = `FIGURE 1.0 — ${data.title.toUpperCase()} SYSTEM ARCHITECTURE BLUEPRINT`;
+      }
+      if (tagPill) {
+        tagPill.textContent = data.isGenuine ? 'GENUINE WORKFLOW EVIDENCE' : 'STRATEGIC SPECIFICATION';
+      }
+      if (descText) {
+        descText.textContent = (gallery[0] && gallery[0].desc) || data.tagline;
+      }
+      return;
+    }
+
+    // Multi-evidence tabs
+    tabsContainer.style.display = 'flex';
+    tabsContainer.innerHTML = gallery.map((item, idx) => `
+      <button type="button" class="cs-evidence-tab-btn ${idx === 0 ? 'active' : ''}" data-idx="${idx}" role="tab" aria-selected="${idx === 0}">
+        <span class="tab-dot"></span>
+        <span class="tab-label">${item.label}</span>
+      </button>
+    `).join('');
+
+    const setActiveEvidence = (item, activeBtn) => {
+      imgEl.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+      imgEl.style.opacity = '0.35';
+      imgEl.style.transform = 'scale(0.99)';
+      setTimeout(() => {
+        imgEl.src = item.image;
+        imgEl.alt = item.alt;
+        if (lightboxImg) {
+          lightboxImg.src = item.image;
+          lightboxImg.alt = item.alt;
+        }
+        if (captionEl) captionEl.textContent = item.title;
+        if (tagPill) tagPill.textContent = item.tag || (data.isGenuine ? 'GENUINE WORKFLOW EVIDENCE' : 'STRATEGIC SPECIFICATION');
+        if (descText) descText.textContent = item.desc;
+        imgEl.style.opacity = '1';
+        imgEl.style.transform = 'scale(1)';
+      }, 160);
+
+      const allBtns = tabsContainer.querySelectorAll('.cs-evidence-tab-btn');
+      allBtns.forEach(b => {
+        const isCur = b === activeBtn;
+        b.classList.toggle('active', isCur);
+        b.setAttribute('aria-selected', isCur ? 'true' : 'false');
+      });
+    };
+
+    // Set first view
+    setActiveEvidence(gallery[0], tabsContainer.querySelector('.cs-evidence-tab-btn'));
+
+    // Attach listeners
+    tabsContainer.querySelectorAll('.cs-evidence-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.idx, 10);
+        const item = gallery[idx];
+        if (item) setActiveEvidence(item, btn);
+      });
+    });
   }
 
   setText(id, text) {

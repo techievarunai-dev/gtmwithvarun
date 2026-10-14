@@ -1,3 +1,8 @@
+import { initSpeedInsights } from './speedInsights.js';
+
+// Initialize Real-User Performance Monitoring (Vercel Speed Insights) across article pages
+initSpeedInsights();
+
 /**
  * Shared Navigation Controller
  * Handles mobile drawer toggle, accessibility attributes, and drawer navigation across all routes.

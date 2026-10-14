@@ -1,20 +1,50 @@
-import { ThreeSceneManager } from './threeScene.js';
+import { initSpeedInsights } from './speedInsights.js';
 import { SpatialScrollController } from './stageController.js';
 import { WorkflowSimulator } from './simulator.js';
 import { ModalManager } from './modals.js';
 import { GTMCalculator } from './gtmCalculator.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize Continuous 3D Constellation
-  let threeScene;
-  try {
-    threeScene = new ThreeSceneManager('webgl-canvas');
-  } catch (err) {
-    console.warn('WebGL initialization failed, falling back to clean CSS backdrop:', err);
-  }
+// 1. Initialize Real-User Performance Monitoring (Vercel Speed Insights)
+initSpeedInsights();
 
-  // 2. Initialize Spatial Scroll & GSAP ScrollTrigger Controller
-  const scrollController = new SpatialScrollController(threeScene);
+document.addEventListener('DOMContentLoaded', () => {
+  // 2. Initialize Spatial Scroll & GSAP ScrollTrigger Controller immediately
+  const scrollController = new SpatialScrollController(null);
+
+  // 3. Defer 3D Scene Loading to First Interaction or Idle Time (Protects Main Thread & TBT)
+  let sceneLoaded = false;
+  const init3DScene = () => {
+    if (sceneLoaded) return;
+    sceneLoaded = true;
+    ['scroll', 'mousemove', 'touchstart', 'pointerdown'].forEach(evt => {
+      window.removeEventListener(evt, init3DScene);
+    });
+
+    import('./threeScene.js')
+      .then(({ ThreeSceneManager }) => {
+        try {
+          const threeScene = new ThreeSceneManager('webgl-canvas');
+          scrollController.threeScene = threeScene;
+          // Sync current scroll position if user has already scrolled
+          if (threeScene && scrollController.currentScrollProgress !== undefined) {
+            threeScene.setScrollProgress(scrollController.currentScrollProgress);
+          }
+        } catch (err) {
+          console.warn('WebGL initialization failed, falling back to clean CSS backdrop:', err);
+        }
+      })
+      .catch(err => console.warn('Could not load 3D scene module:', err));
+  };
+
+  ['scroll', 'mousemove', 'touchstart', 'pointerdown'].forEach(evt => {
+    window.addEventListener(evt, init3DScene, { passive: true, once: true });
+  });
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(init3DScene, { timeout: 3000 });
+  } else {
+    setTimeout(init3DScene, 3000);
+  }
 
   // 3. Initialize Interactive Ingress Workflow Simulator
   const workflowSimulator = new WorkflowSimulator();
