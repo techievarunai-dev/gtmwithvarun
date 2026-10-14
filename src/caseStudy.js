@@ -186,14 +186,14 @@ export class CaseStudyPageManager {
     const nextBtn = document.getElementById('cs-next-link');
 
     if (prevBtn && prevData) {
-      prevBtn.href = `/case-study.html?id=${prevData.id}`;
+      prevBtn.href = `/projects/${prevData.id}/`;
       prevBtn.setAttribute('data-target-id', prevData.id);
       const prevTitle = prevBtn.querySelector('.nav-dest-title');
       if (prevTitle) prevTitle.textContent = prevData.title;
     }
 
     if (nextBtn && nextData) {
-      nextBtn.href = `/case-study.html?id=${nextData.id}`;
+      nextBtn.href = `/projects/${nextData.id}/`;
       nextBtn.setAttribute('data-target-id', nextData.id);
       const nextTitle = nextBtn.querySelector('.nav-dest-title');
       if (nextTitle) nextTitle.textContent = nextData.title;
