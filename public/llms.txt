@@ -2,7 +2,7 @@
 
 > Senior GTM Engineer specializing in building self-healing, deterministic revenue operating systems. Bridges business strategy and software engineering to turn manual RevOps bottlenecks into automated, high-converting pipelines using n8n, Clay, HubSpot, Python, and modern LLMs.
 
-Website: https://varunmurugan-gtm.vercel.app/
+Website: https://gtmwithvarun.vercel.app/
 Email: workwithvarunmurugan@gmail.com
 LinkedIn: https://linkedin.com/in/varunmuruganp
 GitHub: https://github.com/techievarunai-dev
@@ -21,12 +21,12 @@ Academic Honors: B.Sc. Aeronautical Science, Gold Medallist (GPA 4.0), VELS Univ
 
 ## Production Deliverables & Case Studies
 
-1. [US Insurance Outbound System](https://varunmurugan-gtm.vercel.app/projects/us-insurance-outbound-system/): Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling. (4 Workflows, 0 Errors, <3m Reply SLA).
-2. [AI-Powered GTM Intelligence Hub](https://varunmurugan-gtm.vercel.app/projects/gtm-intelligence-hub/): Prioritized high-intent outbound engine using real-time buying signals and automated enrichment. (94/100 Intent Score, 118ms enrichment, 4.2x reply rate).
-3. [Autonomous Lead Response OS](https://varunmurugan-gtm.vercel.app/projects/lead-response-os/): Sub-2-minute inbound lead qualification, enrichment, routing, and personalized booking sequencing. (1m 42s Speed-to-lead, 82% qualification rate).
-4. [AI Newsletter Operations](https://varunmurugan-gtm.vercel.app/projects/newsletter-automation/): End-to-end automated content curation, summary drafting, QA scoring, and multi-channel distribution. (7.5 hrs saved weekly, 99.4% publishing uptime).
-5. [Outbound GTM Systems Audit](https://varunmurugan-gtm.vercel.app/projects/outbound-gtm-audit/): Diagnostic audit identifying pipeline leakage, domain deliverability degradation, and CRM data decay across 12,000+ contacts. (43 actionable findings, 99.1% post-fix deliverability).
-6. [AI Candidate Screening Engine](https://varunmurugan-gtm.vercel.app/projects/candidate-screening/): Automated resume ingestion, rubric scoring, candidate evaluation, and automated feedback. (80% screening time reduction, 100% feedback rate).
+1. [US Insurance Outbound System](https://gtmwithvarun.vercel.app/projects/us-insurance-outbound-system/): Automated ABM outbound operating system with prospect qualification, n8n sequencing, and AI reply handling. (4 Workflows, 0 Errors, <3m Reply SLA).
+2. [AI-Powered GTM Intelligence Hub](https://gtmwithvarun.vercel.app/projects/gtm-intelligence-hub/): Prioritized high-intent outbound engine using real-time buying signals and automated enrichment. (94/100 Intent Score, 118ms enrichment, 4.2x reply rate).
+3. [Autonomous Lead Response OS](https://gtmwithvarun.vercel.app/projects/lead-response-os/): Sub-2-minute inbound lead qualification, enrichment, routing, and personalized booking sequencing. (1m 42s Speed-to-lead, 82% qualification rate).
+4. [AI Newsletter Operations](https://gtmwithvarun.vercel.app/projects/newsletter-automation/): End-to-end automated content curation, summary drafting, QA scoring, and multi-channel distribution. (7.5 hrs saved weekly, 99.4% publishing uptime).
+5. [Outbound GTM Systems Audit](https://gtmwithvarun.vercel.app/projects/outbound-gtm-audit/): Diagnostic audit identifying pipeline leakage, domain deliverability degradation, and CRM data decay across 12,000+ contacts. (43 actionable findings, 99.1% post-fix deliverability).
+6. [AI Candidate Screening Engine](https://gtmwithvarun.vercel.app/projects/candidate-screening/): Automated resume ingestion, rubric scoring, candidate evaluation, and automated feedback. (80% screening time reduction, 100% feedback rate).
 
 ---
 
@@ -42,17 +42,17 @@ Academic Honors: B.Sc. Aeronautical Science, Gold Medallist (GPA 4.0), VELS Univ
 
 ## Technical Insights & Engineering Publications (Blog)
 
-- [What Is a GTM Engineer? A Practical Guide](https://varunmurugan-gtm.vercel.app/blog/what-is-a-gtm-engineer/): Deep-dive into software engineering rigor, deterministic state machines, and AI replacing fragile RevOps hacks.
-- [How to Build an AI-Powered Lead Response System](https://varunmurugan-gtm.vercel.app/blog/how-to-build-an-ai-powered-lead-response-system/): Architectural breakdown of sub-2-minute inbound response: webhook ingress, Clay waterfall enrichment, GPT-4 qualification, and conditional calendar booking.
-- [Inside an AI-Powered GTM Intelligence Hub](https://varunmurugan-gtm.vercel.app/blog/inside-an-ai-powered-gtm-intelligence-hub/): Replacing cold outbound with real-time buying signal monitoring, intent scoring, and automated CRM synchronization.
-- [Building an Automated Outbound System: Architecture and Lessons](https://varunmurugan-gtm.vercel.app/blog/building-an-automated-outbound-system/): Engineering a 4-workflow ABM outbound operating system in n8n with Apollo qualification, idempotent state store, and AI reply classification.
-- [GTM Engineering vs. RevOps: Roles, Responsibilities, and Tools](https://varunmurugan-gtm.vercel.app/blog/gtm-engineering-vs-revops/): Objective comparison between GTM Engineering and traditional RevOps, explaining why high-growth companies need both.
-- [Building GTM Automation Workflows with n8n](https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/): Production guide to n8n for enterprise RevOps: self-hosted Docker, webhook security, rate limits, and custom JavaScript nodes.
-- [How AI Automation Improves B2B Lead Generation](https://varunmurugan-gtm.vercel.app/blog/): [Scheduled Research] Transitioning from blast lists to signal-triggered precision outbound.
+- [What Is a GTM Engineer? A Practical Guide](https://gtmwithvarun.vercel.app/blog/what-is-a-gtm-engineer/): Deep-dive into software engineering rigor, deterministic state machines, and AI replacing fragile RevOps hacks.
+- [How to Build an AI-Powered Lead Response System](https://gtmwithvarun.vercel.app/blog/how-to-build-an-ai-powered-lead-response-system/): Architectural breakdown of sub-2-minute inbound response: webhook ingress, Clay waterfall enrichment, GPT-4 qualification, and conditional calendar booking.
+- [Inside an AI-Powered GTM Intelligence Hub](https://gtmwithvarun.vercel.app/blog/inside-an-ai-powered-gtm-intelligence-hub/): Replacing cold outbound with real-time buying signal monitoring, intent scoring, and automated CRM synchronization.
+- [Building an Automated Outbound System: Architecture and Lessons](https://gtmwithvarun.vercel.app/blog/building-an-automated-outbound-system/): Engineering a 4-workflow ABM outbound operating system in n8n with Apollo qualification, idempotent state store, and AI reply classification.
+- [GTM Engineering vs. RevOps: Roles, Responsibilities, and Tools](https://gtmwithvarun.vercel.app/blog/gtm-engineering-vs-revops/): Objective comparison between GTM Engineering and traditional RevOps, explaining why high-growth companies need both.
+- [Building GTM Automation Workflows with n8n](https://gtmwithvarun.vercel.app/blog/building-gtm-automation-workflows-with-n8n/): Production guide to n8n for enterprise RevOps: self-hosted Docker, webhook security, rate limits, and custom JavaScript nodes.
+- [How AI Automation Improves B2B Lead Generation](https://gtmwithvarun.vercel.app/blog/): [Scheduled Research] Transitioning from blast lists to signal-triggered precision outbound.
 
 ---
 
 ## Complete Knowledge Base & Extended Documentation
-- Blog Hub: https://varunmurugan-gtm.vercel.app/blog/
-- Full Documentation: https://varunmurugan-gtm.vercel.app/llms-full.txt
-- XML Sitemap: https://varunmurugan-gtm.vercel.app/sitemap.xml
+- Blog Hub: https://gtmwithvarun.vercel.app/blog/
+- Full Documentation: https://gtmwithvarun.vercel.app/llms-full.txt
+- XML Sitemap: https://gtmwithvarun.vercel.app/sitemap.xml

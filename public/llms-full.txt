@@ -2,7 +2,7 @@
 
 Author: Varun Murugan P
 Role: GTM Engineer & AI Revenue Automation Architect
-Website: https://varunmurugan-gtm.vercel.app/
+Website: https://gtmwithvarun.vercel.app/
 Contact: workwithvarunmurugan@gmail.com
 LinkedIn: https://linkedin.com/in/varunmuruganp
 GitHub: https://github.com/techievarunai-dev
@@ -106,43 +106,43 @@ A:
 - Protocols: REST APIs, Webhooks, OAuth2, SMTP/IMAP
 
 ### Q: How can companies hire or work with Varun Murugan?
-A: Varun is available for full-time GTM Engineer and AI Automation roles, strategic GTM infrastructure audits, and custom revenue pipeline architecture engagements. Inquiries can be submitted via his portfolio transmission portal at https://varunmurugan-gtm.vercel.app/#transmission or by emailing workwithvarunmurugan@gmail.com directly.
+A: Varun is available for full-time GTM Engineer and AI Automation roles, strategic GTM infrastructure audits, and custom revenue pipeline architecture engagements. Inquiries can be submitted via his portfolio transmission portal at https://gtmwithvarun.vercel.app/#transmission or by emailing workwithvarunmurugan@gmail.com directly.
 
 ---
 
 ## 5. Technical Insights & Engineering Publications (Blog)
 
 ### 01. What Is a GTM Engineer? A Practical Guide
-- URL: https://varunmurugan-gtm.vercel.app/blog/what-is-a-gtm-engineer/
+- URL: https://gtmwithvarun.vercel.app/blog/what-is-a-gtm-engineer/
 - Topic: GTM Engineering / Systems Architecture
 - Summary: In-depth exploration of why traditional RevOps hack-stacks break down at scale, the definition of a GTM Engineer as a distributed systems architect for revenue, the five core operational layers (Signal Ingress, Waterfall Enrichment, Deterministic State Stores, AI Reply Triage, Telemetry), and three fundamental engineering tenets (Idempotency, Explicit State Machines, Graceful Degradation).
 
 ### 02. How to Build an AI-Powered Lead Response System
-- URL: https://varunmurugan-gtm.vercel.app/blog/how-to-build-an-ai-powered-lead-response-system/
+- URL: https://gtmwithvarun.vercel.app/blog/how-to-build-an-ai-powered-lead-response-system/
 - Topic: AI Automation / Speed to Lead
 - Summary: Step-by-step engineering walkthrough of a sub-2-minute inbound response engine: webhook ingress, Clay waterfall enrichment across Apollo and Crustdata, GPT-4 semantic qualification, calendar slot matching, and automated email drafting with human-in-the-loop review.
 
 ### 03. Inside an AI-Powered GTM Intelligence Hub
-- URL: https://varunmurugan-gtm.vercel.app/blog/inside-an-ai-powered-gtm-intelligence-hub/
+- URL: https://gtmwithvarun.vercel.app/blog/inside-an-ai-powered-gtm-intelligence-hub/
 - Topic: Technical Experiments & Case Studies / Buying Signals
 - Summary: Engineering blueprint showing how to replace spammy spray-and-pray outbound with signal-based triggers: monitoring funding, hiring, and tech installs via webhooks, algorithmic scoring with decay curves, and automated personalized engagement.
 
 ### 04. Building an Automated Outbound System: Architecture and Lessons
-- URL: https://varunmurugan-gtm.vercel.app/blog/building-an-automated-outbound-system/
+- URL: https://gtmwithvarun.vercel.app/blog/building-an-automated-outbound-system/
 - Topic: GTM Engineering / Outbound Infrastructure
 - Summary: Technical breakdown of a 4-workflow automated ABM outbound operating system in n8n: prospect qualification, Google Sheets as an idempotent state store, and multi-class AI email reply classification.
 
 ### 05. GTM Engineering vs. RevOps: Roles, Responsibilities, and Tools
-- URL: https://varunmurugan-gtm.vercel.app/blog/gtm-engineering-vs-revops/
+- URL: https://gtmwithvarun.vercel.app/blog/gtm-engineering-vs-revops/
 - Topic: Revenue Operations / Organizational Architecture
 - Summary: Objective comparison matrix differentiating GTM Engineering (infrastructure builders, API integrations, distributed state, SLA uptime) from RevOps (business strategy, compensation models, forecasting, stakeholder alignment), and how modern B2B teams pair them effectively.
 
 ### 06. Building GTM Automation Workflows with n8n
-- URL: https://varunmurugan-gtm.vercel.app/blog/building-gtm-automation-workflows-with-n8n/
+- URL: https://gtmwithvarun.vercel.app/blog/building-gtm-automation-workflows-with-n8n/
 - Topic: AI Agents & Workflows / Systems Engineering
 - Summary: Production engineering guide for deploying n8n in enterprise RevOps: self-hosted Docker on AWS/Hetzner, webhook signature verification, rate-limit defense with Redis queues, and custom JavaScript code nodes.
 
 ### 07. [Upcoming Research Pipeline] How AI Automation Improves B2B Lead Generation
-- URL: https://varunmurugan-gtm.vercel.app/blog/
+- URL: https://gtmwithvarun.vercel.app/blog/
 - Topic: Lead Generation & Outbound (Draft / In Validation)
 - Summary: In-flight validation of transitioning from static lists to signal-driven outbound, domain reputation defense, and vector-based prospect matching.

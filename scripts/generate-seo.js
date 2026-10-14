@@ -22,28 +22,17 @@ const routes = [
     path: '/',
     sourceFile: 'index.html',
     lastmod: '2026-10-14',
-    changefreq: 'weekly',
-    priority: '1.0',
     image: {
       loc: '/assets/varun-portrait.jpg',
       title: 'Varun Murugan P - GTM Engineer',
       caption: 'Varun Murugan P, Senior GTM Engineer and AI Revenue Automation Architect'
     }
   },
-  {
-    path: '/case-study.html',
-    sourceFile: 'case-study.html',
-    lastmod: '2026-10-14',
-    changefreq: 'weekly',
-    priority: '0.9'
-  },
   // Projects / Case Studies
   {
     path: '/projects/us-insurance-outbound-system/',
     sourceFile: 'projects/us-insurance-outbound-system/index.html',
     lastmod: '2026-10-14',
-    changefreq: 'monthly',
-    priority: '0.85',
     image: {
       loc: '/assets/case-studies/us-insurance-outbound-system/hero-workflow-1.png',
       title: 'US Insurance Outbound System Architecture',
@@ -54,8 +43,6 @@ const routes = [
     path: '/projects/gtm-intelligence-hub/',
     sourceFile: 'projects/gtm-intelligence-hub/index.html',
     lastmod: '2026-10-14',
-    changefreq: 'monthly',
-    priority: '0.85',
     image: {
       loc: '/assets/case-studies/gtm-intelligence-hub/hero-dashboard.png',
       title: 'AI-Powered GTM Intelligence Hub Architecture',
@@ -66,8 +53,6 @@ const routes = [
     path: '/projects/lead-response-os/',
     sourceFile: 'projects/lead-response-os/index.html',
     lastmod: '2026-10-14',
-    changefreq: 'monthly',
-    priority: '0.85',
     image: {
       loc: '/assets/case-studies/lead-response-os/hero-workflow.png',
       title: 'Autonomous Lead Response OS Architecture',
@@ -78,8 +63,6 @@ const routes = [
     path: '/projects/newsletter-automation/',
     sourceFile: 'projects/newsletter-automation/index.html',
     lastmod: '2026-10-14',
-    changefreq: 'monthly',
-    priority: '0.85',
     image: {
       loc: '/assets/case-studies/newsletter-automation/hero-workflow.png',
       title: 'AI Newsletter Operations System Architecture',
@@ -90,8 +73,6 @@ const routes = [
     path: '/projects/outbound-gtm-audit/',
     sourceFile: 'projects/outbound-gtm-audit/index.html',
     lastmod: '2026-10-14',
-    changefreq: 'monthly',
-    priority: '0.85',
     image: {
       loc: '/assets/case-studies/outbound-gtm-audit/hero-framework.jpg',
       title: 'Outbound GTM Systems Audit Architecture',
@@ -102,8 +83,6 @@ const routes = [
     path: '/projects/candidate-screening/',
     sourceFile: 'projects/candidate-screening/index.html',
     lastmod: '2026-10-14',
-    changefreq: 'monthly',
-    priority: '0.85',
     image: {
       loc: '/assets/case-studies/candidate-screening/hero-pipeline.png',
       title: 'AI Candidate Screening System Architecture',
@@ -114,9 +93,7 @@ const routes = [
   {
     path: '/blog/',
     sourceFile: 'blog/index.html',
-    lastmod: '2026-10-14',
-    changefreq: 'weekly',
-    priority: '0.9'
+    lastmod: '2026-10-14'
   }
 ];
 
@@ -127,8 +104,6 @@ publishedArticles.forEach(article => {
     path: `/blog/${article.slug}/`,
     sourceFile: `blog/${article.slug}/index.html`,
     lastmod: article.updatedAt || article.publishedAt || '2026-10-14',
-    changefreq: 'monthly',
-    priority: article.featured ? '0.85' : '0.80',
     image: article.coverImage ? {
       loc: article.coverImage,
       title: article.title,
@@ -136,6 +111,17 @@ publishedArticles.forEach(article => {
     } : undefined
   });
 });
+
+// XML entity escaping helper
+function escapeXml(unsafe) {
+  if (!unsafe) return '';
+  return String(unsafe)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
 
 // 2. Validate all routes against local filesystem
 console.log(`[1/4] Validating routes and assets on disk...`);
@@ -164,13 +150,11 @@ routes.forEach(route => {
   xml += `  <url>\n`;
   xml += `    <loc>${targetDomain}${route.path}</loc>\n`;
   xml += `    <lastmod>${route.lastmod}</lastmod>\n`;
-  xml += `    <changefreq>${route.changefreq}</changefreq>\n`;
-  xml += `    <priority>${route.priority}</priority>\n`;
   if (route.image) {
     xml += `    <image:image>\n`;
     xml += `      <image:loc>${targetDomain}${route.image.loc}</image:loc>\n`;
-    xml += `      <image:title>${route.image.title}</image:title>\n`;
-    xml += `      <image:caption>${route.image.caption}</image:caption>\n`;
+    xml += `      <image:title>${escapeXml(route.image.title)}</image:title>\n`;
+    xml += `      <image:caption>${escapeXml(route.image.caption)}</image:caption>\n`;
     xml += `    </image:image>\n`;
   }
   xml += `  </url>\n`;

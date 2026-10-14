@@ -33,6 +33,6 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap & Machine-Readable Knowledge Base Index
-Sitemap: https://varunmurugan-gtm.vercel.app/sitemap.xml
-llms-txt: https://varunmurugan-gtm.vercel.app/llms.txt
-llms-full-txt: https://varunmurugan-gtm.vercel.app/llms-full.txt
+Sitemap: https://gtmwithvarun.vercel.app/sitemap.xml
+llms-txt: https://gtmwithvarun.vercel.app/llms.txt
+llms-full-txt: https://gtmwithvarun.vercel.app/llms-full.txt

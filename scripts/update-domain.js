@@ -92,7 +92,7 @@ if (fs.existsSync(siteConfigPath)) {
   let content = fs.readFileSync(siteConfigPath, 'utf8');
   if (!isDryRun) {
     content = content.replace(
-      new RegExp(`siteUrl:.*`),
+      /siteUrl:[\s\S]*?: 'https?:\/\/[^']+',/,
       `siteUrl: (typeof process !== 'undefined' && (process.env.VITE_SITE_URL || process.env.SITE_URL))\n    ? (process.env.VITE_SITE_URL || process.env.SITE_URL).replace(/\\/$/, '')\n    : '${newDomain}',`
     );
     fs.writeFileSync(siteConfigPath, content, 'utf8');

@@ -51,7 +51,7 @@ export class CaseStudyPageManager {
     if (ogImg) ogImg.setAttribute('content', `${siteUrl}${data.image}`);
 
     const canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (canonicalLink) canonicalLink.setAttribute('href', `${SITE_CONFIG.siteUrl}/case-study.html?id=${data.id}`);
+    if (canonicalLink) canonicalLink.setAttribute('href', `${SITE_CONFIG.siteUrl}/projects/${data.id}/`);
 
     // 1. Meta Badges & Header
     this.setText('cs-index-badge', `CASE 0${data.index} / 06`);

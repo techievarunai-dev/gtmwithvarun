@@ -11,13 +11,12 @@ export const SITE_CONFIG = {
   // Current active production domain (without trailing slash)
   siteUrl: (typeof process !== 'undefined' && (process.env.VITE_SITE_URL || process.env.SITE_URL))
     ? (process.env.VITE_SITE_URL || process.env.SITE_URL).replace(/\/$/, '')
-    : 'https://varunmurugan-gtm.vercel.app',
+    : 'https://gtmwithvarun.vercel.app',
 
   // Candidate production domains
   candidateDomains: {
     gtmwithvarun: 'https://gtmwithvarun.vercel.app',
-    altivionai: 'https://altivionai.com',
-    currentFallback: 'https://varunmurugan-gtm.vercel.app'
+    altivionai: 'https://altivionai.com'
   },
 
   siteName: 'Varun Murugan P — GTM Engineer Portfolio',
@@ -25,7 +24,7 @@ export const SITE_CONFIG = {
     name: 'Varun Murugan P',
     role: 'GTM Engineer & AI Revenue Automation Architect',
     email: 'workwithvarunmurugan@gmail.com',
-    github: 'https://github.com/varunmurugan-gtm',
+    github: 'https://github.com/techievarunai-dev',
     linkedin: 'https://linkedin.com/in/varunmurugan'
   },
 
